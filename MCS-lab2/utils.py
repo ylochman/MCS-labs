@@ -1,22 +1,16 @@
 import numpy as np
 import pandas as pd
-from scipy.integrate import odeint
-import matplotlib.pyplot as plt
 
-from pylab import rcParams
-rcParams['figure.figsize'] = 14, 8
-
-
-def RMNK(X, y, s=None, verbose=False, create_dataframe=False):
+def RMNK(X, y, s=None, verbose=False, deep_verbose=False, create_dataframe=False):
     assert X.ndim == 2 and X.shape[1] > 0
     m = X.shape[1]
     if m > 1:
         if create_dataframe:
-            w, H_inv, RSS, df = RMNK(X[:,:-1], y, s, verbose, create_dataframe)
+            w, H_inv, RSS, df = RMNK(X[:,:-1], y, s, verbose, deep_verbose, create_dataframe)
             if s is not None and m > s:
                 return w, H_inv, RSS, df
         else:
-            w, H_inv, RSS = RMNK(X[:,:-1], y, s, verbose, create_dataframe)
+            w, H_inv, RSS = RMNK(X[:,:-1], y, s, verbose, deep_verbose, create_dataframe)
             if s is not None and m > s:
                 return w, H_inv, RSS
         # w is of shape = [m-1, 1]; H_inv is of shape = [m-1, m-1]    
@@ -49,13 +43,14 @@ def RMNK(X, y, s=None, verbose=False, create_dataframe=False):
         print('===============================================')
         print('\tStep {}'.format(m))
         print('===============================================')
-        print('h_{}:\t\t{}'.format(m, h.reshape(-1,1)[:,0]))
-        print('eta_{}:\t\t{}'.format(m, eta))
-        print('alpha_{}:\t{}'.format(m, alpha.reshape(-1,1)[:,0]))
-        print('beta_{}:\t\t{}'.format(m, beta))
-        print('gamma_{}:\t{}'.format(m, gamma))
-        print('nu_{}:\t\t{}'.format(m, nu))
-        print('===============================================')
+        if deep_verbose:
+            print('h_{}:\t\t{}'.format(m, h.reshape(-1,1)[:,0]))
+            print('eta_{}:\t\t{}'.format(m, eta))
+            print('alpha_{}:\t{}'.format(m, alpha.reshape(-1,1)[:,0]))
+            print('beta_{}:\t\t{}'.format(m, beta))
+            print('gamma_{}:\t{}'.format(m, gamma))
+            print('nu_{}:\t\t{}'.format(m, nu))
+            print('===============================================')
         print('> θ_{}: {}'.format(m, w[:, 0]))
         print('> H_{}_inv:\n{}'.format(m, H_next_inv))
         print('> RSS_{}: {}'.format(m, RSS_next))
