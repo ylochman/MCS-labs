@@ -4,3 +4,4 @@
 /*/
 !*lab*/
 !.gitignore
+__pycache__
