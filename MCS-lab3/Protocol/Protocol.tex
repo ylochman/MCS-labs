@@ -1,0 +1,1738 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+\documentclass[11pt]{article}
+
+    
+    \usepackage[english,main=ukrainian]{babel}
+    \usepackage{indentfirst}
+
+    \usepackage[T1]{fontenc}
+    % Nicer default font (+ math font) than Computer Modern for most use cases
+    \usepackage{mathpazo}
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % We will generate all images so they have a width \maxwidth. This means
+    % that they will get their normal width if they fit onto the page, but
+    % are scaled down if they would overflow the margins.
+    \makeatletter
+    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
+    \else\Gin@nat@width\fi}
+    \makeatother
+    \let\Oldincludegraphics\includegraphics
+    % Set max figure width to be 80% of text width, for now hardcoded.
+    \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=.8\maxwidth]{#1}}
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionLabelFormat{nolabel}{}
+    \captionsetup{labelformat=nolabel}
+
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    
+
+    
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{Protocol}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@fm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sa\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@dl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+    \begin{document}
+    
+    
+    \begin{titlepage} 
+
+\center
+
+{\large
+Національний Технічний Університет України\\[0.2cm]
+«Київський політехнічний інститут імені Ігоря Сікорського»\\[0.2cm]
+Навчально-Науковий Комплекс \\[0.2cm]
+«Інститут прикладного системного аналізу»
+}\\[4cm] % Minor heading such as course title
+
+
+{ \LARGE \bfseries
+Лабороторна робота № 3 \\[0.4cm]
+з дисципліни «Моделювання складних систем»
+}\\[5cm] % Title of your document
+
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Виконали:} \\
+студенти гр. КА-41 \\
+Мельничук Валентин \\
+Лочман Ярослава  \\
+Снігірьова Валерія
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Прийняв:} \\
+професор кафедри ММСА, \\
+д.т.н. Степашко В.С. \\
+\end{flushright}
+\end{minipage}\\[6cm]
+
+Київ 2018
+
+\vfill % Fill the rest of the page with whitespace
+
+\end{titlepage}
+
+    
+
+    \section{Пошук моделі оптимальної
+складності}\label{ux43fux43eux448ux443ux43a-ux43cux43eux434ux435ux43bux456-ux43eux43fux442ux438ux43cux430ux43bux44cux43dux43eux457-ux441ux43aux43bux430ux434ux43dux43eux441ux442ux456}
+
+    \subsection{Задання конфігурацій. Створення
+вибірок}\label{ux437ux430ux434ux430ux43dux43dux44f-ux43aux43eux43dux444ux456ux433ux443ux440ux430ux446ux456ux439.-ux441ux442ux432ux43eux440ux435ux43dux43dux44f-ux432ux438ux431ux456ux440ux43eux43a}
+
+    \subsubsection{Тест 1 (вибірка аналогічна вибірці з лабораторної роботи
+№2)}\label{ux442ux435ux441ux442-1-ux432ux438ux431ux456ux440ux43aux430-ux430ux43dux430ux43bux43eux433ux456ux447ux43dux430-ux432ux438ux431ux456ux440ux446ux456-ux437-ux43bux430ux431ux43eux440ux430ux442ux43eux440ux43dux43eux457-ux440ux43eux431ux43eux442ux438-2}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}761}]:} \PY{n}{config1} \PY{o}{=} \PY{n}{ModelConfig}\PY{p}{(}\PY{n}{a}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{b}\PY{o}{=}\PY{l+m+mf}{0.5}\PY{p}{)}
+          \PY{n}{config1}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{n}{n}\PY{o}{=}\PY{l+m+mi}{1000}\PY{p}{)}
+          \PY{n}{config1}\PY{o}{.}\PY{n}{generate\PYZus{}noise\PYZus{}and\PYZus{}output}\PY{p}{(}\PY{p}{)}
+          \PY{n}{config1}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Regressors: m = 5
+True parameters: θ = [ 3 -2  1  0  0]
+y0 = (3) * x1 + (-2) * x2 + (1) * x3 + (0) * x4 + (0) * x5
+Noise generation: σ = 0.3
+Sample length: n = 1000
+X[:10]:
+[[0.04308385 0.27830758 0.26976892 0.39022119 0.49445485]
+ [0.35547599 0.48728023 0.29090938 0.17106778 0.44217748]
+ [0.23057501 0.05182741 0.35420655 0.33878025 0.43994632]
+ [0.09611698 0.12839818 0.18620192 0.42063433 0.26173627]
+ [0.091473   0.05942291 0.3604472  0.34968361 0.32910679]
+ [0.24643068 0.33150797 0.28024961 0.49592521 0.12985612]
+ [0.13910572 0.15118726 0.38102016 0.14029001 0.39970713]
+ [0.06306985 0.27847968 0.31756348 0.40461903 0.25243815]
+ [0.11870129 0.4192407  0.32457993 0.18718059 0.38507428]
+ [0.41681015 0.03932334 0.11500753 0.00913267 0.04140103]]
+y[:10]:
+[-0.43291385  0.38575983  1.06335113  0.12211829  0.61379791  0.46785321
+  1.26450697  0.12539443  0.04208874  1.33072653]
+
+    \end{Verbatim}
+
+    \subsubsection{Тест 2 (велика вибірка з великою кількістю
+регресорів)}\label{ux442ux435ux441ux442-2-ux432ux435ux43bux438ux43aux430-ux432ux438ux431ux456ux440ux43aux430-ux437-ux432ux435ux43bux438ux43aux43eux44e-ux43aux456ux43bux44cux43aux456ux441ux442ux44e-ux440ux435ux433ux440ux435ux441ux43eux440ux456ux432}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}762}]:} \PY{n}{config2} \PY{o}{=} \PY{n}{ModelConfig}\PY{p}{(}\PY{n}{m}\PY{o}{=}\PY{l+m+mi}{15}\PY{p}{,} \PY{n}{s0}\PY{o}{=}\PY{l+m+mi}{10}\PY{p}{,} \PY{n}{a}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{b}\PY{o}{=}\PY{l+m+mf}{0.5}\PY{p}{,} \PY{n}{theta}\PY{o}{=}\PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{random}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{]}\PY{p}{\PYZcb{}}\PY{p}{)}
+          \PY{n}{config2}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{n}{n}\PY{o}{=}\PY{l+m+mi}{1000}\PY{p}{)}
+          \PY{n}{config2}\PY{o}{.}\PY{n}{generate\PYZus{}noise\PYZus{}and\PYZus{}output}\PY{p}{(}\PY{p}{)}
+          \PY{n}{config2}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Regressors: m = 15
+True parameters: θ = [1.6112567  3.92918486 5.54550484 8.89579123 5.61658096 1.80037743
+ 1.31102406 4.00562737 7.73951187 8.13889251 0.         0.
+ 0.         0.         0.        ]
+y0 = (1.6112567036457572) * x1 + (3.929184861555827) * x2 + (5.545504835204717) * x3 + (8.895791227491983) * x4 + (5.616580955720129) * x5 + (1.800377427691979) * x6 + (1.311024062705871) * x7 + (4.005627372238807) * x8 + (7.739511870641742) * x9 + (8.138892514210113) * x10 + (0.0) * x11 + (0.0) * x12 + (0.0) * x13 + (0.0) * x14 + (0.0) * x15
+Noise generation: σ = 0.3
+Sample length: n = 1000
+X[:10]:
+[[0.17141608 0.08781483 0.01743464 0.29952731 0.16745103 0.24753049
+  0.1284215  0.38092612 0.3119313  0.3007671  0.17271201 0.19120914
+  0.29735522 0.44397982 0.4809952 ]
+ [0.47869302 0.15824631 0.0570476  0.4013738  0.4536813  0.33610225
+  0.07485632 0.24895821 0.18230803 0.14178467 0.32708787 0.2305085
+  0.48024906 0.24493323 0.38827829]
+ [0.0131716  0.36956987 0.13101176 0.37314593 0.10267952 0.29544454
+  0.35293415 0.02098249 0.47523253 0.08506131 0.03398137 0.33780554
+  0.48230987 0.47088904 0.03502071]
+ [0.17128846 0.2917416  0.43680753 0.42073404 0.24958122 0.08615753
+  0.09649508 0.01330002 0.06522511 0.178949   0.2350533  0.25121685
+  0.34353518 0.1525882  0.44943699]
+ [0.08123586 0.15739996 0.02151389 0.2969259  0.45627141 0.00293347
+  0.45785202 0.29677929 0.28126218 0.11094502 0.09498646 0.0181461
+  0.07394435 0.19421807 0.45634451]]
+y[:10]:
+[11.51775111 11.97117785 11.77111645 11.38172423 11.16129411]
+
+    \end{Verbatim}
+
+    \subsubsection{Тест 3 (власні
+задачі)}\label{ux442ux435ux441ux442-3-ux432ux43bux430ux441ux43dux456-ux437ux430ux434ux430ux447ux456}
+
+    \paragraph{Діабет}\label{ux434ux456ux430ux431ux435ux442}
+
+Для 442 пацієнтів з діабетом, маємо 10 вхідних змінних: - вік - стать -
+індекс маси тіла - середній артеріальний тиск - шість вимірів сироватки
+крові,
+
+Вихідна змінна: - кількісний показник прогресії хвороби через рік після
+вимірювання.
+
+В кожному з цих 10 регресорів елементи відцентровані та поділені на
+\(n \sigma\) (тобто в кожному стовпці сума квадратів елементів становить
+1).
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}767}]:} \PY{n}{dataframe\PYZus{}path} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{data/diabetes.csv}\PY{l+s+s1}{\PYZsq{}}
+          \PY{n}{df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{n}{dataframe\PYZus{}path}\PY{p}{)}
+          \PY{n}{config3} \PY{o}{=} \PY{n}{ModelConfig}\PY{p}{(}\PY{n}{theta}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{unknown}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                                \PY{n}{X}\PY{o}{=}\PY{n}{df}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{age}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s6}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+                                \PY{n}{y}\PY{o}{=}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{target}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+          \PY{n}{config3}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Regressors: m = 10
+True parameters: θ = unknown
+Sample length: n = 442
+X[:10]:
+[[ 0.03807591  0.05068012  0.06169621  0.02187235 -0.0442235  -0.03482076
+  -0.04340085 -0.00259226  0.01990842 -0.01764613]
+ [-0.00188202 -0.04464164 -0.05147406 -0.02632783 -0.00844872 -0.01916334
+   0.07441156 -0.03949338 -0.06832974 -0.09220405]
+ [ 0.08529891  0.05068012  0.04445121 -0.00567061 -0.04559945 -0.03419447
+  -0.03235593 -0.00259226  0.00286377 -0.02593034]
+ [-0.08906294 -0.04464164 -0.01159501 -0.03665645  0.01219057  0.02499059
+  -0.03603757  0.03430886  0.02269202 -0.00936191]
+ [ 0.00538306 -0.04464164 -0.03638469  0.02187235  0.00393485  0.01559614
+   0.00814208 -0.00259226 -0.03199144 -0.04664087]]
+y[:10]:
+[151.  75. 141. 206. 135.]
+
+    \end{Verbatim}
+
+    \paragraph{Оцінка
+смертності}\label{ux43eux446ux456ux43dux43aux430-ux441ux43cux435ux440ux442ux43dux43eux441ux442ux456}
+
+! TODO: DESCRIBE TASK
+
+Вхідні змінні: - .
+
+Вихідна змінна: - .
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}768}]:} \PY{n}{dataframe\PYZus{}path} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{data/death\PYZhy{}rate.csv}\PY{l+s+s1}{\PYZsq{}}
+          \PY{n}{df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{n}{dataframe\PYZus{}path}\PY{p}{)}
+          \PY{n}{config3} \PY{o}{=} \PY{n}{ModelConfig}\PY{p}{(}\PY{n}{theta}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{unknown}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                                \PY{n}{X}\PY{o}{=}\PY{n}{df}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{A1}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{A15}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+                                \PY{n}{y}\PY{o}{=}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{B}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+          \PY{n}{config3}\PY{o}{.}\PY{n}{X} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{hstack}\PY{p}{(}\PY{p}{(}\PY{n}{config3}\PY{o}{.}\PY{n}{X}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{ones}\PY{p}{(}\PY{p}{(}\PY{n}{config3}\PY{o}{.}\PY{n}{n}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+          \PY{n}{config3}\PY{o}{.}\PY{n}{m} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+          \PY{n}{config3}\PY{o}{.}\PY{n}{s} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+          \PY{n}{config3}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Regressors: m = 16
+True parameters: θ = unknown
+Sample length: n = 60
+X[:10]:
+[[3.600e+01 2.700e+01 7.100e+01 8.100e+00 3.340e+00 1.140e+01 8.150e+01
+  3.243e+03 8.800e+00 4.260e+01 1.170e+01 2.100e+01 1.500e+01 5.900e+01
+  5.900e+01 1.000e+00]
+ [3.500e+01 2.300e+01 7.200e+01 1.110e+01 3.140e+00 1.100e+01 7.880e+01
+  4.281e+03 3.600e+00 5.070e+01 1.440e+01 8.000e+00 1.000e+01 3.900e+01
+  5.700e+01 1.000e+00]]
+y[:10]:
+[921.87  997.875]
+
+    \end{Verbatim}
+
+    \paragraph{Октан}\label{ux43eux43aux442ux430ux43d}
+
+При дослідженні виробничого процесу нафтопереробному заводі вимірюється
+вміст октану в нафті залежно від кількості 3-х сировинних матеріалів та
+змінної, що характеризує умови виробництва. Вхідні змінні (5): -
+одиниця, відповідає вільному члену - кількість матеріалу 1 - кількість
+матеріалу 2 - кількість матеріалу 3 - кількісний показник умов
+виробництва
+
+Вихідна змінна: - вміст октану
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}769}]:} \PY{n}{dataframe\PYZus{}path} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{data/octane\PYZhy{}rating.csv}\PY{l+s+s1}{\PYZsq{}}
+          \PY{n}{df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{n}{dataframe\PYZus{}path}\PY{p}{)}
+          \PY{n}{config3} \PY{o}{=} \PY{n}{ModelConfig}\PY{p}{(}\PY{n}{theta}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{unknown}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                                \PY{n}{X}\PY{o}{=}\PY{n}{df}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{One}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Condition}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+                                \PY{n}{y}\PY{o}{=}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Octane number}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+          \PY{n}{config3}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Regressors: m = 5
+True parameters: θ = unknown
+Sample length: n = 82
+X[:10]:
+[[ 1.      55.33     1.72    54.       1.66219]
+ [ 1.      59.13     1.2     53.       1.58399]
+ [ 1.      57.39     1.42    55.       1.61731]
+ [ 1.      56.43     1.78    55.       1.66228]
+ [ 1.      55.98     1.58    54.       1.63195]]
+y[:10]:
+[92.19 92.74 91.88 92.8  92.56]
+
+    \end{Verbatim}
+
+    \paragraph{House Prices}\label{house-prices}
+
+Прогнозування цін на нерухомість.
+
+! TODO: DESCRIBE TASK
+
+Вхідні змінні: - .
+
+Вихідна змінна: - .
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}770}]:} \PY{n}{dataframe\PYZus{}path} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{data/house\PYZhy{}prices\PYZhy{}cleaned.csv}\PY{l+s+s1}{\PYZsq{}}
+          \PY{n}{df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{n}{dataframe\PYZus{}path}\PY{p}{)}
+          \PY{n}{config3} \PY{o}{=} \PY{n}{ModelConfig}\PY{p}{(}\PY{n}{theta}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{unknown}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                                \PY{n}{X}\PY{o}{=}\PY{n}{df}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{MSSubClass}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{YrSold}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+                                \PY{n}{y}\PY{o}{=}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{SalePrice}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+          \PY{n}{config3}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Regressors: m = 36
+True parameters: θ = unknown
+Sample length: n = 1460
+X[:10]:
+[[4.11087386e+00 4.18965474e+00 9.04204006e+00 7.00000000e+00
+  5.00000000e+00 2.00300000e+03 2.00300000e+03 5.28320373e+00
+  6.56103067e+00 0.00000000e+00 5.01727984e+00 6.75343792e+00
+  6.75343792e+00 6.75110147e+00 0.00000000e+00 7.44483327e+00
+  1.00000000e+00 0.00000000e+00 2.00000000e+00 1.00000000e+00
+  3.00000000e+00 6.93147181e-01 8.00000000e+00 0.00000000e+00
+  2.00300000e+03 2.00000000e+00 5.48000000e+02 0.00000000e+00
+  4.12713439e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+  0.00000000e+00 0.00000000e+00 2.00000000e+00 2.00800000e+03]]
+y[:10]:
+[12.24769912]
+
+    \end{Verbatim}
+
+    \subsection{Пошук моделі. Послідовне включення (метод з лабораторної
+роботи
+№2)}\label{ux43fux43eux448ux443ux43a-ux43cux43eux434ux435ux43bux456.-ux43fux43eux441ux43bux456ux434ux43eux432ux43dux435-ux432ux43aux43bux44eux447ux435ux43dux43dux44f-ux43cux435ux442ux43eux434-ux437-ux43bux430ux431ux43eux440ux430ux442ux43eux440ux43dux43eux457-ux440ux43eux431ux43eux442ux438-2}
+
+    \subsubsection{Тест 1}\label{ux442ux435ux441ux442-1}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}772}]:} \PY{n}{df1} \PY{o}{=} \PY{n}{config1}\PY{o}{.}\PY{n}{run\PYZus{}single\PYZus{}RMNK\PYZus{}model\PYZus{}selection}\PY{p}{(}\PY{n}{p}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,}
+                                                 \PY{n}{criteria}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+                                                 \PY{n}{plot}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+          \PY{n+nb}{print}\PY{p}{(}\PY{p}{)}
+          \PY{n}{df2} \PY{o}{=} \PY{n}{config1}\PY{o}{.}\PY{n}{run\PYZus{}single\PYZus{}RMNK\PYZus{}model\PYZus{}selection}\PY{p}{(}\PY{n}{p}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{reverse}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                                                 \PY{n}{criteria}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+                                                 \PY{n}{plot}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+=============
+DIRECT
+=============
+Regressors order: [0 1 2 3 4]
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_18_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+Optimal:
+	s* = 3.0
+	regressors = [1, 2, 3]
+
+=============
+REVERSE
+=============
+Regressors order: [4 3 2 1 0]
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_18_3.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+Optimal:
+	s* = 5.0
+	regressors = [1, 2, 3, 4, 5]
+
+    \end{Verbatim}
+
+    \subsubsection{Тест 2}\label{ux442ux435ux441ux442-2}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}773}]:} \PY{n}{df1} \PY{o}{=} \PY{n}{config2}\PY{o}{.}\PY{n}{run\PYZus{}single\PYZus{}RMNK\PYZus{}model\PYZus{}selection}\PY{p}{(}\PY{n}{p}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,}
+                                                 \PY{n}{criteria}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+                                                 \PY{n}{plot}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+          \PY{n+nb}{print}\PY{p}{(}\PY{p}{)}
+          \PY{n}{df2} \PY{o}{=} \PY{n}{config2}\PY{o}{.}\PY{n}{run\PYZus{}single\PYZus{}RMNK\PYZus{}model\PYZus{}selection}\PY{p}{(}\PY{n}{p}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{reverse}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                                                 \PY{n}{criteria}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+                                                 \PY{n}{plot}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+=============
+DIRECT
+=============
+Regressors order: [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14]
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_20_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+Optimal:
+	s* = 10.0
+	regressors = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+=============
+REVERSE
+=============
+Regressors order: [14 13 12 11 10  9  8  7  6  5  4  3  2  1  0]
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_20_3.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+Optimal:
+	s* = 15.0
+	regressors = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+
+    \end{Verbatim}
+
+    \subsubsection{Тест 3}\label{ux442ux435ux441ux442-3}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}774}]:} \PY{n}{df1} \PY{o}{=} \PY{n}{config3}\PY{o}{.}\PY{n}{run\PYZus{}single\PYZus{}RMNK\PYZus{}model\PYZus{}selection}\PY{p}{(}\PY{n}{p}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,}
+                                                 \PY{n}{criteria}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+                                                 \PY{n}{plot}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+          \PY{n+nb}{print}\PY{p}{(}\PY{p}{)}
+          \PY{n}{df2} \PY{o}{=} \PY{n}{config3}\PY{o}{.}\PY{n}{run\PYZus{}single\PYZus{}RMNK\PYZus{}model\PYZus{}selection}\PY{p}{(}\PY{n}{p}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{reverse}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                                                 \PY{n}{criteria}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+                                                 \PY{n}{plot}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+=============
+DIRECT
+=============
+Regressors order: [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35]
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_22_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+Optimal:
+	s* = 14.0
+	regressors = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+
+=============
+REVERSE
+=============
+Regressors order: [35 34 33 32 31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12
+ 11 10  9  8  7  6  5  4  3  2  1  0]
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_22_3.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+Optimal:
+	s* = 23.0
+	regressors = [14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36]
+
+    \end{Verbatim}
+
+    \subsection{Пошук моделі. Метод кореляційного
+включення}\label{ux43fux43eux448ux443ux43a-ux43cux43eux434ux435ux43bux456.-ux43cux435ux442ux43eux434-ux43aux43eux440ux435ux43bux44fux446ux456ux439ux43dux43eux433ux43e-ux432ux43aux43bux44eux447ux435ux43dux43dux44f}
+
+    \subsubsection{Тест 1}\label{ux442ux435ux441ux442-1}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}775}]:} \PY{n}{df1} \PY{o}{=} \PY{n}{config1}\PY{o}{.}\PY{n}{run\PYZus{}single\PYZus{}RMNK\PYZus{}model\PYZus{}selection}\PY{p}{(}\PY{n}{p}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{correlation}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                                                 \PY{n}{criteria}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+                                                 \PY{n}{plot}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+=====================
+CORRELATION INCLUDING
+=====================
+Regressors order: [0 1 2 4 3]
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_25_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+Optimal:
+	s* = 3.0
+	regressors = [1, 2, 3]
+
+    \end{Verbatim}
+
+    \subsubsection{Тест 2}\label{ux442ux435ux441ux442-2}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}776}]:} \PY{n}{df1} \PY{o}{=} \PY{n}{config2}\PY{o}{.}\PY{n}{run\PYZus{}single\PYZus{}RMNK\PYZus{}model\PYZus{}selection}\PY{p}{(}\PY{n}{p}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{correlation}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                                                 \PY{n}{criteria}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+                                                 \PY{n}{plot}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+=====================
+CORRELATION INCLUDING
+=====================
+Regressors order: [ 3  9  8  2  7  4  1  6  5  0 13 14 12 11 10]
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_27_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+Optimal:
+	s* = 10.0
+	regressors = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+    \end{Verbatim}
+
+    \subsubsection{Тест 3}\label{ux442ux435ux441ux442-3}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}777}]:} \PY{n}{df1} \PY{o}{=} \PY{n}{config3}\PY{o}{.}\PY{n}{run\PYZus{}single\PYZus{}RMNK\PYZus{}model\PYZus{}selection}\PY{p}{(}\PY{n}{p}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{correlation}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                                                 \PY{n}{criteria}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+                                                 \PY{n}{plot}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+=====================
+CORRELATION INCLUDING
+=====================
+Regressors order: [26 24  5  1  6  7  3 28 27 22  8 13 25 11 10 29 18 23 15  2 12 20 19 34
+ 31 16 33  9 35  4 14 30 32  0 21 17]
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_29_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+Optimal:
+	s* = 11.0
+	regressors = [2, 4, 6, 7, 8, 9, 23, 25, 27, 28, 29]
+
+    \end{Verbatim}
+
+    \subsection{Пошук моделі. Метод випадкового
+включення}\label{ux43fux43eux448ux443ux43a-ux43cux43eux434ux435ux43bux456.-ux43cux435ux442ux43eux434-ux432ux438ux43fux430ux434ux43aux43eux432ux43eux433ux43e-ux432ux43aux43bux44eux447ux435ux43dux43dux44f}
+
+    \subsubsection{Тест 1}\label{ux442ux435ux441ux442-1}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}779}]:} \PY{n}{Ks} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{20}\PY{p}{,} \PY{l+m+mi}{50}\PY{p}{]}
+          \PY{k}{for} \PY{n}{K} \PY{o+ow}{in} \PY{n}{Ks}\PY{p}{:}
+              \PY{n}{config1}\PY{o}{.}\PY{n}{run\PYZus{}single\PYZus{}random\PYZus{}RMNK\PYZus{}model\PYZus{}selection}\PY{p}{(}\PY{n}{K}\PY{o}{=}\PY{n}{K}\PY{p}{,} \PY{n}{criteria}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+                                                             \PY{n}{main\PYZus{}criterion}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+================================
+RANDOM INCLUDING WITH K = 10
+================================
+
+    s*      regressors*         Cp
+0  5.0  [1, 2, 3, 4, 5]  98.083822
+1  5.0  [1, 2, 3, 4, 5]  98.083822
+2  5.0  [1, 2, 3, 4, 5]  98.083822
+3  5.0  [1, 2, 3, 4, 5]  98.083822
+4  4.0     [1, 2, 3, 5]  96.276951
+{\ldots}
+    s*      regressors*         Cp
+5  3.0        [1, 2, 3]  94.282328
+6  5.0  [1, 2, 3, 4, 5]  98.083822
+7  4.0     [1, 2, 3, 4]  96.115626
+8  4.0     [1, 2, 3, 5]  96.276951
+9  4.0     [1, 2, 3, 4]  96.115626
+
+Optimal:
+	s* = 3.0
+	regressors = [1, 2, 3]
+================================
+RANDOM INCLUDING WITH K = 20
+================================
+
+    s*      regressors*         Cp
+0  5.0  [1, 2, 3, 4, 5]  98.083822
+1  4.0     [1, 2, 3, 4]  96.115626
+2  5.0  [1, 2, 3, 4, 5]  98.083822
+3  4.0     [1, 2, 3, 4]  96.115626
+4  5.0  [1, 2, 3, 4, 5]  98.083822
+{\ldots}
+     s*      regressors*         Cp
+15  5.0  [1, 2, 3, 4, 5]  98.083822
+16  4.0     [1, 2, 3, 5]  96.276951
+17  4.0     [1, 2, 3, 5]  96.276951
+18  3.0        [1, 2, 3]  94.282328
+19  3.0        [1, 2, 3]  94.282328
+
+Optimal:
+	s* = 3.0
+	regressors = [1, 2, 3]
+================================
+RANDOM INCLUDING WITH K = 50
+================================
+
+    s*      regressors*         Cp
+0  3.0        [1, 2, 3]  94.282328
+1  4.0     [1, 2, 3, 5]  96.276951
+2  4.0     [1, 2, 3, 4]  96.115626
+3  3.0        [1, 2, 3]  94.282328
+4  5.0  [1, 2, 3, 4, 5]  98.083822
+{\ldots}
+     s*      regressors*         Cp
+45  5.0  [1, 2, 3, 4, 5]  98.083822
+46  4.0     [1, 2, 3, 5]  96.276951
+47  5.0  [1, 2, 3, 4, 5]  98.083822
+48  5.0  [1, 2, 3, 4, 5]  98.083822
+49  4.0     [1, 2, 3, 4]  96.115626
+
+Optimal:
+	s* = 3.0
+	regressors = [1, 2, 3]
+
+    \end{Verbatim}
+
+    \subsubsection{Тест 2}\label{ux442ux435ux441ux442-2}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}780}]:} \PY{n}{Ks} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{20}\PY{p}{,} \PY{l+m+mi}{50}\PY{p}{]}
+          \PY{k}{for} \PY{n}{K} \PY{o+ow}{in} \PY{n}{Ks}\PY{p}{:}
+              \PY{n}{config2}\PY{o}{.}\PY{n}{run\PYZus{}single\PYZus{}random\PYZus{}RMNK\PYZus{}model\PYZus{}selection}\PY{p}{(}\PY{n}{K}\PY{o}{=}\PY{n}{K}\PY{p}{,} \PY{n}{criteria}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+                                                             \PY{n}{main\PYZus{}criterion}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+================================
+RANDOM INCLUDING WITH K = 10
+================================
+
+     s*                                        regressors*          Cp
+0  15.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}  116.237123
+1  15.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}  116.237123
+2  15.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}  116.237123
+3  15.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}  116.237123
+4  14.0    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15]  114.258229
+{\ldots}
+     s*                                        regressors*          Cp
+5  15.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}  116.237123
+6  15.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}  116.237123
+7  15.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}  116.237123
+8  15.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}  116.237123
+9  15.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}  116.237123
+
+Optimal:
+	s* = 14.0
+	regressors = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15]
+================================
+RANDOM INCLUDING WITH K = 20
+================================
+
+     s*                                        regressors*          Cp
+0  14.0    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15]  114.280158
+1  15.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}  116.237123
+2  15.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}  116.237123
+3  14.0    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15]  114.453405
+4  14.0    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15]  114.237896
+{\ldots}
+      s*                                        regressors*          Cp
+15  14.0    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15]  114.258229
+16  14.0    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15]  114.453405
+17  15.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}  116.237123
+18  15.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}  116.237123
+19  15.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}  116.237123
+
+Optimal:
+	s* = 13.0
+	regressors = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 15]
+================================
+RANDOM INCLUDING WITH K = 50
+================================
+
+     s*                                        regressors*          Cp
+0  14.0    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]  114.288080
+1  14.0    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]  114.288080
+2  15.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}  116.237123
+3  13.0        [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 15]  112.259362
+4  15.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}  116.237123
+{\ldots}
+      s*                                        regressors*          Cp
+45  15.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}  116.237123
+46  12.0            [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 14]  110.498738
+47  15.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}  116.237123
+48  15.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}  116.237123
+49  15.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}  116.237123
+
+Optimal:
+	s* = 12.0
+	regressors = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 14]
+
+    \end{Verbatim}
+
+    \subsubsection{Тест 3}\label{ux442ux435ux441ux442-3}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}782}]:} \PY{n}{Ks} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{20}\PY{p}{,} \PY{l+m+mi}{50}\PY{p}{,} \PY{l+m+mi}{100}\PY{p}{]}
+          \PY{k}{for} \PY{n}{K} \PY{o+ow}{in} \PY{n}{Ks}\PY{p}{:}
+              \PY{n}{config3}\PY{o}{.}\PY{n}{run\PYZus{}single\PYZus{}random\PYZus{}RMNK\PYZus{}model\PYZus{}selection}\PY{p}{(}\PY{n}{K}\PY{o}{=}\PY{n}{K}\PY{p}{,} \PY{n}{criteria}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+                                                             \PY{n}{main\PYZus{}criterion}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+================================
+RANDOM INCLUDING WITH K = 10
+================================
+
+     s*                                        regressors*         Cp
+0  21.0  [1, 2, 4, 5, 7, 8, 9, 11, 13, 15, 16, 20, 23, {\ldots}  75.332316
+1  19.0  [1, 2, 5, 7, 9, 13, 16, 18, 19, 22, 24, 25, 27{\ldots}  82.430653
+2  22.0  [1, 2, 3, 4, 5, 6, 10, 11, 13, 15, 17, 20, 21,{\ldots}  78.091102
+3  13.0     [3, 4, 5, 6, 8, 9, 12, 15, 16, 18, 23, 26, 28]  56.085399
+4  20.0  [1, 4, 5, 9, 10, 12, 13, 16, 17, 19, 23, 24, 2{\ldots}  75.436484
+{\ldots}
+     s*                                        regressors*         Cp
+5   8.0                      [3, 4, 7, 10, 13, 18, 23, 35]  62.258830
+6  17.0  [1, 2, 4, 7, 9, 10, 14, 15, 16, 18, 21, 27, 29{\ldots}  69.731694
+7  23.0  [2, 3, 7, 8, 9, 10, 11, 14, 16, 17, 18, 19, 20{\ldots}  87.231527
+8  22.0  [1, 2, 4, 5, 6, 8, 12, 14, 16, 18, 20, 21, 22,{\ldots}  75.364583
+9  24.0  [1, 2, 4, 5, 7, 8, 9, 10, 12, 13, 14, 15, 16, {\ldots}  80.195423
+
+Optimal:
+	s* = 13.0
+	regressors = [3, 4, 5, 6, 8, 9, 12, 15, 16, 18, 23, 26, 28]
+================================
+RANDOM INCLUDING WITH K = 20
+================================
+
+     s*                                        regressors*         Cp
+0  30.0  [1, 3, 4, 5, 6, 8, 9, 10, 12, 13, 14, 15, 16, {\ldots}  87.133982
+1  24.0  [1, 2, 3, 4, 5, 6, 7, 9, 10, 13, 14, 16, 17, 1{\ldots}  76.010921
+2  16.0  [1, 2, 5, 6, 10, 12, 14, 16, 17, 18, 19, 22, 2{\ldots}  71.824050
+3  21.0  [1, 2, 3, 4, 7, 8, 11, 15, 16, 17, 18, 19, 20,{\ldots}  76.634644
+4  16.0  [1, 4, 6, 13, 14, 15, 17, 21, 22, 23, 25, 26, {\ldots}  71.283410
+{\ldots}
+      s*                                        regressors*         Cp
+15  26.0  [1, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, {\ldots}  82.392430
+16  16.0  [1, 5, 7, 9, 10, 11, 13, 14, 15, 16, 17, 25, 2{\ldots}  80.362725
+17  16.0  [1, 3, 5, 6, 11, 14, 16, 17, 18, 22, 25, 26, 2{\ldots}  68.556969
+18  13.0    [1, 4, 5, 7, 9, 17, 21, 27, 30, 31, 32, 35, 36]  74.879940
+19  11.0            [1, 4, 6, 7, 9, 12, 20, 21, 23, 26, 30]  65.816640
+
+Optimal:
+	s* = 7.0
+	regressors = [3, 4, 5, 6, 16, 26, 28]
+================================
+RANDOM INCLUDING WITH K = 50
+================================
+
+     s*                                        regressors*         Cp
+0  17.0  [4, 8, 9, 14, 15, 17, 19, 22, 23, 25, 26, 27, {\ldots}  78.082043
+1  15.0  [3, 4, 6, 9, 11, 14, 15, 19, 21, 25, 29, 31, 3{\ldots}  73.891446
+2  15.0  [1, 2, 3, 6, 9, 13, 19, 20, 21, 22, 24, 26, 28{\ldots}  80.762026
+3  18.0  [1, 2, 3, 4, 6, 8, 11, 13, 16, 17, 18, 19, 21,{\ldots}  72.293154
+4  12.0      [2, 4, 7, 12, 13, 15, 17, 19, 22, 25, 27, 29]  70.688988
+{\ldots}
+      s*                                        regressors*         Cp
+45  15.0  [5, 6, 7, 10, 12, 13, 16, 20, 24, 26, 27, 28, {\ldots}  67.555766
+46  26.0  [1, 3, 5, 6, 7, 8, 9, 12, 14, 16, 18, 19, 20, {\ldots}  85.026921
+47  27.0  [1, 3, 4, 5, 8, 9, 11, 12, 13, 15, 16, 18, 19,{\ldots}  86.834162
+48  13.0  [1, 4, 7, 11, 13, 14, 19, 22, 23, 24, 25, 33, 36]  67.250935
+49  12.0       [3, 4, 6, 7, 12, 14, 16, 21, 25, 27, 28, 30]  58.748351
+
+Optimal:
+	s* = 12.0
+	regressors = [3, 4, 6, 7, 12, 14, 16, 21, 25, 27, 28, 30]
+================================
+RANDOM INCLUDING WITH K = 100
+================================
+
+     s*                                        regressors*         Cp
+0  19.0  [2, 3, 4, 5, 6, 10, 11, 12, 19, 20, 21, 22, 23{\ldots}  75.832161
+1  18.0  [1, 3, 5, 6, 9, 11, 13, 16, 19, 21, 22, 24, 25{\ldots}  71.932551
+2  12.0       [2, 4, 8, 9, 11, 21, 22, 23, 24, 25, 26, 36]  70.415613
+3  15.0  [2, 4, 5, 6, 9, 11, 15, 16, 18, 21, 23, 24, 26{\ldots}  63.595051
+4  21.0  [1, 3, 5, 6, 7, 8, 12, 15, 17, 18, 20, 23, 24,{\ldots}  90.928419
+{\ldots}
+      s*                                        regressors*         Cp
+95  14.0  [1, 3, 5, 6, 9, 13, 16, 19, 22, 25, 27, 33, 34{\ldots}  68.959838
+96  25.0  [1, 4, 5, 6, 7, 11, 12, 13, 14, 15, 16, 17, 19{\ldots}  79.659246
+97  19.0  [4, 7, 10, 13, 14, 15, 16, 18, 20, 23, 24, 26,{\ldots}  75.974088
+98  12.0      [1, 3, 4, 10, 11, 17, 19, 22, 23, 24, 31, 36]  70.722923
+99   9.0                  [4, 5, 6, 12, 16, 23, 25, 26, 27]  55.254030
+
+Optimal:
+	s* = 5.0
+	regressors = [4, 7, 12, 13, 16]
+
+    \end{Verbatim}
+
+    \subsection{Пошук моделі. Метод перебірного
+включення}\label{ux43fux43eux448ux443ux43a-ux43cux43eux434ux435ux43bux456.-ux43cux435ux442ux43eux434-ux43fux435ux440ux435ux431ux456ux440ux43dux43eux433ux43e-ux432ux43aux43bux44eux447ux435ux43dux43dux44f}
+
+    \subsubsection{Тест 1}\label{ux442ux435ux441ux442-1}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}802}]:} \PY{n}{total\PYZus{}df}\PY{p}{,} \PY{n}{best\PYZus{}df} \PY{o}{=} \PY{n}{config1}\PY{o}{.}\PY{n}{run\PYZus{}single\PYZus{}picking\PYZus{}RMNK\PYZus{}model\PYZus{}selection}\PY{p}{(}\PYZbs{}
+                                                          \PY{n}{criteria}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+                                                          \PY{n}{main\PYZus{}criterion}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+================================
+PICKING INCLUDING
+================================
+Optimal:
+	s* = 3.0
+	regressors = [1, 2, 3]
+
+    \end{Verbatim}
+
+    Таблиця, яка добре демонструє роботу алгоритма (порядок зберігається)
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}804}]:} \PY{n}{total\PYZus{}df}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}804}]:}       s       regressors          Cp
+          0   1.0              [1]  216.391532
+          1   1.0              [2]  538.833175
+          2   1.0              [3]  380.129151
+          3   1.0              [4]  450.597581
+          4   1.0              [5]  453.573587
+          5   2.0           [1, 2]  124.724060
+          6   2.0           [1, 3]  218.131896
+          7   2.0           [1, 4]  208.106903
+          8   2.0           [1, 5]  209.318742
+          9   3.0        [1, 2, 3]   94.282328
+          10  3.0        [1, 2, 4]  124.557551
+          11  3.0        [1, 2, 5]  122.679471
+          12  4.0     [1, 2, 3, 4]   96.115626
+          13  4.0     [1, 2, 3, 5]   96.276951
+          14  5.0  [1, 2, 3, 4, 5]   98.083822
+\end{Verbatim}
+            
+    \subsubsection{Тест 2}\label{ux442ux435ux441ux442-2}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}805}]:} \PY{n}{total\PYZus{}df}\PY{p}{,} \PY{n}{best\PYZus{}df} \PY{o}{=} \PY{n}{config2}\PY{o}{.}\PY{n}{run\PYZus{}single\PYZus{}picking\PYZus{}RMNK\PYZus{}model\PYZus{}selection}\PY{p}{(}\PYZbs{}
+                                                          \PY{n}{criteria}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+                                                          \PY{n}{main\PYZus{}criterion}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+================================
+PICKING INCLUDING
+================================
+Optimal:
+	s* = 10.0
+	regressors = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+    \end{Verbatim}
+
+    Таблиця, яка добре демонструє роботу алгоритма (порядок зберігається)
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}806}]:} \PY{n}{total\PYZus{}df}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}806}]:}         s                                         regressors            Cp
+          0     1.0                                                [1]  41354.994466
+          1     1.0                                                [2]  37630.005797
+          2     1.0                                                [3]  32941.436205
+          3     1.0                                                [4]  29282.190223
+          4     1.0                                                [5]  36730.260511
+          5     1.0                                                [6]  39343.294431
+          6     1.0                                                [7]  39495.098730
+          7     1.0                                                [8]  34653.767187
+          8     1.0                                                [9]  30581.757867
+          9     1.0                                               [10]  29854.461825
+          10    1.0                                               [11]  44022.317531
+          11    1.0                                               [12]  41104.689524
+          12    1.0                                               [13]  42800.114205
+          13    1.0                                               [14]  40799.957978
+          14    1.0                                               [15]  41995.263811
+          15    2.0                                             [1, 4]  17284.417147
+          16    2.0                                             [2, 4]  16302.798927
+          17    2.0                                             [3, 4]  14232.594994
+          18    2.0                                             [4, 5]  13945.909409
+          19    2.0                                             [4, 6]  17043.496668
+          20    2.0                                             [4, 7]  17846.634431
+          21    2.0                                             [4, 8]  15899.736951
+          22    2.0                                             [4, 9]  13061.886973
+          23    2.0                                            [4, 10]  11966.835111
+          24    2.0                                            [4, 11]  19331.477751
+          25    2.0                                            [4, 12]  19181.642813
+          26    2.0                                            [4, 13]  18745.264177
+          27    2.0                                            [4, 14]  18211.267525
+          28    2.0                                            [4, 15]  18527.616071
+          29    3.0                                         [1, 4, 10]   8700.767740
+          ..    {\ldots}                                                {\ldots}           {\ldots}
+          101   9.0                       [1, 2, 3, 4, 5, 6, 8, 9, 10]    145.526558
+          102  10.0                   [1, 2, 3, 4, 5, 6, 8, 9, 10, 11]    147.459809
+          103  10.0                   [1, 2, 3, 4, 5, 6, 8, 9, 10, 12]    147.404664
+          104  10.0                   [1, 2, 3, 4, 5, 6, 8, 9, 10, 13]    147.031402
+          105  10.0                   [1, 2, 3, 4, 5, 6, 8, 9, 10, 14]    147.386212
+          106  10.0                   [1, 2, 3, 4, 5, 6, 8, 9, 10, 15]    147.223308
+          107  11.0                [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]    108.550762
+          108  10.0                    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]    106.550762
+          109  11.0                [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12]    108.347553
+          110  11.0                [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13]    108.544791
+          111  10.0                    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]    106.550762
+          112  11.0                [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 14]    108.498893
+          113  11.0                [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15]    108.520007
+          114  11.0                [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 14]    108.498893
+          115  12.0            [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 14]    110.498738
+          116  11.0                [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 14]    108.498893
+          117  12.0            [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14]    110.314425
+          118  12.0            [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13, 14]    110.490035
+          119  12.0            [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 14, 15]    110.460960
+          120  12.0            [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 14]    110.498738
+          121  13.0        [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14]    112.311029
+          122  12.0            [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 14]    110.498738
+          123  13.0        [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14]    112.489985
+          124  13.0        [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 14, 15]    112.460862
+          125  13.0        [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14]    112.311029
+          126  14.0    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]    114.288080
+          127  13.0        [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14]    112.311029
+          128  14.0    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15]    114.258229
+          129  14.0    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15]    114.258229
+          130  15.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}    116.237123
+          
+          [131 rows x 3 columns]
+\end{Verbatim}
+            
+    Таблиця, яка містить глобально кращий результат на кожній ітерації
+підвищення складності
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}797}]:} \PY{n}{best\PYZus{}df}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}797}]:}       s*                      regressors*            Cp
+          0    1.0                              [4]  29282.190223
+          1    2.0                          [4, 10]  11966.835111
+          2    3.0                       [4, 9, 10]   5730.487062
+          3    4.0                    [3, 4, 9, 10]   3026.765316
+          4    5.0                 [3, 4, 5, 9, 10]   1535.515926
+          5    6.0              [2, 3, 4, 5, 9, 10]    829.992514
+          6    7.0           [2, 3, 4, 5, 8, 9, 10]    346.640527
+          7    8.0        [2, 3, 4, 5, 6, 8, 9, 10]    218.295380
+          8    9.0     [1, 2, 3, 4, 5, 6, 8, 9, 10]    145.526558
+          9   10.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]    106.550762
+          10  10.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]    106.550762
+          11  10.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]    106.550762
+          12  10.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]    106.550762
+          13  10.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]    106.550762
+          14  10.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]    106.550762
+\end{Verbatim}
+            
+    \subsubsection{Тест 3}\label{ux442ux435ux441ux442-3}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}798}]:} \PY{n}{total\PYZus{}df}\PY{p}{,} \PY{n}{best\PYZus{}df} \PY{o}{=} \PY{n}{config3}\PY{o}{.}\PY{n}{run\PYZus{}single\PYZus{}picking\PYZus{}RMNK\PYZus{}model\PYZus{}selection}\PY{p}{(}\PYZbs{}
+                                                          \PY{n}{criteria}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+                                                          \PY{n}{main\PYZus{}criterion}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+================================
+PICKING INCLUDING
+================================
+Optimal:
+	s* = 7.0
+	regressors = [3, 4, 5, 6, 9, 16, 26]
+
+    \end{Verbatim}
+
+    Таблиця, яка добре демонструє роботу алгоритма (порядок зберігається)
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}799}]:} \PY{n}{total\PYZus{}df}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}799}]:}         s                                         regressors             Cp
+          0     1.0                                                [1]    6922.622699
+          1     1.0                                                [2]  171607.168945
+          2     1.0                                                [3]     595.423285
+          3     1.0                                                [4]    8072.403830
+          4     1.0                                                [5]    8415.507144
+          5     1.0                                                [6]     158.358196
+          6     1.0                                                [7]     175.164569
+          7     1.0                                                [8]  208501.298773
+          8     1.0                                                [9]   69222.239836
+          9     1.0                                               [10]  187787.682459
+          10    1.0                                               [11]   19886.729830
+          11    1.0                                               [12]    5277.995979
+          12    1.0                                               [13]     280.697357
+          13    1.0                                               [14]  119107.026909
+          14    1.0                                               [15]  207716.568406
+          15    1.0                                               [16]     208.827496
+          16    1.0                                               [17]  124823.714740
+          17    1.0                                               [18]  199572.038985
+          18    1.0                                               [19]   20872.240938
+          19    1.0                                               [20]  131690.187233
+          20    1.0                                               [21]   15268.403104
+          21    1.0                                               [22]    3751.889765
+          22    1.0                                               [23]   10822.918605
+          23    1.0                                               [24]  107593.708684
+          24    1.0                                               [25]    4139.687219
+          25    1.0                                               [26]   28801.198215
+          26    1.0                                               [27]   32587.576839
+          27    1.0                                               [28]  109136.079786
+          28    1.0                                               [29]   95121.691000
+          29    1.0                                               [30]  182670.791806
+          ..    {\ldots}                                                {\ldots}            {\ldots}
+          772  31.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}      89.120961
+          773  32.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}      90.880558
+          774  33.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}      92.767377
+          775  32.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}      90.880558
+          776  33.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}      92.800002
+          777  32.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}      90.880558
+          778  33.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}      92.878469
+          779  31.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}      89.120961
+          780  32.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}      90.880558
+          781  33.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}      92.855271
+          782  32.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}      90.880558
+          783  33.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}      92.767377
+          784  34.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}      94.695102
+          785  31.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}      89.120961
+          786  32.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}      90.880558
+          787  33.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}      92.767377
+          788  34.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}      94.766422
+          789  34.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}      94.739615
+          790  32.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}      90.880558
+          791  33.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}      92.767377
+          792  34.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}      94.695102
+          793  35.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}      96.693792
+          794  33.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}      92.767377
+          795  34.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}      94.695102
+          796  35.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}      96.668793
+          797  32.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}      90.880558
+          798  33.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}      92.767377
+          799  34.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}      94.695102
+          800  35.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}      96.693792
+          801  36.0  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14{\ldots}      98.667221
+          
+          [802 rows x 3 columns]
+\end{Verbatim}
+            
+    Таблиця, яка містить глобально кращий результат на кожній ітерації
+підвищення складності
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}800}]:} \PY{n}{best\PYZus{}df}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}800}]:}      s*              regressors*          Cp
+          0   1.0                      [6]  158.358196
+          1   2.0                  [6, 16]   78.361004
+          2   3.0               [4, 6, 16]   54.822413
+          3   4.0            [3, 4, 6, 16]   49.481128
+          4   5.0         [3, 4, 5, 6, 16]   47.128611
+          5   6.0      [3, 4, 5, 6, 9, 16]   45.398392
+          6   7.0  [3, 4, 5, 6, 9, 16, 26]   44.912894
+          7   7.0  [3, 4, 5, 6, 9, 16, 26]   44.912894
+          8   7.0  [3, 4, 5, 6, 9, 16, 26]   44.912894
+          9   7.0  [3, 4, 5, 6, 9, 16, 26]   44.912894
+          10  7.0  [3, 4, 5, 6, 9, 16, 26]   44.912894
+          11  7.0  [3, 4, 5, 6, 9, 16, 26]   44.912894
+          12  7.0  [3, 4, 5, 6, 9, 16, 26]   44.912894
+          13  7.0  [3, 4, 5, 6, 9, 16, 26]   44.912894
+          14  7.0  [3, 4, 5, 6, 9, 16, 26]   44.912894
+          15  7.0  [3, 4, 5, 6, 9, 16, 26]   44.912894
+          16  7.0  [3, 4, 5, 6, 9, 16, 26]   44.912894
+          17  7.0  [3, 4, 5, 6, 9, 16, 26]   44.912894
+          18  7.0  [3, 4, 5, 6, 9, 16, 26]   44.912894
+          19  7.0  [3, 4, 5, 6, 9, 16, 26]   44.912894
+          20  7.0  [3, 4, 5, 6, 9, 16, 26]   44.912894
+          21  7.0  [3, 4, 5, 6, 9, 16, 26]   44.912894
+          22  7.0  [3, 4, 5, 6, 9, 16, 26]   44.912894
+          23  7.0  [3, 4, 5, 6, 9, 16, 26]   44.912894
+          24  7.0  [3, 4, 5, 6, 9, 16, 26]   44.912894
+          25  7.0  [3, 4, 5, 6, 9, 16, 26]   44.912894
+          26  7.0  [3, 4, 5, 6, 9, 16, 26]   44.912894
+          27  7.0  [3, 4, 5, 6, 9, 16, 26]   44.912894
+          28  7.0  [3, 4, 5, 6, 9, 16, 26]   44.912894
+          29  7.0  [3, 4, 5, 6, 9, 16, 26]   44.912894
+          30  7.0  [3, 4, 5, 6, 9, 16, 26]   44.912894
+          31  7.0  [3, 4, 5, 6, 9, 16, 26]   44.912894
+          32  7.0  [3, 4, 5, 6, 9, 16, 26]   44.912894
+          33  7.0  [3, 4, 5, 6, 9, 16, 26]   44.912894
+          34  7.0  [3, 4, 5, 6, 9, 16, 26]   44.912894
+          35  7.0  [3, 4, 5, 6, 9, 16, 26]   44.912894
+\end{Verbatim}
+            
+    \section{Висновки}\label{ux432ux438ux441ux43dux43eux432ux43aux438}
+
+    ! TODO: Write down conclusions
+
+    \section{Код
+програми}\label{ux43aux43eux434-ux43fux440ux43eux433ux440ux430ux43cux438}
+
+    \subsection{Імпорт необхідних бібліотек,
+налаштування}\label{ux456ux43cux43fux43eux440ux442-ux43dux435ux43eux431ux445ux456ux434ux43dux438ux445-ux431ux456ux431ux43bux456ux43eux442ux435ux43a-ux43dux430ux43bux430ux448ux442ux443ux432ux430ux43dux43dux44f}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}623}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+          \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k}{as} \PY{n+nn}{pd}
+          \PY{k+kn}{from} \PY{n+nn}{scipy}\PY{n+nn}{.}\PY{n+nn}{integrate} \PY{k}{import} \PY{n}{odeint}
+          \PY{k+kn}{from} \PY{n+nn}{itertools} \PY{k}{import} \PY{n}{permutations}
+          \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+          \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
+          
+          \PY{k+kn}{from} \PY{n+nn}{pylab} \PY{k}{import} \PY{n}{rcParams}
+          \PY{n}{rcParams}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{figure.figsize}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{l+m+mi}{9}\PY{p}{,} \PY{l+m+mi}{5}
+\end{Verbatim}
+
+
+    \subsection{Реалізація
+МНКО}\label{ux440ux435ux430ux43bux456ux437ux430ux446ux456ux44f-ux43cux43dux43aux43e}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}624}]:} \PY{k}{def} \PY{n+nf}{RMNK}\PY{p}{(}\PY{n}{X}\PY{p}{,} \PY{n}{y}\PY{p}{,} \PY{n}{s}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,} \PY{n}{sigma\PYZus{}estimation}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,} \PY{n}{verbose}\PY{o}{=}\PY{k+kc}{False}\PY{p}{,}
+                   \PY{n}{deep\PYZus{}verbose}\PY{o}{=}\PY{k+kc}{False}\PY{p}{,} \PY{n}{create\PYZus{}dataframe}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}\PY{p}{:}
+              \PY{k}{assert} \PY{n}{X}\PY{o}{.}\PY{n}{ndim} \PY{o}{==} \PY{l+m+mi}{2} \PY{o+ow}{and} \PY{n}{X}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{\PYZgt{}} \PY{l+m+mi}{0}
+              \PY{n}{m} \PY{o}{=} \PY{n}{X}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}
+              \PY{k}{if} \PY{n}{m} \PY{o}{\PYZgt{}} \PY{l+m+mi}{1}\PY{p}{:}
+                  \PY{k}{if} \PY{n}{create\PYZus{}dataframe}\PY{p}{:}
+                      \PY{n}{w}\PY{p}{,} \PY{n}{H\PYZus{}inv}\PY{p}{,} \PY{n}{RSS}\PY{p}{,} \PY{n}{df} \PY{o}{=} \PY{n}{RMNK}\PY{p}{(}\PY{n}{X}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{y}\PY{p}{,} \PY{n}{s}\PY{p}{,} \PY{n}{sigma\PYZus{}estimation}\PY{p}{,}
+                                               \PY{n}{verbose}\PY{p}{,} \PY{n}{deep\PYZus{}verbose}\PY{p}{,} \PY{n}{create\PYZus{}dataframe}\PY{p}{)}
+                      \PY{k}{if} \PY{n}{s} \PY{o+ow}{and} \PY{n}{m} \PY{o}{\PYZgt{}} \PY{n}{s}\PY{p}{:}
+                          \PY{k}{return} \PY{n}{w}\PY{p}{,} \PY{n}{H\PYZus{}inv}\PY{p}{,} \PY{n}{RSS}\PY{p}{,} \PY{n}{df}
+                  \PY{k}{else}\PY{p}{:}
+                      \PY{n}{w}\PY{p}{,} \PY{n}{H\PYZus{}inv}\PY{p}{,} \PY{n}{RSS} \PY{o}{=} \PY{n}{RMNK}\PY{p}{(}\PY{n}{X}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{y}\PY{p}{,} \PY{n}{s}\PY{p}{,} \PY{n}{sigma\PYZus{}estimation}\PY{p}{,}
+                                           \PY{n}{verbose}\PY{p}{,} \PY{n}{deep\PYZus{}verbose}\PY{p}{,} \PY{n}{create\PYZus{}dataframe}\PY{p}{)}
+                      \PY{k}{if} \PY{n}{s} \PY{o+ow}{and} \PY{n}{m} \PY{o}{\PYZgt{}} \PY{n}{s}\PY{p}{:}
+                          \PY{k}{return} \PY{n}{w}\PY{p}{,} \PY{n}{H\PYZus{}inv}\PY{p}{,} \PY{n}{RSS} 
+                  \PY{c+c1}{\PYZsh{} w is of shape = [m\PYZhy{}1, 1]; H\PYZus{}inv is of shape = [m\PYZhy{}1, m\PYZhy{}1]    }
+                  \PY{n}{h} \PY{o}{=} \PY{p}{(}\PY{n}{X}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{T} \PY{o}{@} \PY{n}{X}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{reshape}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)} \PY{c+c1}{\PYZsh{} shape = [m\PYZhy{}1, 1]}
+                  \PY{n}{eta} \PY{o}{=} \PY{n}{X}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{T} \PY{o}{@} \PY{n}{X}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]} \PY{c+c1}{\PYZsh{} shape = [1, 1]}
+                  \PY{n}{alpha} \PY{o}{=} \PY{n}{H\PYZus{}inv} \PY{o}{@} \PY{n}{h} \PY{c+c1}{\PYZsh{} shape = [m\PYZhy{}1, 1]}
+                  \PY{n}{beta} \PY{o}{=} \PY{n}{eta} \PY{o}{\PYZhy{}} \PY{n}{h}\PY{o}{.}\PY{n}{T} \PY{o}{@} \PY{n}{alpha} \PY{c+c1}{\PYZsh{} shape = [1, 1]}
+                  \PY{n}{beta\PYZus{}inv} \PY{o}{=} \PY{l+m+mi}{1} \PY{o}{/} \PY{n}{beta} \PY{c+c1}{\PYZsh{} shape = [1, 1]}
+                  \PY{n}{gamma} \PY{o}{=} \PY{n}{X}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{T} \PY{o}{@} \PY{n}{y} \PY{c+c1}{\PYZsh{} shape = [1, 1]}
+                  \PY{n}{nu} \PY{o}{=} \PY{n}{beta\PYZus{}inv} \PY{o}{*} \PY{p}{(}\PY{n}{gamma} \PY{o}{\PYZhy{}} \PY{n}{h}\PY{o}{.}\PY{n}{T} \PY{o}{@} \PY{n}{w}\PY{p}{)} \PY{c+c1}{\PYZsh{} shape = [1, 1]}
+                  \PY{n}{w} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{vstack}\PY{p}{(}\PY{p}{(}\PY{n}{w} \PY{o}{\PYZhy{}} \PY{n}{nu} \PY{o}{*} \PY{n}{alpha}\PY{p}{,} \PY{n}{nu}\PY{p}{)}\PY{p}{)}  \PY{c+c1}{\PYZsh{} shape = [m, 1]}
+                  \PY{n}{H\PYZus{}next\PYZus{}inv} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{vstack}\PY{p}{(}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{hstack}\PY{p}{(}\PY{p}{(}\PY{n}{H\PYZus{}inv} \PY{o}{+} \PY{n}{beta\PYZus{}inv} \PY{o}{*} \PY{n}{alpha} \PY{o}{@} \PY{n}{alpha}\PY{o}{.}\PY{n}{T}\PY{p}{,}
+                                                     \PY{p}{(}\PY{o}{\PYZhy{}} \PY{n}{beta\PYZus{}inv} \PY{o}{*} \PY{n}{alpha}\PY{p}{)}\PY{o}{.}\PY{n}{reshape}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{,}
+                                         \PY{n}{np}\PY{o}{.}\PY{n}{hstack}\PY{p}{(}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{beta\PYZus{}inv} \PY{o}{*} \PY{n}{alpha}\PY{o}{.}\PY{n}{T}\PY{p}{,} \PY{n}{beta\PYZus{}inv}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+                  \PY{n}{RSS\PYZus{}next} \PY{o}{=} \PY{p}{(}\PY{n}{RSS} \PY{o}{\PYZhy{}} \PY{n}{nu}\PY{o}{.}\PY{n}{flatten}\PY{p}{(}\PY{p}{)} \PY{o}{*}\PY{o}{*} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{beta}\PY{o}{.}\PY{n}{flatten}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+          
+              \PY{k}{else}\PY{p}{:} \PY{c+c1}{\PYZsh{} 1}
+                  \PY{n}{H\PYZus{}inv} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{]}\PY{p}{)}
+                  \PY{n}{eta} \PY{o}{=} \PY{n}{beta} \PY{o}{=} \PY{n}{X}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{T} \PY{o}{@} \PY{n}{X}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}
+                  \PY{n}{beta\PYZus{}inv} \PY{o}{=} \PY{l+m+mi}{1} \PY{o}{/} \PY{n}{beta}
+                  \PY{n}{alpha} \PY{o}{=} \PY{n}{h} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+                  \PY{n}{gamma} \PY{o}{=} \PY{n}{X}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{T} \PY{o}{@} \PY{n}{y}
+                  \PY{n}{nu} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{beta\PYZus{}inv} \PY{o}{*} \PY{n}{gamma}\PY{p}{]}\PY{p}{)}
+                  \PY{n}{w} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{nu}\PY{p}{]}\PY{p}{)}
+                  \PY{n}{H\PYZus{}next\PYZus{}inv} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{beta\PYZus{}inv}\PY{p}{)}\PY{o}{.}\PY{n}{reshape}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}
+                  \PY{n}{RSS\PYZus{}next} \PY{o}{=} \PY{p}{(}\PY{n}{y}\PY{o}{.}\PY{n}{T} \PY{o}{@} \PY{n}{y} \PY{o}{\PYZhy{}} \PY{n}{y}\PY{o}{.}\PY{n}{T} \PY{o}{@} \PY{n}{X}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{reshape}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)} \PY{o}{@} \PY{n}{w}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+                  \PY{k}{if} \PY{n}{create\PYZus{}dataframe}\PY{p}{:}
+                      \PY{k}{if} \PY{n}{sigma\PYZus{}estimation} \PY{o+ow}{is} \PY{k+kc}{None}\PY{p}{:}
+                          \PY{n}{df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{columns}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{RSS}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{FPE}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                      \PY{k}{else}\PY{p}{:}
+                          \PY{n}{df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{columns}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{RSS}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp\PYZus{}simple}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                                                     \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{FPE}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                  
+              \PY{k}{if} \PY{n}{verbose}\PY{p}{:}
+                  \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{===============================================}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                  \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{Step }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{m}\PY{p}{)}\PY{p}{)}
+                  \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{===============================================}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                  \PY{k}{if} \PY{n}{deep\PYZus{}verbose}\PY{p}{:}
+                      \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{h\PYZus{}}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{m}\PY{p}{,} \PY{n}{h}\PY{o}{.}\PY{n}{reshape}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+                      \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{eta\PYZus{}}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{m}\PY{p}{,} \PY{n}{eta}\PY{p}{)}\PY{p}{)}
+                      \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{alpha\PYZus{}}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{m}\PY{p}{,} \PY{n}{alpha}\PY{o}{.}\PY{n}{reshape}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+                      \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{beta\PYZus{}}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{m}\PY{p}{,} \PY{n}{beta}\PY{p}{)}\PY{p}{)}
+                      \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{gamma\PYZus{}}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{m}\PY{p}{,} \PY{n}{gamma}\PY{p}{)}\PY{p}{)}
+                      \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{nu\PYZus{}}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{m}\PY{p}{,} \PY{n}{nu}\PY{p}{)}\PY{p}{)}
+                      \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{===============================================}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                  \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZgt{} θ\PYZus{}}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{: }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{m}\PY{p}{,} \PY{n}{w}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+                  \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZgt{} H\PYZus{}}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZus{}inv:}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{m}\PY{p}{,} \PY{n}{H\PYZus{}next\PYZus{}inv}\PY{p}{)}\PY{p}{)}
+                  \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZgt{} RSS\PYZus{}}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{: }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{m}\PY{p}{,} \PY{n}{RSS\PYZus{}next}\PY{p}{)}\PY{p}{)}
+              \PY{k}{if} \PY{n}{create\PYZus{}dataframe}\PY{p}{:}
+                  \PY{n}{n} \PY{o}{=} \PY{n}{y}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+                  \PY{n}{FPE} \PY{o}{=} \PY{p}{(}\PY{n}{n} \PY{o}{+} \PY{n}{m}\PY{p}{)} \PY{o}{/} \PY{p}{(}\PY{n}{n} \PY{o}{\PYZhy{}} \PY{n}{m}\PY{p}{)} \PY{o}{*} \PY{n}{RSS\PYZus{}next}
+                  \PY{n}{Cp\PYZus{}simple} \PY{o}{=} \PY{n}{RSS\PYZus{}next} \PY{o}{+} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{m}
+                  \PY{k}{if} \PY{n}{sigma\PYZus{}estimation} \PY{o+ow}{is} \PY{k+kc}{None}\PY{p}{:}
+                      \PY{n}{df} \PY{o}{=} \PY{n}{df}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n}{m}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{RSS}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n}{RSS\PYZus{}next}\PY{p}{,}
+                                      \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n}{Cp\PYZus{}simple}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{FPE}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n}{FPE}\PY{p}{\PYZcb{}}\PY{p}{,}
+                                     \PY{n}{ignore\PYZus{}index}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+                  \PY{k}{else}\PY{p}{:}
+                      \PY{n}{Cp} \PY{o}{=} \PY{n}{RSS\PYZus{}next} \PY{o}{+} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{sigma\PYZus{}estimation} \PY{o}{*} \PY{n}{m}
+                      \PY{n}{df} \PY{o}{=} \PY{n}{df}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n}{m}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{RSS}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n}{RSS\PYZus{}next}\PY{p}{,}
+                                      \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp\PYZus{}simple}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n}{Cp\PYZus{}simple}\PY{p}{,}
+                                      \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n}{Cp}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{FPE}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n}{FPE}\PY{p}{\PYZcb{}}\PY{p}{,}
+                                     \PY{n}{ignore\PYZus{}index}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+                  \PY{k}{return} \PY{n}{w}\PY{p}{,} \PY{n}{H\PYZus{}next\PYZus{}inv}\PY{p}{,} \PY{n}{RSS\PYZus{}next}\PY{p}{,} \PY{n}{df}
+              \PY{k}{return} \PY{n}{w}\PY{p}{,} \PY{n}{H\PYZus{}next\PYZus{}inv}\PY{p}{,} \PY{n}{RSS\PYZus{}next}
+\end{Verbatim}
+
+
+    \subsection{Реалізація класу моделювання і усіх необхідних
+методів}\label{ux440ux435ux430ux43bux456ux437ux430ux446ux456ux44f-ux43aux43bux430ux441ux443-ux43cux43eux434ux435ux43bux44eux432ux430ux43dux43dux44f-ux456-ux443ux441ux456ux445-ux43dux435ux43eux431ux445ux456ux434ux43dux438ux445-ux43cux435ux442ux43eux434ux456ux432}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}745}]:} \PY{k}{class} \PY{n+nc}{ModelConfig}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+              \PY{n}{m} \PY{o}{=} \PY{l+m+mi}{5}
+              \PY{n}{n} \PY{o}{=} \PY{l+m+mi}{10}
+              \PY{n}{n\PYZus{}grid} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{30}\PY{p}{,} \PY{l+m+mi}{100}\PY{p}{]}
+              \PY{n}{theta} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+              \PY{n}{a} \PY{o}{=} \PY{l+m+mi}{0}
+              \PY{n}{b} \PY{o}{=} \PY{l+m+mi}{2}
+              \PY{n}{sigma} \PY{o}{=} \PY{l+m+mf}{0.3}
+              \PY{n}{s0} \PY{o}{=} \PY{l+m+mi}{3}
+              \PY{n}{s} \PY{o}{=} \PY{n}{m}
+              
+              \PY{k}{def} \PY{n+nf}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{m}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,} \PY{n}{s0}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,} \PY{n}{theta}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,} \PY{n}{a}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,} \PY{n}{b}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,}
+                           \PY{n}{X}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,} \PY{n}{y}\PY{o}{=}\PY{k+kc}{None}\PY{p}{)}\PY{p}{:}
+                  \PY{k}{if} \PY{n}{m}\PY{p}{:}
+                      \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{m} \PY{o}{=} \PY{n}{m}
+                      \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{s} \PY{o}{=} \PY{n}{m}
+                  \PY{k}{if} \PY{n}{s0}\PY{p}{:}
+                      \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{s0} \PY{o}{=} \PY{n}{s0}
+                  \PY{k}{if} \PY{n}{theta}\PY{p}{:}
+                      \PY{k}{if} \PY{n+nb}{isinstance}\PY{p}{(}\PY{n}{theta}\PY{p}{,} \PY{n+nb}{dict}\PY{p}{)} \PY{o+ow}{and} \PY{n}{theta}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{random}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{:}
+                          \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{theta} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{m}\PY{p}{)}
+                          \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{theta}\PY{p}{[}\PY{p}{:}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{s0}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{uniform}\PY{p}{(}\PY{o}{*}\PY{n}{theta}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{random}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+                                                                   \PY{n}{size}\PY{o}{=}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{s0}\PY{p}{)}
+                      \PY{k}{elif} \PY{n}{theta} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{unknown}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
+                          \PY{k}{assert} \PY{n}{X} \PY{o+ow}{is} \PY{o+ow}{not} \PY{k+kc}{None}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Please provide data (X)}\PY{l+s+s1}{\PYZsq{}}
+                          \PY{k}{assert} \PY{n}{y} \PY{o+ow}{is} \PY{o+ow}{not} \PY{k+kc}{None}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Please provide target values as well (y)}\PY{l+s+s1}{\PYZsq{}}
+                          \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{theta} \PY{o}{=} \PY{n}{theta}
+                      \PY{k}{else}\PY{p}{:}
+                          \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{theta} \PY{o}{=} \PY{n}{theta}
+                  \PY{k}{if} \PY{n}{a}\PY{p}{:}
+                      \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{a} \PY{o}{=} \PY{n}{a}
+                  \PY{k}{if} \PY{n}{b}\PY{p}{:}
+                      \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{b} \PY{o}{=} \PY{n}{b}
+                  \PY{k}{if} \PY{n}{X} \PY{o+ow}{is} \PY{o+ow}{not} \PY{k+kc}{None}\PY{p}{:}
+                      \PY{k}{assert} \PY{n}{y} \PY{o+ow}{is} \PY{o+ow}{not} \PY{k+kc}{None}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Please provide target values as well (y)}\PY{l+s+s1}{\PYZsq{}}
+                      \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{X} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{X}\PY{p}{)}
+                      \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{y} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{y}\PY{p}{)}
+                      \PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{n}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{m}\PY{p}{)} \PY{o}{=} \PY{n}{X}\PY{o}{.}\PY{n}{shape}
+                      \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{s} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{m}
+                  \PY{k}{else}\PY{p}{:}
+                      \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{p}{)}
+                  
+              \PY{k}{def} \PY{n+nf}{generate\PYZus{}noise\PYZus{}and\PYZus{}output}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+                  \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ksi} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{normal}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{sigma}\PY{p}{,} \PY{n}{size}\PY{o}{=}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{n}\PY{p}{)}
+                  \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{y} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{X} \PY{o}{@} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{theta} \PY{o}{+} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ksi}
+                  
+              \PY{k}{def} \PY{n+nf}{compile}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{n}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,} \PY{n}{sigma}\PY{o}{=}\PY{k+kc}{None}\PY{p}{)}\PY{p}{:}
+                  \PY{k}{if} \PY{n}{n}\PY{p}{:}
+                      \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{n} \PY{o}{=} \PY{n}{n}
+                  \PY{k}{if} \PY{n}{sigma}\PY{p}{:}
+                      \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{sigma} \PY{o}{=} \PY{n}{sigma}
+                  \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{X} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{uniform}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{a}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{b}\PY{p}{,} \PY{n}{size}\PY{o}{=}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{n}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{m}\PY{p}{)}\PY{p}{)}
+                  \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{generate\PYZus{}noise\PYZus{}and\PYZus{}output}\PY{p}{(}\PY{p}{)}
+                  
+              \PY{k}{def} \PY{n+nf}{show}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{n\PYZus{}limit}\PY{o}{=}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{:}
+                  \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Regressors: m = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{m}\PY{p}{)}\PY{p}{)}
+                  \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{True parameters: θ = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{theta}\PY{p}{)}\PY{p}{)}
+                  \PY{k}{if} \PY{o+ow}{not} \PY{n+nb}{isinstance}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{theta}\PY{p}{,} \PY{n+nb}{str}\PY{p}{)}\PY{p}{:}
+                      \PY{n}{equation\PYZus{}str} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsq{}}
+                      \PY{k}{for} \PY{n}{i}\PY{p}{,} \PY{n}{theta\PYZus{}i} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{theta}\PY{p}{)}\PY{p}{:}
+                          \PY{n}{equation\PYZus{}str} \PY{o}{+}\PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ + (}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{) * x}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{theta\PYZus{}i}\PY{p}{,} \PY{n}{i}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
+                      \PY{n}{equation\PYZus{}str} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{y0 = }\PY{l+s+s1}{\PYZsq{}}\PY{o}{+} \PY{n}{equation\PYZus{}str}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{:}\PY{p}{]}
+                      \PY{n+nb}{print}\PY{p}{(}\PY{n}{equation\PYZus{}str}\PY{p}{)}
+                      \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Noise generation: σ = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{sigma}\PY{p}{)}\PY{p}{)}
+                  \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Sample length: n = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{n}\PY{p}{)}\PY{p}{)}
+                  \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{X[:10]:}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{X}\PY{p}{[}\PY{p}{:}\PY{n}{n\PYZus{}limit}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+                  \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{y[:10]:}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{y}\PY{p}{[}\PY{p}{:}\PY{n}{n\PYZus{}limit}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+                  
+              \PY{k}{def} \PY{n+nf}{show\PYZus{}estimations}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+                  \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{RSS(m) = }\PY{l+s+si}{\PYZob{}:5.5\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{RSS}\PY{p}{)}\PY{p}{)}
+                  \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{σ* = }\PY{l+s+si}{\PYZob{}:5.5\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{sigma\PYZus{}hat} \PY{o}{*}\PY{o}{*} \PY{o}{.}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
+              
+              \PY{k}{def} \PY{n+nf}{estimate\PYZus{}sigma}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+                  \PY{n}{\PYZus{}}\PY{p}{,} \PY{n}{\PYZus{}}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{RSS} \PY{o}{=} \PY{n}{RMNK}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{X}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{y}\PY{p}{,} \PY{n}{s}\PY{o}{=}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{s}\PY{p}{,}
+                                   \PY{n}{verbose}\PY{o}{=}\PY{k+kc}{False}\PY{p}{,} \PY{n}{create\PYZus{}dataframe}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}
+                  \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{sigma\PYZus{}hat} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{RSS} \PY{o}{*}\PY{o}{*} \PY{l+m+mi}{2} \PY{o}{/} \PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{X}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{X}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}
+                  
+              \PY{k}{def} \PY{n+nf}{run\PYZus{}grid\PYZus{}RMNK\PYZus{}model\PYZus{}selection}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+                  \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{estimate\PYZus{}sigma}\PY{p}{(}\PY{p}{)}
+                  \PY{k}{for} \PY{n}{i}\PY{p}{,} \PY{n}{n} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{n\PYZus{}grid}\PY{p}{)}\PY{p}{:} 
+                      \PY{k}{for} \PY{n}{j}\PY{p}{,} \PY{n}{sigma} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{sigma\PYZus{}grid}\PY{p}{)}\PY{p}{:}
+                          \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{n}{n}\PY{p}{,} \PY{n}{sigma}\PY{p}{)}
+                          \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                          \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{SAMPLE \PYZsh{}}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{i} \PY{o}{*} \PY{n+nb}{len}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{n\PYZus{}grid}\PY{p}{)} \PY{o}{+} \PY{n}{j} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
+                          \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                          \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{CONFUGURATIONS \PYZam{} DATA}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                          \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+                          \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{RLSM ITERATIONS}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                          \PY{n}{theta\PYZus{}pred}\PY{p}{,} \PY{n}{\PYZus{}}\PY{p}{,} \PY{n}{\PYZus{}}\PY{p}{,} \PY{n}{df} \PY{o}{=} \PY{n}{RMNK}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{X}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{y}\PY{p}{,} \PY{n}{s}\PY{o}{=}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{s}\PY{p}{,}
+                                                      \PY{n}{verbose}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{create\PYZus{}dataframe}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+                          \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{RESULTS}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                          \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{PARAMETERS}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                          \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{True values:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{θ: }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{theta}\PY{p}{)}\PY{p}{)}
+                          \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Estimates:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{θ*: }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{theta\PYZus{}pred}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+                          \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{RSS}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{RSS}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                          \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                          \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{FPE}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{FPE}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                          \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}
+                          \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+                          \PY{n+nb}{print}\PY{p}{(}\PY{n}{df}\PY{p}{)}
+                          \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s* by Cp:  }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{argmin}\PY{p}{(}\PY{p}{)}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
+                          \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s* by FPE: }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{FPE}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{argmin}\PY{p}{(}\PY{p}{)}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
+                          \PY{n+nb}{print}\PY{p}{(}\PY{p}{)}
+              
+              \PY{k}{def} \PY{n+nf}{run\PYZus{}single\PYZus{}RMNK\PYZus{}model\PYZus{}selection}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{p}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,} \PY{n}{plot}\PY{o}{=}\PY{k+kc}{False}\PY{p}{,} 
+                                                  \PY{n}{criteria}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{FPE}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{RSS}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{p}{:}
+                  \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Single RMNK}
+          \PY{l+s+sd}{        }
+          \PY{l+s+sd}{        p : str in [\PYZsq{}direct\PYZsq{}, \PYZsq{}reverse\PYZsq{}, \PYZsq{}correlation\PYZsq{}] or list}
+          \PY{l+s+sd}{            if list: permutation indices}
+          \PY{l+s+sd}{            if str: how to create permutation}
+          \PY{l+s+sd}{        \PYZdq{}\PYZdq{}\PYZdq{}}
+                  \PY{k}{if} \PY{n}{p} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{reverse}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
+                      \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{=============}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{REVERSE}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{=============}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                      \PY{n}{p} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{flip}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{m}\PY{p}{)}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}
+                  \PY{k}{elif} \PY{n}{p} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{correlation}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
+                      \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{=====================}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{CORRELATION INCLUDING}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{=====================}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                      \PY{n}{correlations} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{abs}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{cov}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{X}\PY{o}{.}\PY{n}{T}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{y}\PY{o}{.}\PY{n}{T}\PY{p}{)}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}
+                      \PY{n}{p} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{argsort}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{correlations}\PY{p}{)}
+                  \PY{k}{elif} \PY{n+nb}{isinstance}\PY{p}{(}\PY{n}{p}\PY{p}{,} \PY{n+nb}{list}\PY{p}{)}\PY{p}{:}
+                      \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{=============}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{CUSTOM}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{=============}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                  \PY{k}{else}\PY{p}{:}
+                      \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{=============}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{DIRECT}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{=============}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                      \PY{n}{p} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{m}\PY{p}{)}
+                  \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Regressors order: }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{p}\PY{p}{)}\PY{p}{)}
+                  \PY{n}{theta\PYZus{}pred}\PY{p}{,} \PY{n}{\PYZus{}}\PY{p}{,} \PY{n}{\PYZus{}}\PY{p}{,} \PY{n}{df} \PY{o}{=} \PY{n}{RMNK}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{X}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{p}\PY{p}{]}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{y}\PY{p}{,} \PY{n}{s}\PY{o}{=}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{s}\PY{p}{,}
+                                              \PY{n}{verbose}\PY{o}{=}\PY{k+kc}{False}\PY{p}{,} \PY{n}{create\PYZus{}dataframe}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+                      
+                  \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{regressors}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{p}{[}\PY{n+nb}{str}\PY{p}{(}\PY{n+nb}{sorted}\PY{p}{(}\PY{n}{p}\PY{p}{[}\PY{p}{:}\PY{n+nb}{int}\PY{p}{(}\PY{n}{s}\PY{p}{)}\PY{p}{]}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)} \PY{k}{for} \PY{n}{s} \PY{o+ow}{in} \PY{n}{df}\PY{o}{.}\PY{n}{s}\PY{p}{]}
+                  \PY{k}{for} \PY{n}{criterion} \PY{o+ow}{in} \PY{n}{criteria}\PY{p}{:}
+                      \PY{n}{df}\PY{p}{[}\PY{n}{criterion}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{round}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{n}{criterion}\PY{p}{]}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{)}
+                  \PY{k}{if} \PY{n}{plot}\PY{p}{:}
+                      \PY{k}{for} \PY{n}{criterion} \PY{o+ow}{in} \PY{n}{criteria}\PY{p}{:}
+                          \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{df}\PY{p}{[}\PY{n}{criterion}\PY{p}{]}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{n}{criterion}\PY{p}{)}
+                          \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}
+                          \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+                  \PY{n}{df} \PY{o}{=} \PY{n}{df}\PY{o}{.}\PY{n}{sort\PYZus{}values}\PY{p}{(}\PY{n}{by}\PY{o}{=}\PY{n}{criteria}\PY{p}{)}\PY{o}{.}\PY{n}{reset\PYZus{}index}\PY{p}{(}\PY{p}{)}\PYZbs{}
+                             \PY{p}{[}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{regressors}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{+} \PY{n}{criteria}\PY{p}{]}
+                  \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{s\PYZus{}opt}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{regressors\PYZus{}opt} \PY{o}{=} \PY{n}{df}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{regressors}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{]}
+                  \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Optimal:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                  \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{s* = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{regressors = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{s\PYZus{}opt}\PY{p}{,}
+                                                              \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{regressors\PYZus{}opt}\PY{p}{)}\PY{p}{)}
+                  \PY{k}{return} \PY{n}{df}
+              
+              \PY{k}{def} \PY{n+nf}{run\PYZus{}single\PYZus{}full\PYZus{}RMNK\PYZus{}model\PYZus{}selection}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,}
+                                                       \PY{n}{criteria}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{FPE}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{RSS}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{p}{:}
+                  \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{=============}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{BRUT FORCE}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{=============}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                  \PY{n}{total\PYZus{}df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{p}{)}
+                  \PY{k}{for} \PY{n}{p} \PY{o+ow}{in} \PY{n}{permutations}\PY{p}{(}\PY{n+nb}{range}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{m}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+                      \PY{n}{p} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{p}\PY{p}{)}
+                      \PY{n}{theta\PYZus{}pred}\PY{p}{,} \PY{n}{\PYZus{}}\PY{p}{,} \PY{n}{\PYZus{}}\PY{p}{,} \PY{n}{df} \PY{o}{=} \PY{n}{RMNK}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{X}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{p}\PY{p}{]}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{y}\PY{p}{,} \PY{n}{s}\PY{o}{=}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{s}\PY{p}{,}
+                                                  \PY{n}{verbose}\PY{o}{=}\PY{k+kc}{False}\PY{p}{,} \PY{n}{create\PYZus{}dataframe}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+                      \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{regressors}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{p}{[}\PY{n+nb}{str}\PY{p}{(}\PY{n+nb}{sorted}\PY{p}{(}\PY{n}{p}\PY{p}{[}\PY{p}{:}\PY{n+nb}{int}\PY{p}{(}\PY{n}{s}\PY{p}{)}\PY{p}{]}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)} \PY{k}{for} \PY{n}{s} \PY{o+ow}{in} \PY{n}{df}\PY{o}{.}\PY{n}{s}\PY{p}{]}
+                      \PY{n}{total\PYZus{}df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{concat}\PY{p}{(}\PY{p}{[}\PY{n}{total\PYZus{}df}\PY{p}{,} \PY{n}{df}\PY{p}{]}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}
+                  \PY{k}{for} \PY{n}{criterion} \PY{o+ow}{in} \PY{n}{criteria}\PY{p}{:}
+                      \PY{n}{total\PYZus{}df}\PY{p}{[}\PY{n}{criterion}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{round}\PY{p}{(}\PY{n}{total\PYZus{}df}\PY{p}{[}\PY{n}{criterion}\PY{p}{]}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{)}
+                  \PY{n}{total\PYZus{}df} \PY{o}{=} \PY{n}{total\PYZus{}df}\PY{o}{.}\PY{n}{drop\PYZus{}duplicates}\PY{p}{(}\PY{p}{)}
+                  \PY{n}{total\PYZus{}df} \PY{o}{=} \PY{n}{total\PYZus{}df}\PY{o}{.}\PY{n}{sort\PYZus{}values}\PY{p}{(}\PY{n}{by}\PY{o}{=}\PY{n}{criteria}\PY{p}{)}\PY{o}{.}\PY{n}{reset\PYZus{}index}\PY{p}{(}\PY{p}{)}\PYZbs{}
+                             \PY{p}{[}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{regressors}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{+} \PY{n}{criteria}\PY{p}{]}
+                  \PY{k}{return} \PY{n}{total\PYZus{}df}
+              
+              \PY{k}{def} \PY{n+nf}{run\PYZus{}single\PYZus{}random\PYZus{}RMNK\PYZus{}model\PYZus{}selection}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{K}\PY{o}{=}\PY{l+m+mi}{20}\PY{p}{,}
+                                                         \PY{n}{criteria}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{FPE}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{RSS}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+                                                         \PY{n}{main\PYZus{}criterion}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{:}
+                  \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{================================}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{RANDOM INCLUDING WITH K = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{================================}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{K}\PY{p}{)}\PY{p}{)}
+                  \PY{n}{permutations} \PY{o}{=} \PY{p}{[}\PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{permutation}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{m}\PY{p}{)} \PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{K}\PY{p}{)}\PY{p}{]}
+                  \PY{n}{total\PYZus{}df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{p}{)}
+                  \PY{n}{best\PYZus{}df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{p}{)}
+                  \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{main\PYZus{}criterion\PYZus{}value} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{Inf}
+                  \PY{k}{for} \PY{n}{p} \PY{o+ow}{in} \PY{n}{permutations}\PY{p}{:}
+                      \PY{n}{p} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{p}\PY{p}{)}
+                      \PY{n}{theta\PYZus{}pred}\PY{p}{,} \PY{n}{\PYZus{}}\PY{p}{,} \PY{n}{\PYZus{}}\PY{p}{,} \PY{n}{df} \PY{o}{=} \PY{n}{RMNK}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{X}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{p}\PY{p}{]}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{y}\PY{p}{,} \PY{n}{s}\PY{o}{=}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{s}\PY{p}{,}
+                                                  \PY{n}{verbose}\PY{o}{=}\PY{k+kc}{False}\PY{p}{,} \PY{n}{create\PYZus{}dataframe}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+                      \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{regressors}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{p}{[}\PY{n+nb}{str}\PY{p}{(}\PY{n+nb}{sorted}\PY{p}{(}\PY{n}{p}\PY{p}{[}\PY{p}{:}\PY{n+nb}{int}\PY{p}{(}\PY{n}{s}\PY{p}{)}\PY{p}{]}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)} \PY{k}{for} \PY{n}{s} \PY{o+ow}{in} \PY{n}{df}\PY{o}{.}\PY{n}{s}\PY{p}{]}
+                      \PY{n}{df} \PY{o}{=} \PY{n}{df}\PY{o}{.}\PY{n}{sort\PYZus{}values}\PY{p}{(}\PY{n}{by}\PY{o}{=}\PY{n}{criteria}\PY{p}{)}\PY{o}{.}\PY{n}{reset\PYZus{}index}\PY{p}{(}\PY{p}{)}
+                      \PY{n}{main\PYZus{}criterion\PYZus{}value} \PY{o}{=} \PY{n}{df}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{main\PYZus{}criterion}\PY{p}{]}
+                      \PY{k}{if} \PY{n}{main\PYZus{}criterion\PYZus{}value} \PY{o}{\PYZlt{}} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{main\PYZus{}criterion\PYZus{}value}\PY{p}{:}
+                          \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{main\PYZus{}criterion\PYZus{}value} \PY{o}{=} \PY{n}{main\PYZus{}criterion\PYZus{}value}
+                          \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{theta\PYZus{}pred} \PY{o}{=} \PY{n}{theta\PYZus{}pred}
+                          \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{s\PYZus{}opt}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{regressors\PYZus{}opt} \PY{o}{=} \PY{n}{df}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}
+                                                                   \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{regressors}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{]}
+                      \PY{n}{total\PYZus{}df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{concat}\PY{p}{(}\PY{p}{[}\PY{n}{total\PYZus{}df}\PY{p}{,} \PY{n}{df}\PY{p}{]}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}
+                      \PY{n}{best\PYZus{}df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{concat}\PY{p}{(}\PY{p}{[}\PY{n}{best\PYZus{}df}\PY{p}{,} \PY{n}{df}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{:}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{]}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}
+                  \PY{k}{for} \PY{n}{criterion} \PY{o+ow}{in} \PY{n}{criteria}\PY{p}{:}
+                      \PY{n}{total\PYZus{}df}\PY{p}{[}\PY{n}{criterion}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{round}\PY{p}{(}\PY{n}{total\PYZus{}df}\PY{p}{[}\PY{n}{criterion}\PY{p}{]}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{)}
+                      \PY{n}{best\PYZus{}df}\PY{p}{[}\PY{n}{criterion}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{round}\PY{p}{(}\PY{n}{best\PYZus{}df}\PY{p}{[}\PY{n}{criterion}\PY{p}{]}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{)}
+                  \PY{n}{total\PYZus{}df} \PY{o}{=} \PY{n}{total\PYZus{}df}\PY{o}{.}\PY{n}{drop\PYZus{}duplicates}\PY{p}{(}\PY{p}{)}
+                  \PY{n}{total\PYZus{}df} \PY{o}{=} \PY{n}{total\PYZus{}df}\PY{o}{.}\PY{n}{sort\PYZus{}values}\PY{p}{(}\PY{n}{by}\PY{o}{=}\PY{n}{criteria}\PY{p}{)}\PY{o}{.}\PY{n}{reset\PYZus{}index}\PY{p}{(}\PY{p}{)}\PYZbs{}
+                             \PY{p}{[}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{regressors}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{+} \PY{n}{criteria}\PY{p}{]}
+                  \PY{n}{best\PYZus{}df} \PY{o}{=} \PY{n}{best\PYZus{}df}\PY{o}{.}\PY{n}{rename}\PY{p}{(}\PY{n}{columns}\PY{o}{=}\PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s*}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                                           \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{regressors}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{regressors*}\PY{l+s+s1}{\PYZsq{}}\PY{p}{\PYZcb{}}\PY{p}{)}\PY{o}{.}\PY{n}{reset\PYZus{}index}\PY{p}{(}\PY{p}{)}\PYZbs{}
+                            \PY{p}{[}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s*}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{regressors*}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{+} \PY{n}{criteria}\PY{p}{]}
+                  \PY{n+nb}{print}\PY{p}{(}\PY{p}{)}
+                  \PY{n+nb}{print}\PY{p}{(}\PY{n}{best\PYZus{}df}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{5}\PY{p}{]}\PY{p}{)}
+                  \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{...}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                  \PY{n+nb}{print}\PY{p}{(}\PY{n}{best\PYZus{}df}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{p}{:}\PY{p}{]}\PY{p}{)}
+                  \PY{n+nb}{print}\PY{p}{(}\PY{p}{)}
+                  \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Optimal:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                  \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{s* = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{regressors = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{s\PYZus{}opt}\PY{p}{,}
+                                                              \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{regressors\PYZus{}opt}\PY{p}{)}\PY{p}{)}
+                  \PY{k}{return} \PY{n}{total\PYZus{}df}\PY{p}{,} \PY{n}{best\PYZus{}df}
+              
+              \PY{k}{def} \PY{n+nf}{run\PYZus{}single\PYZus{}picking\PYZus{}RMNK\PYZus{}model\PYZus{}selection}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,}
+                                                         \PY{n}{criteria}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{FPE}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{RSS}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+                                                         \PY{n}{main\PYZus{}criterion}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{:}
+                  \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{================================}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{PICKING INCLUDING}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{================================}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{K}\PY{p}{)}\PY{p}{)}
+                  \PY{n}{total\PYZus{}df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{p}{)}
+                  \PY{n}{best\PYZus{}df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{p}{)}
+                  \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{main\PYZus{}criterion\PYZus{}value} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{Inf}
+                  \PY{n}{remained\PYZus{}indices} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{n+nb}{range}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{m}\PY{p}{)}\PY{p}{)}
+                  \PY{n}{regressors\PYZus{}indices} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+                  \PY{k}{while} \PY{n+nb}{len}\PY{p}{(}\PY{n}{remained\PYZus{}indices}\PY{p}{)} \PY{o}{\PYZgt{}} \PY{l+m+mi}{0}\PY{p}{:}
+                      \PY{n}{local\PYZus{}main\PYZus{}criterion\PYZus{}value} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{Inf}
+                      \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n}{remained\PYZus{}indices}\PY{p}{:}
+                          \PY{n}{p} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{regressors\PYZus{}indices} \PY{o}{+} \PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
+                          \PY{n}{theta\PYZus{}pred}\PY{p}{,} \PY{n}{\PYZus{}}\PY{p}{,} \PY{n}{\PYZus{}}\PY{p}{,} \PY{n}{df} \PY{o}{=} \PY{n}{RMNK}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{X}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{p}\PY{p}{]}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{y}\PY{p}{,} \PY{n}{s}\PY{o}{=}\PY{n+nb}{len}\PY{p}{(}\PY{n}{p}\PY{p}{)}\PY{p}{,}
+                                                      \PY{n}{verbose}\PY{o}{=}\PY{k+kc}{False}\PY{p}{,} \PY{n}{create\PYZus{}dataframe}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+                          \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{regressors}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{p}{[}\PY{n+nb}{str}\PY{p}{(}\PY{n+nb}{sorted}\PY{p}{(}\PY{n}{p}\PY{p}{[}\PY{p}{:}\PY{n+nb}{int}\PY{p}{(}\PY{n}{s}\PY{p}{)}\PY{p}{]}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)} \PY{k}{for} \PY{n}{s} \PY{o+ow}{in} \PY{n}{df}\PY{o}{.}\PY{n}{s}\PY{p}{]}
+                          \PY{n}{df} \PY{o}{=} \PY{n}{df}\PY{o}{.}\PY{n}{sort\PYZus{}values}\PY{p}{(}\PY{n}{by}\PY{o}{=}\PY{n}{criteria}\PY{p}{)}\PY{o}{.}\PY{n}{reset\PYZus{}index}\PY{p}{(}\PY{p}{)}
+                          \PY{n}{main\PYZus{}criterion\PYZus{}value} \PY{o}{=} \PY{n}{df}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{main\PYZus{}criterion}\PY{p}{]}
+                          \PY{k}{if} \PY{n}{main\PYZus{}criterion\PYZus{}value} \PY{o}{\PYZlt{}} \PY{n}{local\PYZus{}main\PYZus{}criterion\PYZus{}value}\PY{p}{:}
+                              \PY{n}{local\PYZus{}main\PYZus{}criterion\PYZus{}value} \PY{o}{=} \PY{n}{main\PYZus{}criterion\PYZus{}value}
+                              \PY{n}{local\PYZus{}df} \PY{o}{=} \PY{n}{df}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{1}\PY{p}{]}
+                              \PY{n}{local\PYZus{}i} \PY{o}{=} \PY{n}{i}
+                          \PY{k}{if} \PY{n}{main\PYZus{}criterion\PYZus{}value} \PY{o}{\PYZlt{}} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{main\PYZus{}criterion\PYZus{}value}\PY{p}{:}
+                              \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{main\PYZus{}criterion\PYZus{}value} \PY{o}{=} \PY{n}{main\PYZus{}criterion\PYZus{}value}
+                              \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{theta\PYZus{}pred} \PY{o}{=} \PY{n}{theta\PYZus{}pred}
+                              \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{s\PYZus{}opt}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{regressors\PYZus{}opt} \PY{o}{=} \PY{n}{df}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{regressors}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{]}
+                          \PY{n}{total\PYZus{}df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{concat}\PY{p}{(}\PY{p}{[}\PY{n}{total\PYZus{}df}\PY{p}{,} \PY{n}{df}\PY{p}{]}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}
+                      \PY{n}{regressors\PYZus{}indices} \PY{o}{+}\PY{o}{=} \PY{p}{[}\PY{n}{local\PYZus{}i}\PY{p}{]}
+                      \PY{n}{remained\PYZus{}indices}\PY{o}{.}\PY{n}{remove}\PY{p}{(}\PY{n}{local\PYZus{}i}\PY{p}{)}
+                      \PY{n}{best\PYZus{}df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{concat}\PY{p}{(}\PY{p}{[}\PY{n}{best\PYZus{}df}\PY{p}{,} \PY{n}{local\PYZus{}df}\PY{p}{]}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}
+                  \PY{k}{for} \PY{n}{criterion} \PY{o+ow}{in} \PY{n}{criteria}\PY{p}{:}
+                      \PY{n}{total\PYZus{}df}\PY{p}{[}\PY{n}{criterion}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{round}\PY{p}{(}\PY{n}{total\PYZus{}df}\PY{p}{[}\PY{n}{criterion}\PY{p}{]}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{)}
+                      \PY{n}{best\PYZus{}df}\PY{p}{[}\PY{n}{criterion}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{round}\PY{p}{(}\PY{n}{best\PYZus{}df}\PY{p}{[}\PY{n}{criterion}\PY{p}{]}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{)}
+                  \PY{n}{total\PYZus{}df} \PY{o}{=} \PY{n}{total\PYZus{}df}\PY{o}{.}\PY{n}{drop\PYZus{}duplicates}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{reset\PYZus{}index}\PY{p}{(}\PY{p}{)}\PYZbs{}
+                             \PY{p}{[}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{regressors}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{+} \PY{n}{criteria}\PY{p}{]}
+          \PY{c+c1}{\PYZsh{}         total\PYZus{}df = total\PYZus{}df.sort\PYZus{}values(by=criteria).reset\PYZus{}index()\PYZbs{}}
+          \PY{c+c1}{\PYZsh{}                    [[\PYZsq{}s\PYZsq{}, \PYZsq{}regressors\PYZsq{}] + criteria]}
+                  \PY{n}{best\PYZus{}df} \PY{o}{=} \PY{n}{best\PYZus{}df}\PY{o}{.}\PY{n}{rename}\PY{p}{(}\PY{n}{columns}\PY{o}{=}\PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s*}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                                           \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{regressors}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{regressors*}\PY{l+s+s1}{\PYZsq{}}\PY{p}{\PYZcb{}}\PY{p}{)}\PY{o}{.}\PY{n}{reset\PYZus{}index}\PY{p}{(}\PY{p}{)}\PYZbs{}
+                            \PY{p}{[}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s*}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{regressors*}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{+} \PY{n}{criteria}\PY{p}{]}
+                  \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Optimal:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                  \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{s* = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{regressors = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{s\PYZus{}opt}\PY{p}{,}
+                                                              \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{regressors\PYZus{}opt}\PY{p}{)}\PY{p}{)}
+                  \PY{k}{return} \PY{n}{total\PYZus{}df}\PY{p}{,} \PY{n}{best\PYZus{}df}
+\end{Verbatim}
+
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}
