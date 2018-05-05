@@ -1,0 +1,2417 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+\documentclass[11pt]{article}
+
+    \usepackage[english,main=ukrainian]{babel}
+    \usepackage{indentfirst}
+    \usepackage[T1]{fontenc}
+    % Nicer default font (+ math font) than Computer Modern for most use cases
+    \usepackage{mathpazo}
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % We will generate all images so they have a width \maxwidth. This means
+    % that they will get their normal width if they fit onto the page, but
+    % are scaled down if they would overflow the margins.
+    \makeatletter
+    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
+    \else\Gin@nat@width\fi}
+    \makeatother
+    \let\Oldincludegraphics\includegraphics
+    % Set max figure width to be 80% of text width, for now hardcoded.
+    \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=.8\maxwidth]{#1}}
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionLabelFormat{nolabel}{}
+    \captionsetup{labelformat=nolabel}
+
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    
+
+    
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{Protocol}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@fm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sa\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@dl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+    \begin{document}
+    
+    
+    
+\begin{titlepage} 
+
+\center
+
+{\large
+Національний Технічний Університет України\\[0.2cm]
+«Київський політехнічний інститут імені Ігоря Сікорського»\\[0.2cm]
+Навчально-Науковий Комплекс \\[0.2cm]
+«Інститут прикладного системного аналізу»
+}\\[4cm] % Minor heading such as course title
+
+
+{ \LARGE \bfseries
+Лабороторна робота № 2 \\[0.4cm]
+з дисципліни «Моделювання складних систем»
+}\\[5cm] % Title of your document
+
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Виконали:} \\
+студенти гр. КА-41 \\
+Мельничук Валентин \\
+Лочман Ярослава  \\
+Снігірьова Валерія
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Прийняв:} \\
+професор кафедри ММСА, \\
+д.т.н. Степашко В.С. \\
+\end{flushright}
+\end{minipage}\\[6cm]
+
+Київ 2018
+
+\vfill % Fill the rest of the page with whitespace
+
+\end{titlepage}
+
+    \newpage
+    \section{Модель
+Фергюльста}\label{ux43cux43eux434ux435ux43bux44c-ux444ux435ux440ux433ux44eux43bux44cux441ux442ux430}
+
+    \subsection{Рівняння
+моделі}\label{ux440ux456ux432ux43dux44fux43dux43dux44f-ux43cux43eux434ux435ux43bux456}
+
+\[ N'=μN(k-N) \enspace | \enspace N_0 \]
+
+    \subsection{Різницеве
+рівняння}\label{ux440ux456ux437ux43dux438ux446ux435ux432ux435-ux440ux456ux432ux43dux44fux43dux43dux44f}
+
+$ \Delta t = 1 $
+
+\[ N'(t) \approx N(t+1)-N(t) - \text{різниця вперед} \]
+
+\[ N'(t) \approx N(t)-N(t-1) - \text{різниця назад} \]
+
+\[ N'(t) \approx \frac{N(t+1)-N(t-1)}{2}  - \text{центральна різниця} \]
+
+Розглядатимемо для різниці вперед:
+
+\[ \left \{ \begin{array}{ll}
+                        N(t+1)-N(t)=\mu N(t)[k-N(t)] \\
+                        N(0) = N_0
+                       \end{array} \right. \]
+
+\[ \iff \left \{ \begin{array}{ll}
+                    N(t+1)=(\mu k+1)N(t)-\mu N^2(t) \\
+                    N(0) = N_0
+                \end{array} \right. \]
+
+
+Отже, лінійна регресійна залежність виглядає таким чином:
+
+\[ \left \{ \begin{array}{ll}
+                  y_i = \theta_1 x_{i1} +  \theta_2 x_{i2} + \xi_i\\
+                  \theta_1 = \mu k+1\\
+                  \theta_2 = -\mu\\
+                  E\xi = 0_n;\enspace cov(\xi) = \sigma^2I_n
+                \end{array}
+            \right. \]
+
+              
+\[ \Rightarrow \left \{ \begin{array}{ll}  
+                  \mu = -\theta_2 \\
+                  k = (1 - \theta_1) / \theta_2
+                \end{array} \right. \]
+
+    \subsection{Генерування
+вибірки}\label{ux433ux435ux43dux435ux440ux443ux432ux430ux43dux43dux44f-ux432ux438ux431ux456ux440ux43aux438}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}41}]:} \PY{n}{config} \PY{o}{=} \PY{n}{VerhulstModelConfig}\PY{p}{(}\PY{p}{)}
+         \PY{n}{config}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+         
+         \PY{n}{plt}\PY{o}{.}\PY{n}{scatter}\PY{p}{(}\PY{n}{config}\PY{o}{.}\PY{n}{t}\PY{p}{,} \PY{n}{config}\PY{o}{.}\PY{n}{y}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Intermediate parameters values: θ\PYZus{}1 = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{θ\PYZus{}2 = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{o}{*}\PY{n}{config}\PY{o}{.}\PY{n}{theta}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Regression model: y = (}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{) * x1 + (}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{) * x2}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{o}{*}\PY{n}{config}\PY{o}{.}\PY{n}{theta}\PY{p}{)}\PY{p}{)}
+         \PY{n}{config}\PY{o}{.}\PY{n}{df}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Initial parameters:	μ = 0.0001
+			               k = 100
+			N0 = 10
+
+Noise generation: C = 3
+Sample length: n = 50
+Time starting from 0 to 500                with discretization frequency 10
+
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_5_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+Intermediate parameters values: θ\_1 = 1.01	θ\_2 = -0.0001
+Regression model: y = (1.01) * x1 + (-0.0001) * x2
+
+    \end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}41}]:}     i   t       N(t)      N\^{}2(t)  N(t+1)
+         0   1   0  10.000000  100.000000  10.090
+         1   2  10  10.956582  120.046684  11.054
+         2   3  20  11.992475  143.819461  12.098
+         3   4  30  13.111886  171.921546  13.226
+         4   5  40  14.318785  205.027597  14.441
+         5   6  51  15.616808  243.884680  15.749
+         6   7  61  17.009139  289.310822  17.150
+         7   8  71  18.498393  342.190549  18.649
+         8   9  81  20.086481  403.466709  20.247
+         9  10  91  21.774481  474.128027  21.945
+\end{Verbatim}
+            
+    \subsection{Робота алгоритму
+МНКО}\label{ux440ux43eux431ux43eux442ux430-ux430ux43bux433ux43eux440ux438ux442ux43cux443-ux43cux43dux43aux43e}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}25}]:} \PY{n}{config}\PY{o}{.}\PY{n}{run\PYZus{}single\PYZus{}RMNK}\PY{p}{(}\PY{n}{verbose}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{deep\PYZus{}verbose}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Recurrent Least Squares Method
+===============================================
+	Step 1
+===============================================
+h\_1:		[0]
+eta\_1:		192021.11695382808
+alpha\_1:	[0]
+beta\_1:		192021.11695382808
+gamma\_1:	192454.57239914758
+nu\_1:		[1.00225733]
+===============================================
+> θ\_1: [1.00225733]
+> H\_1\_inv:
+[[5.20776056e-06]]
+> RSS\_1: 0.5984206103312317
+===============================================
+	Step 2
+===============================================
+h\_2:		[14865979.31260227]
+eta\_2:		1210738873.994198
+alpha\_2:	[77.41846078]
+beta\_2:		[[59837637.56477976]]
+gamma\_2:	14893552.79759949
+nu\_2:		[[-0.0001]]
+===============================================
+> θ\_2: [ 1.00999944e+00 -1.00003420e-04]
+> H\_2\_inv:
+[[ 1.05372445e-04 -1.29380878e-06]
+ [-1.29380878e-06  1.67118897e-08]]
+> RSS\_2: 3.3057016820547958e-06
+=============================================
+
+INTERMEDIATE PARAMETERS
+True values:	θ\_1 = 1.01	θ\_2 = -0.0001
+Estimates:	θ\_1* = 1.0099994430189054	θ\_2* = -0.00010000341994466655
+
+INITIAL PARAMETERS
+True values:	μ = 0.0001	k = 100
+Estimates:	μ* = 0.00010000341994466655	k* = 99.9910105518219
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_7_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \subsection{Таблиця залежності оцінок від рівня
+шуму}\label{ux442ux430ux431ux43bux438ux446ux44f-ux437ux430ux43bux435ux436ux43dux43eux441ux442ux456-ux43eux446ux456ux43dux43eux43a-ux432ux456ux434-ux440ux456ux432ux43dux44f-ux448ux443ux43cux443}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}26}]:} \PY{n}{config}\PY{o}{.}\PY{n}{run\PYZus{}grid\PYZus{}RMNK}\PY{p}{(}\PY{n}{verbose}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}26}]:}      C  num\_samples   θ\_1      θ\_1*     θ\_2      θ\_2*       μ        μ*  \textbackslash{}
+         0  0.0         10.0  1.01  0.998957 -0.0001  0.000044  0.0001 -0.000044   
+         1  0.0         50.0  1.01  1.010265 -0.0001 -0.000106  0.0001  0.000106   
+         2  0.0        100.0  1.01  1.009688 -0.0001 -0.000097  0.0001  0.000097   
+         3  2.0         10.0  1.01  1.009857 -0.0001 -0.000098  0.0001  0.000098   
+         4  2.0         50.0  1.01  1.009994 -0.0001 -0.000100  0.0001  0.000100   
+         5  2.0        100.0  1.01  1.009956 -0.0001 -0.000099  0.0001  0.000099   
+         6  5.0         10.0  1.01  1.010000 -0.0001 -0.000100  0.0001  0.000100   
+         7  5.0         50.0  1.01  1.010000 -0.0001 -0.000100  0.0001  0.000100   
+         8  5.0        100.0  1.01  1.010000 -0.0001 -0.000100  0.0001  0.000100   
+         
+                k          k*  
+         0  100.0   23.826999  
+         1  100.0   96.768521  
+         2  100.0  100.083587  
+         3  100.0  100.559471  
+         4  100.0  100.105598  
+         5  100.0  100.113571  
+         6  100.0  100.000233  
+         7  100.0  100.000141  
+         8  100.0  100.000091  
+\end{Verbatim}
+            
+    \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+    \newpage
+    \section{Рівняння згасаючих
+коливань}\label{ux440ux456ux432ux43dux44fux43dux43dux44f-ux437ux433ux430ux441ux430ux44eux447ux438ux445-ux43aux43eux43bux438ux432ux430ux43dux44c}
+
+    \subsection{Модель
+рівняння}\label{ux43cux43eux434ux435ux43bux44c-ux440ux456ux432ux43dux44fux43dux43dux44f}
+\[ x''+2\delta x'+\omega_0^2 x=0 \enspace | \enspace x_0, x'_0\]
+
+    \subsection{Різницеве
+рівняння}\label{ux440ux456ux437ux43dux438ux446ux435ux432ux435-ux440ux456ux432ux43dux44fux43dux43dux44f}
+
+$ \Delta t = 1 $
+
+\[ x'(t) \approx x(t+1)-x(t)  - \text{різниця вперед}\]
+
+\[ x'(t) \approx x(t)-x(t-1) - \text{різниця назад}\]
+
+\[ x'(t) \approx \frac{x(t+1)-x(t-1)}{2} - \text{центральна різниця}\]
+
+\[ x''(t) \approx x(t+1)-2x(t)+x(t-1) \]
+
+Розглянемо для апроксимації різницею
+вперед:
+
+\[ \left \{ \begin{array}{ll}
+                          x(t+1)-2x(t)+x(t-1)+2\delta[x(t+1)-x(t)]+\omega_0^2 x(t)=0 \\
+                          x(0) = x_0\\
+                          x(1) = x(0) + x'(0) = x_0 + x'_0
+                       \end{array} \right. \]
+
+\[ \iff \left \{ \begin{array}{ll}
+                    x(t+2)=\frac{2+2\delta-\omega_0^2}{1+2\delta}x(t+1)-\frac{1}{1+2\delta}x(t) \\
+                    x(0) = x_0\\
+                    x(1) = x_0 + x'_0
+                 \end{array} \right. \]
+
+Отже, лінійна регресійна залежність виглядає таким чином:
+
+\[ \left \{ \begin{array}{ll}
+                  y_i = \theta_1 x_{i1} +  \theta_2 x_{i2} + \xi_i\\
+                  \theta_1 = \frac{2+2\delta-\omega_0^2}{1+2\delta}\\
+                  \theta_2 = -\frac{1}{1+2\delta}\\
+                  E\xi = 0_n;\enspace cov(\xi) = \sigma ^2I_n
+                \end{array}
+              \right. \]
+
+    \subsection{Генерування
+вибірки}\label{ux433ux435ux43dux435ux440ux443ux432ux430ux43dux43dux44f-ux432ux438ux431ux456ux440ux43aux438}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}53}]:} \PY{n}{config} \PY{o}{=} \PY{n}{OscillationModelConfig}\PY{p}{(}\PY{p}{)}
+         \PY{n}{config}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+         
+         \PY{n}{plt}\PY{o}{.}\PY{n}{scatter}\PY{p}{(}\PY{n}{config}\PY{o}{.}\PY{n}{t}\PY{p}{,} \PY{n}{config}\PY{o}{.}\PY{n}{y}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Intermediate parameters values: θ\PYZus{}1 = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{θ\PYZus{}2 = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{o}{*}\PY{n}{config}\PY{o}{.}\PY{n}{theta}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Regression model: y = (}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{) * x1 + (}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{) * x2}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{o}{*}\PY{n}{config}\PY{o}{.}\PY{n}{theta}\PY{p}{)}\PY{p}{)}
+         \PY{n}{config}\PY{o}{.}\PY{n}{df}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Initial parameters:	δ = 0.005
+			ω0\^{}2 = 0.01              
+			x0 = 5
+			x00 = 2
+
+Noise generation: C = 2
+Sample length: n = 80
+Time starting from 0 to 500                with discretization frequency 6
+
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_15_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+Intermediate parameters values: θ\_1 = 1.98019801980198	θ\_2 = -0.9900990099009901
+Regression model: y = (1.98019801980198) * x1 + (-0.9900990099009901) * x2
+
+    \end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}53}]:}     i   t       x(t)     x(t+1)  x(t+2)
+         0   1   0   5.000000   7.000000    2.97
+         1   2   6  15.514879  17.135487   13.76
+         2   3  12  19.560926  20.217068   18.72
+         3   4  18  16.016072  15.520598   16.35
+         4   5  25   6.676531   5.286058    7.99
+         5   6  31  -4.596447  -6.305073   -2.86
+         6   7  37 -13.452646 -14.818532  -11.97
+         7   8  44 -16.715857 -17.247299  -16.02
+         8   9  50 -13.504159 -13.052839  -13.82
+         9  10  56  -5.420258  -4.215867   -6.56
+\end{Verbatim}
+            
+    \subsection{Робота алгоритму
+МНКО}\label{ux440ux43eux431ux43eux442ux430-ux430ux43bux433ux43eux440ux438ux442ux43cux443-ux43cux43dux43aux43e}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}43}]:} \PY{n}{config}\PY{o}{.}\PY{n}{run\PYZus{}single\PYZus{}RMNK}\PY{p}{(}\PY{n}{verbose}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{deep\PYZus{}verbose}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Recurrent Least Squares Method
+===============================================
+	Step 1
+===============================================
+h\_1:		[0]
+eta\_1:		3496.0743024036183
+alpha\_1:	[0]
+beta\_1:		3496.0743024036183
+gamma\_1:	3349.3120437748094
+nu\_1:		[0.95802084]
+===============================================
+> θ\_1: [0.95802084]
+> H\_1\_inv:
+[[0.00028604]]
+> RSS\_1: 29.453858680093163
+===============================================
+	Step 2
+===============================================
+h\_2:		[3609.56221018]
+eta\_2:		3756.7578218698554
+alpha\_2:	[1.03246153]
+beta\_2:		[[30.02371322]]
+gamma\_2:	3428.2987274811694
+nu\_2:		[[-0.99045368]]
+===============================================
+> θ\_2: [ 1.98062616 -0.99045368]
+> H\_2\_inv:
+[[ 0.03579053 -0.0343882 ]
+ [-0.0343882   0.03330701]]
+> RSS\_2: 0.0006414646992354278
+=============================================
+
+INTERMEDIATE PARAMETERS
+True values:	θ\_1 = 1.98019801980198	θ\_2 = -0.9900990099009901
+Estimates:	θ\_1* = 1.9806261560117218	θ\_2* = -0.9904536768605774
+
+INITIAL PARAMETERS
+True values:	δ = 0.005			ω0\^{}2 = 0.01
+Estimates:	δ* = 0.004819166894145632	ω0\^{}2* = 0.009922241775108143
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_17_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \subsection{Таблиця залежності оцінок від рівня
+шуму}\label{ux442ux430ux431ux43bux438ux446ux44f-ux437ux430ux43bux435ux436ux43dux43eux441ux442ux456-ux43eux446ux456ux43dux43eux43a-ux432ux456ux434-ux440ux456ux432ux43dux44f-ux448ux443ux43cux443}
+
+Розміри вибірки: {[}30, 80, 150{]}
+
+Округлення (кількість знаків після коми) до: {[}0, 2, 5{]}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}44}]:} \PY{n}{forward\PYZus{}df} \PY{o}{=} \PY{n}{config}\PY{o}{.}\PY{n}{run\PYZus{}grid\PYZus{}RMNK}\PY{p}{(}\PY{n}{verbose}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}
+         \PY{n}{forward\PYZus{}df}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}44}]:}      C  num\_samples       θ\_1      θ\_1*       θ\_2      θ\_2*      δ        δ*  \textbackslash{}
+         0  0.0         30.0  1.980198  2.092809 -0.990099 -1.100300  0.005 -0.045579   
+         1  0.0         80.0  1.980198  1.959643 -0.990099 -0.966105  0.005  0.017542   
+         2  0.0        150.0  1.980198  1.985392 -0.990099 -0.991847  0.005  0.004110   
+         3  2.0         30.0  1.980198  1.980402 -0.990099 -0.990257  0.005  0.004919   
+         4  2.0         80.0  1.980198  1.980626 -0.990099 -0.990454  0.005  0.004819   
+         5  2.0        150.0  1.980198  1.980007 -0.990099 -0.989910  0.005  0.005096   
+         6  5.0         30.0  1.980198  1.980197 -0.990099 -0.990098  0.005  0.005001   
+         7  5.0         80.0  1.980198  1.980199 -0.990099 -0.990100  0.005  0.005000   
+         8  5.0        150.0  1.980198  1.980197 -0.990099 -0.990098  0.005  0.005000   
+         
+            ω0\_sqr   ω0\_sqr*  
+         0    0.01  0.006809  
+         1    0.01  0.006689  
+         2    0.01  0.006507  
+         3    0.01  0.009952  
+         4    0.01  0.009922  
+         5    0.01  0.010005  
+         6    0.01  0.010000  
+         7    0.01  0.010000  
+         8    0.01  0.010000  
+\end{Verbatim}
+            
+    Розглянемо для апроксимації центральною різницею:
+
+$ \Rightarrow \left \{ \begin{array}{ll}
+                            x(t+1)-2x(t)+x(t-1)+\delta[x(t+1)-x(t-1)]+\omega_0^2 x(t)=0 \\
+                            x(0) = x_0\\
+                            x(1) = x(0) + x'(0) = x_0 + x'_0
+                        \end{array} \right. $
+
+$ \iff \left \{ \begin{array}{ll}
+                    x(t+2)=\frac{2-\omega_0^2}{1+\delta}x(t+1)-\frac{1-\delta}{1+\delta}x(t) \\
+                    x(0) = x_0\\
+                    x(1) = x_0 + x'_0
+                 \end{array} \right. $
+
+$ \left \{ \begin{array}{ll}
+                  y_i = \theta_1 x_{i1} +  \theta_2 x_{i2} + \xi_i\\
+                  \theta_1 = \frac{2-\omega_0^2}{1+\delta}\\
+                  \theta_2 = -\frac{1-\delta}{1+\delta}\\
+                  E\xi = 0_n;\enspace cov(\xi) = \sigma^2I_n
+                \end{array}
+              \right. $
+
+    \subsection{Генерування
+вибірки}\label{ux433ux435ux43dux435ux440ux443ux432ux430ux43dux43dux44f-ux432ux438ux431ux456ux440ux43aux438}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}50}]:} \PY{n}{config} \PY{o}{=} \PY{n}{OscillationModelConfig}\PY{p}{(}\PY{n}{difference}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{config}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+         
+         \PY{n}{plt}\PY{o}{.}\PY{n}{scatter}\PY{p}{(}\PY{n}{config}\PY{o}{.}\PY{n}{t}\PY{p}{,} \PY{n}{config}\PY{o}{.}\PY{n}{y}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Intermediate parameters values: θ\PYZus{}1 = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{θ\PYZus{}2 = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{o}{*}\PY{n}{config}\PY{o}{.}\PY{n}{theta}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Regression model: y = (}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{) * x1 + (}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{) * x2}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{o}{*}\PY{n}{config}\PY{o}{.}\PY{n}{theta}\PY{p}{)}\PY{p}{)}
+         \PY{n}{config}\PY{o}{.}\PY{n}{df}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Initial parameters:	δ = 0.005
+			ω0\^{}2 = 0.01              
+			x0 = 5
+			x00 = 2
+
+Noise generation: C = 2
+Sample length: n = 80
+Time starting from 0 to 500                with discretization frequency 6
+
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_22_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+Intermediate parameters values: θ\_1 = 1.9800995024875623	θ\_2 = -0.9900497512437811
+Regression model: y = (1.9800995024875623) * x1 + (-0.9900497512437811) * x2
+
+    \end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}50}]:}     i   t       x(t)     x(t+1)  x(t+2)
+         0   1   0   5.000000   7.000000    2.97
+         1   2   6  15.514879  17.135487   13.76
+         2   3  12  19.560926  20.217068   18.72
+         3   4  18  16.016072  15.520598   16.35
+         4   5  25   6.676531   5.286058    7.99
+         5   6  31  -4.596447  -6.305073   -2.86
+         6   7  37 -13.452646 -14.818532  -11.97
+         7   8  44 -16.715857 -17.247299  -16.02
+         8   9  50 -13.504159 -13.052839  -13.82
+         9  10  56  -5.420258  -4.215867   -6.56
+\end{Verbatim}
+            
+    \subsection{Робота алгоритму
+МНКО}\label{ux440ux43eux431ux43eux442ux430-ux430ux43bux433ux43eux440ux438ux442ux43cux443-ux43cux43dux43aux43e}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}33}]:} \PY{n}{config}\PY{o}{.}\PY{n}{run\PYZus{}single\PYZus{}RMNK}\PY{p}{(}\PY{n}{verbose}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{deep\PYZus{}verbose}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Recurrent Least Squares Method
+===============================================
+	Step 1
+===============================================
+h\_1:		[0]
+eta\_1:		3496.0743024036183
+alpha\_1:	[0]
+beta\_1:		3496.0743024036183
+gamma\_1:	3349.2782321079894
+nu\_1:		[0.95801117]
+===============================================
+> θ\_1: [0.95801117]
+> H\_1\_inv:
+[[0.00028604]]
+> RSS\_1: 29.447942916061038
+===============================================
+	Step 2
+===============================================
+h\_2:		[3609.56221018]
+eta\_2:		3756.7578218698554
+alpha\_2:	[1.03246153]
+beta\_2:		[[30.02371322]]
+gamma\_2:	3428.266809326686
+nu\_2:		[[-0.99035405]]
+===============================================
+> θ\_2: [ 1.98051363 -0.99035405]
+> H\_2\_inv:
+[[ 0.03579053 -0.0343882 ]
+ [-0.0343882   0.03330701]]
+> RSS\_2: 0.0006504761399703796
+=============================================
+
+INTERMEDIATE PARAMETERS
+True values:	θ\_1 = 1.9800995024875623	θ\_2 = -0.9900497512437811
+Estimates:	θ\_1* = 1.980513626457381	θ\_2* = -0.9903540525860997
+
+INITIAL PARAMETERS
+True values:	δ = 0.005			ω0\^{}2 = 0.01
+Estimates:	δ* = 0.004846347513582927	ω0\^{}2* = 0.009888116253420117
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_24_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \subsection{Таблиця залежності оцінок від рівня
+шуму}\label{ux442ux430ux431ux43bux438ux446ux44f-ux437ux430ux43bux435ux436ux43dux43eux441ux442ux456-ux43eux446ux456ux43dux43eux43a-ux432ux456ux434-ux440ux456ux432ux43dux44f-ux448ux443ux43cux443}
+
+Розміри вибірки: {[}30, 80, 150{]}
+
+Округлення (кількість знаків після коми) до: {[}0, 2, 5{]}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}34}]:} \PY{n}{center\PYZus{}df} \PY{o}{=} \PY{n}{config}\PY{o}{.}\PY{n}{run\PYZus{}grid\PYZus{}RMNK}\PY{p}{(}\PY{n}{verbose}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}
+         \PY{n}{center\PYZus{}df}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}34}]:}      C  num\_samples     θ\_1      θ\_1*      θ\_2      θ\_2*      δ        δ*  \textbackslash{}
+         0  0.0         30.0  1.9801  2.092809 -0.99005 -1.100300  0.005 -0.047755   
+         1  0.0         80.0  1.9801  1.959643 -0.99005 -0.966105  0.005  0.017240   
+         2  0.0        150.0  1.9801  1.985392 -0.99005 -0.991847  0.005  0.004093   
+         3  2.0         30.0  1.9801  1.980023 -0.99005 -0.989908  0.005  0.005071   
+         4  2.0         80.0  1.9801  1.980514 -0.99005 -0.990354  0.005  0.004846   
+         5  2.0        150.0  1.9801  1.979936 -0.99005 -0.989861  0.005  0.005095   
+         6  5.0         30.0  1.9801  1.980099 -0.99005 -0.990050  0.005  0.005000   
+         7  5.0         80.0  1.9801  1.980099 -0.99005 -0.990050  0.005  0.005000   
+         8  5.0        150.0  1.9801  1.980100 -0.99005 -0.990050  0.005  0.005000   
+         
+            ω0\_sqr   ω0\_sqr*  
+         0    0.01  0.007134  
+         1    0.01  0.006574  
+         2    0.01  0.006481  
+         3    0.01  0.009935  
+         4    0.01  0.009888  
+         5    0.01  0.009975  
+         6    0.01  0.010000  
+         7    0.01  0.010000  
+         8    0.01  0.010000  
+\end{Verbatim}
+            
+    \subsection{Об'єднана таблиця для двох видів
+апроксимацій}\label{ux43eux431ux454ux434ux43dux430ux43dux430-ux442ux430ux431ux43bux438ux446ux44f-ux434ux43bux44f-ux434ux432ux43eux445-ux432ux438ux434ux456ux432-ux430ux43fux440ux43eux43aux441ux438ux43cux430ux446ux456ux439}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}35}]:} \PY{n}{center\PYZus{}df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{difference}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{center}\PY{l+s+s1}{\PYZsq{}}
+         \PY{n}{forward\PYZus{}df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{difference}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{forward}\PY{l+s+s1}{\PYZsq{}}
+         \PY{n}{pd}\PY{o}{.}\PY{n}{concat}\PY{p}{(}\PY{p}{[}\PY{n}{center\PYZus{}df}\PY{p}{,} \PY{n}{forward\PYZus{}df}\PY{p}{]}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}\PY{o}{.}\PY{n}{sort\PYZus{}values}\PY{p}{(}\PY{n}{by}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{C}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                                                                    \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{num\PYZus{}samples}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                                                                    \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{difference}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}35}]:}      C  num\_samples       θ\_1      θ\_1*       θ\_2      θ\_2*      δ        δ*  \textbackslash{}
+         0  0.0         30.0  1.980100  2.092809 -0.990050 -1.100300  0.005 -0.047755   
+         0  0.0         30.0  1.980198  2.092809 -0.990099 -1.100300  0.005 -0.045579   
+         1  0.0         80.0  1.980100  1.959643 -0.990050 -0.966105  0.005  0.017240   
+         1  0.0         80.0  1.980198  1.959643 -0.990099 -0.966105  0.005  0.017542   
+         2  0.0        150.0  1.980100  1.985392 -0.990050 -0.991847  0.005  0.004093   
+         2  0.0        150.0  1.980198  1.985392 -0.990099 -0.991847  0.005  0.004110   
+         3  2.0         30.0  1.980100  1.980023 -0.990050 -0.989908  0.005  0.005071   
+         3  2.0         30.0  1.980198  1.980402 -0.990099 -0.990257  0.005  0.004919   
+         4  2.0         80.0  1.980100  1.980514 -0.990050 -0.990354  0.005  0.004846   
+         4  2.0         80.0  1.980198  1.980626 -0.990099 -0.990454  0.005  0.004819   
+         5  2.0        150.0  1.980100  1.979936 -0.990050 -0.989861  0.005  0.005095   
+         5  2.0        150.0  1.980198  1.980007 -0.990099 -0.989910  0.005  0.005096   
+         6  5.0         30.0  1.980100  1.980099 -0.990050 -0.990050  0.005  0.005000   
+         6  5.0         30.0  1.980198  1.980197 -0.990099 -0.990098  0.005  0.005001   
+         7  5.0         80.0  1.980100  1.980099 -0.990050 -0.990050  0.005  0.005000   
+         7  5.0         80.0  1.980198  1.980199 -0.990099 -0.990100  0.005  0.005000   
+         8  5.0        150.0  1.980100  1.980100 -0.990050 -0.990050  0.005  0.005000   
+         8  5.0        150.0  1.980198  1.980197 -0.990099 -0.990098  0.005  0.005000   
+         
+            ω0\_sqr   ω0\_sqr* difference  
+         0    0.01  0.007134     center  
+         0    0.01  0.006809    forward  
+         1    0.01  0.006574     center  
+         1    0.01  0.006689    forward  
+         2    0.01  0.006481     center  
+         2    0.01  0.006507    forward  
+         3    0.01  0.009935     center  
+         3    0.01  0.009952    forward  
+         4    0.01  0.009888     center  
+         4    0.01  0.009922    forward  
+         5    0.01  0.009975     center  
+         5    0.01  0.010005    forward  
+         6    0.01  0.010000     center  
+         6    0.01  0.010000    forward  
+         7    0.01  0.010000     center  
+         7    0.01  0.010000    forward  
+         8    0.01  0.010000     center  
+         8    0.01  0.010000    forward  
+\end{Verbatim}
+    
+    \newpage       
+    \section{Дослідження закономірностей селекції оптимальних моделей за різними критеріями}\label{ux434ux43eux441ux43bux456ux434ux436ux435ux43dux43dux44f-ux437ux430ux43aux43eux43dux43eux43cux456ux440ux43dux43eux441ux442ux435ux439-ux441ux435ux43bux435ux43aux446ux456ux457-ux43eux43fux442ux438ux43cux430ux43bux44cux43dux438ux445-ux43cux43eux434ux435ux43bux435ux439-ux437ux430-ux440ux456ux437ux43dux438ux43cux438-ux43aux440ux438ux442ux435ux440ux456ux44fux43cux438}
+
+    Розглянемо настпуні критерії
+
+$ RSS(s) $
+
+RSS(s) (як функція дискретного аргумента s) є строго спадною. Тобто при
+підвищенні складності (число аргументів або регресорів) моделі,
+наприклад, за рахунок шумів, значення цієї функції зменшиться. Тому її
+не можна використовувати в якості критерія оптимальності моделі.
+
+Тож введемо такі два критерії, які будемо використовувати для селекції
+оптимальних моделей
+
+$ C\_p(s) = RSS(s) + 2s - \text{спрощений критерій Меллоуза} $
+
+$ FPE(s) = \frac{n + s}{n - s} RSS(s) -
+\text{критерій фінальної помилки передбачення Акаіке} $
+
+    \subsection{Генерування
+вибірки}\label{ux433ux435ux43dux435ux440ux443ux432ux430ux43dux43dux44f-ux432ux438ux431ux456ux440ux43aux438}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}49}]:} \PY{n}{config} \PY{o}{=} \PY{n}{ModelConfig}\PY{p}{(}\PY{p}{)}
+         
+         \PY{n}{config}\PY{o}{.}\PY{n}{generate\PYZus{}noise\PYZus{}and\PYZus{}output}\PY{p}{(}\PY{p}{)}
+         \PY{n}{config}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Sample length: n = 10
+Noise generation: σ = 0.01
+X[:10]:
+[[0.8256075  0.96538628 0.98689577 0.34211039 0.73125083]
+ [1.99661548 1.10312016 0.47063081 0.6743167  0.32270018]
+ [0.50521783 1.94305153 0.2321996  1.57475096 1.7151454 ]
+ [1.45231104 0.84137512 1.6251626  1.55947169 1.65454129]
+ [0.30540542 0.59276023 0.81413665 1.63787871 0.78084218]
+ [0.35927949 1.59431491 0.59784151 0.89101901 0.11862545]
+ [1.66405542 0.4946509  1.41582645 0.42319989 0.14946643]
+ [0.25641774 0.39958445 0.1393855  1.55680484 1.58562454]
+ [0.16804735 0.58465338 0.66805314 0.25416042 0.67679176]
+ [0.52214368 0.30785052 0.81917318 1.88955457 1.13773672]]
+y[:10]:
+[ 1.53935532e+00  4.24655357e+00 -2.13879892e+00  4.28630293e+00
+  5.42699716e-01 -1.53415571e+00  5.41475184e+00  1.17818043e-01
+ -2.70343421e-04  1.78361145e+00]
+
+    \end{Verbatim}
+
+    \subsection{Результати роботи МНКО для кожної складності
+моделі}\label{ux440ux435ux437ux443ux43bux44cux442ux430ux442ux438-ux440ux43eux431ux43eux442ux438-ux43cux43dux43aux43e-ux434ux43bux44f-ux43aux43eux436ux43dux43eux457-ux441ux43aux43bux430ux434ux43dux43eux441ux442ux456-ux43cux43eux434ux435ux43bux456}
+
+Розміри вибірки: {[}10, 30, 100{]}
+
+Дисперсії: {[}0.1, 0.5, 1{]}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}47}]:} \PY{n}{config}\PY{o}{.}\PY{n}{run\PYZus{}grid\PYZus{}RMNK\PYZus{}model\PYZus{}selection}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+--------------------------------------------------------------
+			SAMPLE \#1
+--------------------------------------------------------------
+		CONFUGURATIONS \& DATA
+Sample length: n = 10
+Noise generation: σ = 0.1
+X[:10]:
+[[1.74499128 1.36387688 0.97317271 0.91202505 0.82077243]
+ [0.25024059 0.71549269 0.67900453 1.56559033 1.60674223]
+ [0.78587479 1.4332687  0.72735019 0.80508076 1.44407207]
+ [0.92653795 1.16807282 1.81264013 1.87331243 1.26766465]
+ [1.37688235 1.55669921 0.41909229 1.71869654 0.44395493]
+ [0.06463555 1.91239844 1.86896445 1.56800728 1.53465654]
+ [1.6610133  0.98512173 1.79487906 1.51341071 1.51509083]
+ [1.41194792 1.36280981 0.38997994 1.53333186 0.61675108]
+ [0.03745953 1.65573554 0.41078422 1.58074669 1.24010989]
+ [0.50865276 1.78581802 0.58324822 1.6045627  1.52076612]]
+y[:10]:
+[ 3.48591953 -0.0823742   0.35078648  2.32588991  1.68130005 -1.81033725
+  4.69829369  1.89906112 -2.76304196 -1.67492179]
+
+		RLSM ITERATIONS
+===============================================
+	Step 1
+===============================================
+> θ\_1: [1.75888448]
+> H\_1\_inv:
+[[0.08698404]]
+> RSS\_1: 24.34948235855881
+===============================================
+	Step 2
+===============================================
+> θ\_2: [ 3.28244712 -1.51445048]
+> H\_2\_inv:
+[[ 0.19950471 -0.1118477 ]
+ [-0.1118477   0.11117876]]
+> RSS\_2: 3.720000469205509
+===============================================
+	Step 3
+===============================================
+> θ\_3: [ 3.04616316 -1.98965346  0.9481994 ]
+> H\_3\_inv:
+[[ 0.21506781 -0.08054793 -0.0624542 ]
+ [-0.08054793  0.17412736 -0.1256049 ]
+ [-0.0624542  -0.1256049   0.25062656]]
+> RSS\_3: 0.13266281282578296
+===============================================
+	Step 4
+===============================================
+> θ\_4: [ 3.04862082 -1.97302879  0.95465723 -0.02234266]
+> H\_4\_inv:
+[[ 0.2217556  -0.03530892 -0.04488117 -0.06079878]
+ [-0.03530892  0.48014312 -0.00673353 -0.41126856]
+ [-0.04488117 -0.00673353  0.29680197 -0.15975667]
+ [-0.06079878 -0.41126856 -0.15975667  0.55272261]]
+> RSS\_4: 0.1317596574980914
+===============================================
+	Step 5
+===============================================
+> θ\_5: [ 3.01994177 -1.93297116  1.01152629  0.02558417 -0.13454104]
+> H\_5\_inv:
+[[ 0.25394333 -0.08026732 -0.10870776 -0.11458912  0.15100118]
+ [-0.08026732  0.54293903  0.08241662 -0.33613661 -0.21091176]
+ [-0.10870776  0.08241662  0.42336674 -0.05309326 -0.2994274 ]
+ [-0.11458912 -0.33613661 -0.05309326  0.642614   -0.2523447 ]
+ [ 0.15100118 -0.21091176 -0.2994274  -0.2523447   0.70838647]]
+> RSS\_5: 0.10620681153214041
+
+			RESULTS
+
+PARAMETERS
+True values:	θ: [ 3 -2  1  0  0]
+Estimates:	θ*: [ 3.01994177 -1.93297116  1.01152629  0.02558417 -0.13454104]
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_34_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+     s        RSS         Cp        FPE
+0  1.0  24.349482  26.349482  29.760478
+1  2.0   3.720000   7.720000   5.580001
+2  3.0   0.132663   6.132663   0.246374
+3  4.0   0.131760   8.131760   0.307439
+4  5.0   0.106207  10.106207   0.318620
+s* by Cp:  3
+s* by FPE: 3
+
+--------------------------------------------------------------
+			SAMPLE \#2
+--------------------------------------------------------------
+		CONFUGURATIONS \& DATA
+Sample length: n = 10
+Noise generation: σ = 0.5
+X[:10]:
+[[0.33492291 1.08563438 1.68194974 0.29033474 1.78802504]
+ [0.2159277  0.81205598 0.53006163 1.53257466 1.88128202]
+ [0.39104558 0.91036983 0.36540506 1.12260893 1.52395021]
+ [1.22387016 0.962584   0.69919347 1.47873658 1.06353278]
+ [1.98865213 1.88135532 1.62673745 1.07394478 0.38639772]
+ [0.21440056 0.00601832 0.63623142 0.72337703 0.98327312]
+ [0.71403784 1.08255883 0.15211974 0.74150085 0.19634336]
+ [1.82350366 1.98757221 0.10940998 1.41456159 1.19650657]
+ [1.00166412 1.39490568 0.49255994 0.91280459 1.37797455]
+ [0.7371997  1.43040815 0.65326362 1.36619623 1.98564815]]
+y[:10]:
+[ 0.12993849 -0.54116239  0.15820152  3.12991112  3.43588371  2.54449243
+ -0.1174249   1.47193416 -0.00622622  0.01589706]
+
+		RLSM ITERATIONS
+===============================================
+	Step 1
+===============================================
+> θ\_1: [1.23329701]
+> H\_1\_inv:
+[[0.08934883]]
+> RSS\_1: 13.568114398236023
+===============================================
+	Step 2
+===============================================
+> θ\_2: [ 3.28209475 -1.8105654 ]
+> H\_2\_inv:
+[[ 0.75766193 -0.59060225]
+ [-0.59060225  0.52192756]]
+> RSS\_2: 7.287267551556573
+===============================================
+	Step 3
+===============================================
+> θ\_3: [ 3.42991111 -2.54163368  1.20115625]
+> H\_3\_inv:
+[[ 0.76239897 -0.61403067  0.03849325]
+ [-0.61403067  0.63779955 -0.19037944]
+ [ 0.03849325 -0.19037944  0.3127963 ]]
+> RSS\_3: 2.674756662545904
+===============================================
+	Step 4
+===============================================
+> θ\_4: [ 3.45280477 -3.20182555  1.21173671  0.80394412]
+> H\_4\_inv:
+[[ 0.7627099  -0.622997    0.03863695  0.01091868]
+ [-0.622997    0.89636443 -0.19452329 -0.31486561]
+ [ 0.03863695 -0.19452329  0.31286271  0.00504615]
+ [ 0.01091868 -0.31486561  0.00504615  0.38342543]]
+> RSS\_4: 0.989093427444625
+===============================================
+	Step 5
+===============================================
+> θ\_5: [ 3.89786176 -3.50690387  1.06884173  0.47639856  0.33843127]
+> H\_5\_inv:
+[[ 2.37527968 -1.7283837  -0.47911276 -1.17587332  1.22623406]
+ [-1.7283837   1.65408652  0.16038454  0.49865831 -0.84056072]
+ [-0.47911276  0.16038454  0.47909723  0.38609088 -0.39370844]
+ [-1.17587332  0.49865831  0.38609088  1.25686066 -0.90246313]
+ [ 1.22623406 -0.84056072 -0.39370844 -0.90246313  0.93245575]]
+> RSS\_5: 0.8662610858480779
+
+			RESULTS
+
+PARAMETERS
+True values:	θ: [ 3 -2  1  0  0]
+Estimates:	θ*: [ 3.89786176 -3.50690387  1.06884173  0.47639856  0.33843127]
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_34_3.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+     s        RSS         Cp        FPE
+0  1.0  13.568114  15.568114  16.583251
+1  2.0   7.287268  11.287268  10.930901
+2  3.0   2.674757   8.674757   4.967405
+3  4.0   0.989093   8.989093   2.307885
+4  5.0   0.866261  10.866261   2.598783
+s* by Cp:  3
+s* by FPE: 4
+
+--------------------------------------------------------------
+			SAMPLE \#3
+--------------------------------------------------------------
+		CONFUGURATIONS \& DATA
+Sample length: n = 10
+Noise generation: σ = 1
+X[:10]:
+[[0.14696984 1.64225686 0.81527383 0.5052387  1.74258384]
+ [0.54192376 1.77129056 0.69364413 1.91389457 1.11587571]
+ [1.46345848 0.70656644 0.33467826 1.80626046 1.15677286]
+ [0.15388681 1.80944155 0.56569552 0.16313333 1.6271434 ]
+ [1.55113002 0.30217504 0.42268223 1.36097742 0.80769278]
+ [0.90139168 1.54823504 0.90174186 0.59907987 0.66142068]
+ [0.87465941 1.822172   1.23629605 1.23502435 1.11140353]
+ [0.06916039 0.20130832 1.52169335 0.59426913 0.98419139]
+ [1.42907423 0.32435217 1.16714399 1.15158231 1.01927989]
+ [1.51590501 1.6155413  1.6922702  1.25023024 0.92448734]]
+y[:10]:
+[-1.35546965 -2.93986301  2.09830818 -2.84221758  2.75526638  0.02831423
+  0.59059142 -0.01914911  4.41352945  2.51628973]
+
+		RLSM ITERATIONS
+===============================================
+	Step 1
+===============================================
+> θ\_1: [1.45961255]
+> H\_1\_inv:
+[[0.09251363]]
+> RSS\_1: 33.684904369399405
+===============================================
+	Step 2
+===============================================
+> θ\_2: [ 2.72218064 -1.53371291]
+> H\_2\_inv:
+[[ 0.15498937 -0.07589281]
+ [-0.07589281  0.09219129]]
+> RSS\_2: 8.169747929934228
+===============================================
+	Step 3
+===============================================
+> θ\_3: [ 2.38566268 -1.88274339  0.847052  ]
+> H\_3\_inv:
+[[ 0.20876806 -0.02011451 -0.13536676]
+ [-0.02011451  0.15004357 -0.14040001]
+ [-0.13536676 -0.14040001  0.34073274]]
+> RSS\_3: 6.064000510738701
+===============================================
+	Step 4
+===============================================
+> θ\_4: [ 3.27963753 -1.61892154  0.89849639 -1.1196245 ]
+> H\_4\_inv:
+[[ 0.5134597   0.06980336 -0.11783308 -0.38159936]
+ [ 0.06980336  0.17657932 -0.13522563 -0.11261419]
+ [-0.11783308 -0.13522563  0.34174173 -0.0219594 ]
+ [-0.38159936 -0.11261419 -0.0219594   0.47791947]]
+> RSS\_4: 3.44105023141445
+===============================================
+	Step 5
+===============================================
+> θ\_5: [ 3.27075458 -1.57050896  0.93236985 -1.08868603 -0.11081723]
+> H\_5\_inv:
+[[ 0.51689518  0.0510798  -0.13093363 -0.39356481  0.04285855]
+ [ 0.0510798   0.27862387 -0.0638268  -0.04740175 -0.23358169]
+ [-0.13093363 -0.0638268   0.39169827  0.02366863 -0.16343312]
+ [-0.39356481 -0.04740175  0.02366863  0.51959403 -0.14927237]
+ [ 0.04285855 -0.23358169 -0.16343312 -0.14927237  0.53467246]]
+> RSS\_5: 3.4180820437301587
+
+			RESULTS
+
+PARAMETERS
+True values:	θ: [ 3 -2  1  0  0]
+Estimates:	θ*: [ 3.27075458 -1.57050896  0.93236985 -1.08868603 -0.11081723]
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_34_5.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+     s        RSS         Cp        FPE
+0  1.0  33.684904  35.684904  41.170439
+1  2.0   8.169748  12.169748  12.254622
+2  3.0   6.064001  12.064001  11.261715
+3  4.0   3.441050  11.441050   8.029117
+4  5.0   3.418082  13.418082  10.254246
+s* by Cp:  4
+s* by FPE: 4
+
+--------------------------------------------------------------
+			SAMPLE \#4
+--------------------------------------------------------------
+		CONFUGURATIONS \& DATA
+Sample length: n = 30
+Noise generation: σ = 0.1
+X[:10]:
+[[0.1487495  0.39253727 0.94876846 0.84020432 1.02141893]
+ [1.03237769 1.14966652 1.10723391 0.16075337 0.2289113 ]
+ [1.55214301 0.974513   0.66598849 1.86118306 0.22885745]
+ [1.65397925 1.45360209 0.83021713 0.78597958 0.43489001]
+ [0.71856424 1.28416975 0.73402926 1.3018575  0.94595914]
+ [0.80133343 0.43329017 1.09414303 0.98373604 0.62182217]
+ [0.10070248 1.77904068 1.78430279 0.09961824 0.16469113]
+ [0.59460095 0.28739308 1.33864153 1.84248439 0.03749578]
+ [1.48062364 1.05328261 1.36069382 0.56938633 1.91588621]
+ [0.5420078  0.63760454 1.89696076 0.86427491 1.31056505]]
+y[:10]:
+[ 0.49487737  1.96984176  3.44538533  3.02811936  0.23413413  2.54153192
+ -1.56549911  2.5680147   3.57818677  2.40551953]
+
+		RLSM ITERATIONS
+===============================================
+	Step 1
+===============================================
+> θ\_1: [2.16725506]
+> H\_1\_inv:
+[[0.02894723]]
+> RSS\_1: 42.911961631672995
+===============================================
+	Step 2
+===============================================
+> θ\_2: [ 3.27016325 -1.34135586]
+> H\_2\_inv:
+[[ 0.07547652 -0.05658888]
+ [-0.05658888  0.06882334]]
+> RSS\_2: 16.769149956764263
+===============================================
+	Step 3
+===============================================
+> θ\_3: [ 3.02755153 -2.03001379  1.00549493]
+> H\_3\_inv:
+[[ 0.07904502 -0.04645962 -0.01478951]
+ [-0.04645962  0.09757541 -0.0419803 ]
+ [-0.01478951 -0.0419803   0.06129455]]
+> RSS\_3: 0.2746963575911856
+===============================================
+	Step 4
+===============================================
+> θ\_4: [ 3.02592015e+00 -2.02963720e+00  1.00441252e+00  2.61162670e-03]
+> H\_4\_inv:
+[[ 0.11719665 -0.05526666  0.01052376 -0.06107561]
+ [-0.05526666  0.09960845 -0.04782369  0.01409888]
+ [ 0.01052376 -0.04782369  0.07808968 -0.04052313]
+ [-0.06107561  0.01409888 -0.04052313  0.09777381]]
+> RSS\_4: 0.2746265986852164
+===============================================
+	Step 5
+===============================================
+> θ\_5: [ 3.02427775e+00 -2.02995134e+00  1.00108958e+00  2.33265179e-03
+  6.88853109e-03]
+> H\_5\_inv:
+[[ 0.12210533 -0.05432778  0.0204551  -0.06024183 -0.02058789]
+ [-0.05432778  0.09978804 -0.04592412  0.01425836 -0.00393785]
+ [ 0.0204551  -0.04592412  0.09818297 -0.03883621 -0.04165386]
+ [-0.06024183  0.01425836 -0.03883621  0.09791543 -0.00349702]
+ [-0.02058789 -0.00393785 -0.04165386 -0.00349702  0.0863494 ]]
+> RSS\_5: 0.2740770655149688
+
+			RESULTS
+
+PARAMETERS
+True values:	θ: [ 3 -2  1  0  0]
+Estimates:	θ*: [ 3.02427775e+00 -2.02995134e+00  1.00108958e+00  2.33265179e-03
+  6.88853109e-03]
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_34_7.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+     s        RSS         Cp        FPE
+0  1.0  42.911962  44.911962  45.871407
+1  2.0  16.769150  20.769150  19.164743
+2  3.0   0.274696   6.274696   0.335740
+3  4.0   0.274627   8.274627   0.359127
+4  5.0   0.274077  10.274077   0.383708
+s* by Cp:  3
+s* by FPE: 3
+
+--------------------------------------------------------------
+			SAMPLE \#5
+--------------------------------------------------------------
+		CONFUGURATIONS \& DATA
+Sample length: n = 30
+Noise generation: σ = 0.5
+X[:10]:
+[[0.72876001 1.31939899 0.25131668 1.02587873 1.08236842]
+ [1.6790284  1.49552647 1.82319386 0.0662499  1.77054865]
+ [0.24189569 0.06920569 0.11676017 0.36094835 1.96565189]
+ [0.03083241 0.48892639 1.62124848 0.57922692 1.94939807]
+ [0.8968224  1.35714991 1.36761615 1.21381602 1.48231496]
+ [0.62585452 0.74419252 1.41248933 1.82981646 0.6278084 ]
+ [1.87687817 0.45745942 0.14204097 1.2282496  1.40724115]
+ [0.74047996 1.79276388 0.18282914 0.33575151 1.06089481]
+ [0.34882251 0.07366257 1.75406866 1.3220241  0.92124879]
+ [0.12071026 1.89096654 1.05274132 0.58485607 1.80056392]]
+y[:10]:
+[-0.72240974  3.2231523   0.62399833  0.62839286  0.97950829  2.15486126
+  6.06103113 -1.59945271  3.02280988 -3.09663769]
+
+		RLSM ITERATIONS
+===============================================
+	Step 1
+===============================================
+> θ\_1: [2.45358863]
+> H\_1\_inv:
+[[0.02866141]]
+> RSS\_1: 79.59086964249369
+===============================================
+	Step 2
+===============================================
+> θ\_2: [ 3.90447742 -1.86582164]
+> H\_2\_inv:
+[[ 0.07155604 -0.05516186]
+ [-0.05516186  0.07093734]]
+> RSS\_2: 30.515298339401106
+===============================================
+	Step 3
+===============================================
+> θ\_3: [ 3.24605609 -2.29954684  1.17928989]
+> H\_3\_inv:
+[[ 0.09271279 -0.04122516 -0.03789359]
+ [-0.04122516  0.08011793 -0.02496184]
+ [-0.03789359 -0.02496184  0.06787072]]
+> RSS\_3: 10.024508583050252
+===============================================
+	Step 4
+===============================================
+> θ\_4: [ 3.12715944 -2.32002488  1.12147583  0.21910323]
+> H\_4\_inv:
+[[ 0.12126723 -0.03630712 -0.02400886 -0.05262023]
+ [-0.03630712  0.08096498 -0.02257041 -0.00906299]
+ [-0.02400886 -0.02257041  0.07462223 -0.02558683]
+ [-0.05262023 -0.00906299 -0.02558683  0.09696876]]
+> RSS\_4: 9.529439633710565
+===============================================
+	Step 5
+===============================================
+> θ\_5: [ 3.1684059  -2.2741488   1.27557734  0.30493557 -0.35785053]
+> H\_5\_inv:
+[[ 0.12210233 -0.03537828 -0.02088882 -0.05088241 -0.00724528]
+ [-0.03537828  0.08199808 -0.01910017 -0.00713011 -0.00805851]
+ [-0.02088882 -0.01910017  0.08627907 -0.01909414 -0.02706921]
+ [-0.05088241 -0.00713011 -0.01909414  0.1005851  -0.01507716]
+ [-0.00724528 -0.00805851 -0.02706921 -0.01507716  0.06285941]]
+> RSS\_5: 7.492242706240905
+
+			RESULTS
+
+PARAMETERS
+True values:	θ: [ 3 -2  1  0  0]
+Estimates:	θ*: [ 3.1684059  -2.2741488   1.27557734  0.30493557 -0.35785053]
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_34_9.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+     s        RSS         Cp        FPE
+0  1.0  79.590870  81.590870  85.079895
+1  2.0  30.515298  34.515298  34.874627
+2  3.0  10.024509  16.024509  12.252177
+3  4.0   9.529440  17.529440  12.461575
+4  5.0   7.492243  17.492243  10.489140
+s* by Cp:  3
+s* by FPE: 5
+
+--------------------------------------------------------------
+			SAMPLE \#6
+--------------------------------------------------------------
+		CONFUGURATIONS \& DATA
+Sample length: n = 30
+Noise generation: σ = 1
+X[:10]:
+[[1.4657479  1.0203736  0.27119653 0.76962363 0.12997583]
+ [0.12688183 0.14651378 1.5920262  0.65060901 0.41573806]
+ [0.39620312 1.51504911 1.95252342 1.38204029 0.33692889]
+ [1.30746237 1.12286779 0.00974265 0.85186273 1.39939848]
+ [0.36114552 0.02900568 0.24237525 0.37378936 1.51242997]
+ [0.14718973 0.55690455 0.63306301 0.6750009  1.61196702]
+ [0.561286   1.13888002 0.81831695 0.72452641 1.3125748 ]
+ [1.6350668  1.38261912 0.66248552 1.09468795 0.14239637]
+ [1.96966048 1.37709031 1.24864897 0.07716315 1.53212933]
+ [1.67362771 1.12044411 1.36239841 1.73962138 0.13950526]]
+y[:10]:
+[ 2.23790939  3.28962769  0.66891754  1.28786737  1.87640715 -1.05213968
+ -1.13407385  3.14801966  4.0742737   2.62623902]
+
+		RLSM ITERATIONS
+===============================================
+	Step 1
+===============================================
+> θ\_1: [1.95439287]
+> H\_1\_inv:
+[[0.02786828]]
+> RSS\_1: 72.16315009756227
+===============================================
+	Step 2
+===============================================
+> θ\_2: [ 3.18672401 -1.67285668]
+> H\_2\_inv:
+[[ 0.0744196  -0.06319218]
+ [-0.06319218  0.0857817 ]]
+> RSS\_2: 39.54022982150166
+===============================================
+	Step 3
+===============================================
+> θ\_3: [ 2.84257131 -2.09676554  0.88739358]
+> H\_3\_inv:
+[[ 0.0842777  -0.05104949 -0.02541901]
+ [-0.05104949  0.10073841 -0.03130977]
+ [-0.02541901 -0.03130977  0.0655426 ]]
+> RSS\_3: 27.525641486335502
+===============================================
+	Step 4
+===============================================
+> θ\_4: [ 2.82363745 -2.44083945  0.75675816  0.48181414]
+> H\_4\_inv:
+[[ 0.0844384  -0.04812916 -0.02431024 -0.0040894 ]
+ [-0.04812916  0.15380786 -0.01116076 -0.0743143 ]
+ [-0.02431024 -0.01116076  0.07319263 -0.0282151 ]
+ [-0.0040894  -0.0743143  -0.0282151   0.10406392]]
+> RSS\_4: 25.294850332210924
+===============================================
+	Step 5
+===============================================
+> θ\_5: [ 2.80245265 -2.3222004   0.85858036  0.60379904 -0.37542031]
+> H\_5\_inv:
+[[ 0.08464449 -0.04928331 -0.02530078 -0.0052761   0.00365216]
+ [-0.04928331  0.16027129 -0.0056135  -0.06766858 -0.02045284]
+ [-0.02530078 -0.0056135   0.07795357 -0.0225114  -0.01755369]
+ [-0.0052761  -0.06766858 -0.0225114   0.11089706 -0.02102965]
+ [ 0.00365216 -0.02045284 -0.01755369 -0.02102965  0.06472077]]
+> RSS\_5: 23.11718154095141
+
+			RESULTS
+
+PARAMETERS
+True values:	θ: [ 3 -2  1  0  0]
+Estimates:	θ*: [ 2.80245265 -2.3222004   0.85858036  0.60379904 -0.37542031]
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_34_11.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+     s        RSS         Cp        FPE
+0  1.0  72.163150  74.163150  77.139919
+1  2.0  39.540230  43.540230  45.188834
+2  3.0  27.525641  33.525641  33.642451
+3  4.0  25.294850  33.294850  33.077881
+4  5.0  23.117182  33.117182  32.364054
+s* by Cp:  5
+s* by FPE: 5
+
+--------------------------------------------------------------
+			SAMPLE \#7
+--------------------------------------------------------------
+		CONFUGURATIONS \& DATA
+Sample length: n = 100
+Noise generation: σ = 0.1
+X[:10]:
+[[1.98504115e+00 1.37682418e-01 1.29076862e+00 1.61146647e+00
+  1.55773586e+00]
+ [1.68041062e-01 1.02261171e+00 6.52525865e-01 1.79307661e+00
+  7.81053943e-01]
+ [1.44758733e+00 5.79668061e-01 9.21768252e-01 1.75864705e+00
+  1.40988989e+00]
+ [1.60422920e+00 1.86154158e+00 6.18633827e-01 1.38958277e-03
+  8.07922782e-01]
+ [1.63708292e+00 5.86510715e-01 1.06373771e+00 1.48776152e+00
+  1.20121708e-01]
+ [9.66599051e-01 4.68436160e-01 2.89297431e-01 5.11833060e-01
+  1.31440094e+00]
+ [4.81831012e-02 1.34767400e+00 7.61509565e-01 6.08325805e-01
+  9.66134925e-02]
+ [1.71562470e+00 1.83542193e+00 7.19104070e-01 1.13391063e+00
+  9.80065132e-01]
+ [1.08834028e+00 1.29009480e+00 1.92487873e+00 7.87675476e-01
+  1.24867257e+00]
+ [1.90783230e+00 1.57581923e+00 1.20548848e+00 1.24757961e+00
+  1.16952879e+00]]
+y[:10]:
+[ 7.0468222  -0.91133898  3.94671901  1.74501699  4.79035547  2.10071719
+ -1.80283288  2.28376996  2.54127111  3.74845277]
+
+		RLSM ITERATIONS
+===============================================
+	Step 1
+===============================================
+> θ\_1: [2.20023113]
+> H\_1\_inv:
+[[0.00827928]]
+> RSS\_1: 139.90400552191068
+===============================================
+	Step 2
+===============================================
+> θ\_2: [ 3.27649717 -1.32743988]
+> H\_2\_inv:
+[[ 0.0194286  -0.0137513 ]
+ [-0.0137513   0.01696051]]
+> RSS\_2: 36.009931867380544
+===============================================
+	Step 3
+===============================================
+> θ\_3: [ 2.9906726  -1.96198542  0.97913501]
+> H\_3\_inv:
+[[ 0.02175901 -0.00857766 -0.00798317]
+ [-0.00857766  0.02844625 -0.01772306]
+ [-0.00798317 -0.01772306  0.02734756]]
+> RSS\_3: 0.9535903845829736
+===============================================
+	Step 4
+===============================================
+> θ\_4: [ 3.00435631 -1.95577587  0.9914165  -0.03379706]
+> H\_4\_inv:
+[[ 0.0257926  -0.00674726 -0.00436293 -0.00996246]
+ [-0.00674726  0.02927688 -0.01608023 -0.00452088]
+ [-0.00436293 -0.01608023  0.03059683 -0.00894156]
+ [-0.00996246 -0.00452088 -0.00894156  0.02460603]]
+> RSS\_4: 0.9071691999350311
+===============================================
+	Step 5
+===============================================
+> θ\_5: [ 3.00447526e+00 -1.95562053e+00  9.91512807e-01 -3.37209128e-02
+ -5.39683672e-04]
+> H\_5\_inv:
+[[ 0.02728664 -0.00479622 -0.00315327 -0.00900608 -0.00677842]
+ [-0.00479622  0.03182468 -0.01450057 -0.00327198 -0.00885175]
+ [-0.00315327 -0.01450057  0.03157622 -0.00816724 -0.00548814]
+ [-0.00900608 -0.00327198 -0.00816724  0.02521822 -0.00433901]
+ [-0.00677842 -0.00885175 -0.00548814 -0.00433901  0.03075334]]
+> RSS\_5: 0.9071597291441771
+
+			RESULTS
+
+PARAMETERS
+True values:	θ: [ 3 -2  1  0  0]
+Estimates:	θ*: [ 3.00447526e+00 -1.95562053e+00  9.91512807e-01 -3.37209128e-02
+ -5.39683672e-04]
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_34_13.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+     s         RSS          Cp         FPE
+0  1.0  139.904006  141.904006  142.730349
+1  2.0   36.009932   40.009932   37.479725
+2  3.0    0.953590    6.953590    1.012575
+3  4.0    0.907169    8.907169    0.982767
+4  5.0    0.907160   10.907160    1.002650
+s* by Cp:  3
+s* by FPE: 4
+
+--------------------------------------------------------------
+			SAMPLE \#8
+--------------------------------------------------------------
+		CONFUGURATIONS \& DATA
+Sample length: n = 100
+Noise generation: σ = 0.5
+X[:10]:
+[[1.16187113 0.56692258 0.88095381 0.32026532 0.09746003]
+ [0.38195709 1.42179186 1.01824668 0.34410347 1.71823047]
+ [1.46259151 0.68407143 0.29287657 1.28169498 1.92523134]
+ [1.97185322 1.18134425 1.79891701 0.12145096 0.1565097 ]
+ [0.95352219 0.65448288 0.0711204  0.71785963 0.33788788]
+ [1.82159754 0.20021885 0.88754426 0.08819382 0.1003117 ]
+ [0.07789955 1.81320805 0.38136005 0.43157208 0.93967719]
+ [1.95729242 1.14355876 1.26371677 0.27375364 1.20363225]
+ [0.62060307 1.0264235  0.58194768 0.69663503 1.41678501]
+ [1.354261   0.39651202 1.62760213 1.56285985 0.4112288 ]]
+y[:10]:
+[ 2.38814537 -0.266042    3.83982479  5.04186083  2.25968846  6.26543951
+ -3.28538265  4.52274475  0.4938657   5.23045345]
+
+		RLSM ITERATIONS
+===============================================
+	Step 1
+===============================================
+> θ\_1: [2.40017533]
+> H\_1\_inv:
+[[0.00709572]]
+> RSS\_1: 149.33523273005187
+===============================================
+	Step 2
+===============================================
+> θ\_2: [ 3.34070496 -1.31207733]
+> H\_2\_inv:
+[[ 0.01687949 -0.01364876]
+ [-0.01364876  0.01904058]]
+> RSS\_2: 58.92059074839193
+===============================================
+	Step 3
+===============================================
+> θ\_3: [ 2.98275274 -1.91011335  1.00409455]
+> H\_3\_inv:
+[[ 0.02000003 -0.00843524 -0.00875343]
+ [-0.00843524  0.02775088 -0.01462449]
+ [-0.00875343 -0.01462449  0.02455432]]
+> RSS\_3: 17.860373938172174
+===============================================
+	Step 4
+===============================================
+> θ\_4: [ 2.96394998 -1.92331992  0.98658008  0.06439653]
+> H\_4\_inv:
+[[ 0.0223063  -0.00681537 -0.00660517 -0.00789865]
+ [-0.00681537  0.02888864 -0.01311561 -0.0055478 ]
+ [-0.00660517 -0.01311561  0.0265554  -0.00735746]
+ [-0.00789865 -0.0055478  -0.00735746  0.02705165]]
+> RSS\_4: 17.70707778387631
+===============================================
+	Step 5
+===============================================
+> θ\_5: [ 2.95898496 -1.9600944   0.96301441  0.04528211  0.09973274]
+> H\_5\_inv:
+[[ 0.0223677  -0.0063606  -0.00631375 -0.00766227 -0.00123333]
+ [-0.0063606   0.03225696 -0.01095713 -0.00379704 -0.00913492]
+ [-0.00631375 -0.01095713  0.02793858 -0.00623555 -0.0058538 ]
+ [-0.00766227 -0.00379704 -0.00623555  0.02796165 -0.00474809]
+ [-0.00123333 -0.00913492 -0.0058538  -0.00474809  0.02477398]]
+> RSS\_5: 17.305583185460527
+
+			RESULTS
+
+PARAMETERS
+True values:	θ: [ 3 -2  1  0  0]
+Estimates:	θ*: [ 2.95898496 -1.9600944   0.96301441  0.04528211  0.09973274]
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_34_15.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+     s         RSS          Cp         FPE
+0  1.0  149.335233  151.335233  152.352106
+1  2.0   58.920591   62.920591   61.325513
+2  3.0   17.860374   23.860374   18.965139
+3  4.0   17.707078   25.707078   19.182668
+4  5.0   17.305583   27.305583   19.127224
+s* by Cp:  3
+s* by FPE: 3
+
+--------------------------------------------------------------
+			SAMPLE \#9
+--------------------------------------------------------------
+		CONFUGURATIONS \& DATA
+Sample length: n = 100
+Noise generation: σ = 1
+X[:10]:
+[[0.16317167 1.04009727 0.61903509 1.41726038 0.1041959 ]
+ [0.03426191 1.54064845 1.38433454 1.95238531 1.57416181]
+ [0.05619171 0.67891817 0.82471112 1.37210371 0.05593376]
+ [1.4317724  0.92900862 0.03548929 1.2426427  0.01113482]
+ [0.93923039 0.6533068  0.70056497 0.607301   0.71847807]
+ [0.97213425 0.14949815 1.82198766 1.43888765 1.94579019]
+ [0.64720489 0.85166612 1.14092488 0.22591394 1.77904608]
+ [1.55753117 1.50877538 1.94006306 1.67828737 1.39720275]
+ [0.81905904 0.07663614 1.13281294 0.28873397 0.3659255 ]
+ [0.18543698 1.66253315 0.45416154 0.10617749 0.08200263]]
+y[:10]:
+[-1.38886961 -1.10470176  0.02462339  1.37963429  0.8109831   5.42763679
+  1.96177076  2.97733318  5.03682273 -2.54133726]
+
+		RLSM ITERATIONS
+===============================================
+	Step 1
+===============================================
+> θ\_1: [2.29777755]
+> H\_1\_inv:
+[[0.00924745]]
+> RSS\_1: 321.732971393194
+===============================================
+	Step 2
+===============================================
+> θ\_2: [ 3.62354553 -1.61403333]
+> H\_2\_inv:
+[[ 0.02015025 -0.01327342]
+ [-0.01327342  0.0161595 ]]
+> RSS\_2: 160.5210677852021
+===============================================
+	Step 3
+===============================================
+> θ\_3: [ 3.20833974 -2.08013516  1.01265985]
+> H\_3\_inv:
+[[ 0.02407731 -0.00886498 -0.00957786]
+ [-0.00886498  0.02110833 -0.01075191]
+ [-0.00957786 -0.01075191  0.02335977]]
+> RSS\_3: 116.62165726531734
+===============================================
+	Step 4
+===============================================
+> θ\_4: [ 3.14722556 -2.12966522  0.9258072   0.20096952]
+> H\_4\_inv:
+[[ 0.02596771 -0.0073329  -0.00689131 -0.00621643]
+ [-0.0073329   0.02235001 -0.0085746  -0.00503812]
+ [-0.00689131 -0.0085746   0.02717776 -0.00883451]
+ [-0.00621643 -0.00503812 -0.00883451  0.02044229]]
+> RSS\_4: 114.64591220959169
+===============================================
+	Step 5
+===============================================
+> θ\_5: [ 3.14978672 -2.12652568  0.929833    0.20372165 -0.01407788]
+> H\_5\_inv:
+[[ 0.02684447 -0.00625814 -0.00551315 -0.00527429 -0.00481931]
+ [-0.00625814  0.02366748 -0.00688521 -0.00388321 -0.00590764]
+ [-0.00551315 -0.00688521  0.02934404 -0.00735358 -0.00757532]
+ [-0.00527429 -0.00388321 -0.00735358  0.02145468 -0.00517866]
+ [-0.00481931 -0.00590764 -0.00757532 -0.00517866  0.02649024]]
+> RSS\_5: 114.63843070995833
+
+			RESULTS
+
+PARAMETERS
+True values:	θ: [ 3 -2  1  0  0]
+Estimates:	θ*: [ 3.14978672 -2.12652568  0.929833    0.20372165 -0.01407788]
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_34_17.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+     s         RSS          Cp         FPE
+0  1.0  321.732971  323.732971  328.232627
+1  2.0  160.521068  164.521068  167.072948
+2  3.0  116.621657  122.621657  123.835368
+3  4.0  114.645912  122.645912  124.199738
+4  5.0  114.638431  124.638431  126.705634
+s* by Cp:  3
+s* by FPE: 3
+
+
+    \end{Verbatim}
+
+\vfill
+\subsection{Результати роботи МНКО для кожної складності моделі з перестановками}
+
+Оскільки алгоритм МНКО діє послідовно в порядку розташування регресорів, має сенс будувати моделі для перестановок (найвпливовіший регресор, наприклад, може бути розташований в кінці, а найменш впливовий - на початку; це потрібно відслідковувати).
+
+Тож виконаємо МНКО для однієї вибірки довжини n = 100, з дисперсією шуму $\sigma$ = 1 з перестановкою регресорів.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}48}]:} \PY{n}{config}\PY{o}{.}\PY{n}{run\PYZus{}single\PYZus{}full\PYZus{}RMNK\PYZus{}model\PYZus{}selection}\PY{p}{(}\PY{n}{sort\PYZus{}values\PYZus{}by}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{FPE}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+         \PY{c+c1}{\PYZsh{} [\PYZsq{}s\PYZsq{}, \PYZsq{}Cp\PYZsq{}, \PYZsq{}FPE\PYZsq{}]}
+\end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}48}]:}       s       regressors         RSS          Cp         FPE
+         0   3.0        [1, 2, 3]  116.621657  122.621657  123.835368
+         1   4.0     [1, 2, 3, 4]  114.645912  122.645912  124.199738
+         2   4.0     [1, 2, 3, 5]  116.572858  124.572858  126.287262
+         3   5.0  [1, 2, 3, 4, 5]  114.638431  124.638431  126.705634
+         4   4.0     [1, 2, 4, 5]  144.102310  152.102310  156.110836
+         5   3.0        [1, 2, 4]  146.183425  152.183425  155.225699
+         6   3.0        [1, 2, 5]  153.827996  159.827996  163.343130
+         7   2.0           [1, 2]  160.521068  164.521068  167.072948
+         8   3.0        [1, 3, 5]  306.719568  312.719568  325.691912
+         9   2.0           [1, 5]  309.379084  313.379084  322.006802
+         10  4.0     [1, 3, 4, 5]  305.707017  313.707017  331.182602
+         11  3.0        [1, 4, 5]  309.249047  315.249047  328.377854
+         12  2.0           [1, 4]  318.070515  322.070515  331.052985
+         13  3.0        [1, 3, 4]  317.575349  323.575349  337.219185
+         14  1.0              [1]  321.732971  323.732971  328.232627
+         15  2.0           [1, 3]  321.610000  325.610000  334.736939
+         16  4.0     [2, 3, 4, 5]  484.217522  492.217522  524.568983
+         17  3.0        [2, 3, 4]  496.082280  502.082280  526.767782
+         18  3.0        [2, 3, 5]  517.356037  523.356037  549.357442
+         19  2.0           [2, 3]  544.137976  548.137976  566.347689
+         20  2.0           [3, 4]  572.017780  576.017780  595.365444
+         21  3.0        [3, 4, 5]  571.494826  577.494826  606.845021
+         22  3.0        [2, 4, 5]  572.337972  578.337972  607.740321
+         23  2.0           [3, 5]  584.595152  588.595152  608.456178
+         24  1.0              [3]  589.415868  591.415868  601.323260
+         25  2.0           [4, 5]  616.452583  620.452583  641.613913
+         26  2.0           [2, 4]  618.422055  622.422055  643.663771
+         27  1.0              [4]  634.770928  636.770928  647.594583
+         28  2.0           [2, 5]  665.920341  669.920341  693.100763
+         29  1.0              [5]  675.015687  677.015687  688.652368
+         30  1.0              [2]  812.130057  814.130057  828.536725
+\end{Verbatim}
+    
+    В даному випадку за другим критерієм оптимальною є модель складності 3 з регресорами 1, 2, 3. 
+
+    \newpage
+    \section{Висновки}\label{ux432ux438ux441ux43dux43eux432ux43aux438}
+    
+При побудові регресійних моделей для різницевого рівняння моделі Фергюльста та різницевого рівнянна згасаючих коливань ми показали, що алгоритм МНКО є ефективним при оцінюванні параметрів моделі. У порівнянні з МНК він є набагато менш затратним через те, що не виконує пряме обертання матриці, а рекурентно виконує апроксимацію оберненої матриці, і при цьому дає досить точні оцінки, залежність точності яких від шуму була показана в роботі. При відносно невеликих шумах алгоритм показує дуже хороші результати.
+
+В ході проведення статистичних експериментів ми з'ясували, що критерії Маллоуза і критерій фінальної помилки передбачення Акаіке є досить стійкими до зростаючого рівня шуму, і при додаванні нерелевантних регресорів моделі, вони не обирають переускладнені моделі, оскільки в них наявний штраф за складність. За теоретичними оцінками відомо, що за умови наявності точної оцінки дисперсії (рівня) шуму критерій Маллоуза є оптимальним з точки зору теорії завадостійкого моделювання. Ми підтвердили це експериментально.
+
+    \newpage   
+    \section{Код
+програми}\label{ux43aux43eux434-ux43fux440ux43eux433ux440ux430ux43cux438}
+
+    \subsection{Імпорт необхідних бібліотек;
+налаштування}\label{ux456ux43cux43fux43eux440ux442-ux43dux435ux43eux431ux445ux456ux434ux43dux438ux445-ux431ux456ux431ux43bux456ux43eux442ux435ux43a-ux43dux430ux43bux430ux448ux442ux443ux432ux430ux43dux43dux44f}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}20}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+         \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k}{as} \PY{n+nn}{pd}
+         \PY{k+kn}{from} \PY{n+nn}{scipy}\PY{n+nn}{.}\PY{n+nn}{integrate} \PY{k}{import} \PY{n}{odeint}
+         \PY{k+kn}{from} \PY{n+nn}{itertools} \PY{k}{import} \PY{n}{permutations}
+         \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+         \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
+         
+         \PY{k+kn}{from} \PY{n+nn}{pylab} \PY{k}{import} \PY{n}{rcParams}
+         \PY{n}{rcParams}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{figure.figsize}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{l+m+mi}{14}\PY{p}{,} \PY{l+m+mi}{8}
+         
+         \PY{k+kn}{import} \PY{n+nn}{plotly}\PY{n+nn}{.}\PY{n+nn}{offline} \PY{k}{as} \PY{n+nn}{py}
+         \PY{k+kn}{import} \PY{n+nn}{plotly}\PY{n+nn}{.}\PY{n+nn}{graph\PYZus{}objs} \PY{k}{as} \PY{n+nn}{go}
+         
+         \PY{n}{py}\PY{o}{.}\PY{n}{offline}\PY{o}{.}\PY{n}{init\PYZus{}notebook\PYZus{}mode}\PY{p}{(}\PY{n}{connected}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+\end{Verbatim}
+
+
+    
+    
+    \subsection{Реалізація
+МНКО}\label{ux440ux435ux430ux43bux456ux437ux430ux446ux456ux44f-ux43cux43dux43aux43e}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}21}]:} \PY{k}{def} \PY{n+nf}{RMNK}\PY{p}{(}\PY{n}{X}\PY{p}{,} \PY{n}{y}\PY{p}{,} \PY{n}{s}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,} \PY{n}{sigma\PYZus{}estimation}\PY{o}{=}\PY{l+m+mi}{1}
+                  \PY{n}{verbose}\PY{o}{=}\PY{k+kc}{False}\PY{p}{,} \PY{n}{deep\PYZus{}verbose}\PY{o}{=}\PY{k+kc}{False}\PY{p}{,} \PY{n}{create\PYZus{}dataframe}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}\PY{p}{:}
+             \PY{k}{assert} \PY{n}{X}\PY{o}{.}\PY{n}{ndim} \PY{o}{==} \PY{l+m+mi}{2} \PY{o+ow}{and} \PY{n}{X}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{\PYZgt{}} \PY{l+m+mi}{0}
+             \PY{n}{m} \PY{o}{=} \PY{n}{X}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}
+             \PY{k}{if} \PY{n}{m} \PY{o}{\PYZgt{}} \PY{l+m+mi}{1}\PY{p}{:}
+                 \PY{k}{if} \PY{n}{create\PYZus{}dataframe}\PY{p}{:}
+                     \PY{n}{w}\PY{p}{,} \PY{n}{H\PYZus{}inv}\PY{p}{,} \PY{n}{RSS}\PY{p}{,} \PY{n}{df} \PY{o}{=} \PY{n}{RMNK}\PY{p}{(}\PY{n}{X}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{y}\PY{p}{,} \PY{n}{s}\PY{p}{,} \PY{n}{sigma\PYZus{}estimation}
+                                              \PY{n}{verbose}\PY{p}{,} \PY{n}{deep\PYZus{}verbose}\PY{p}{,} \PY{n}{create\PYZus{}dataframe}\PY{p}{)}
+                     \PY{k}{if} \PY{n}{s} \PY{o+ow}{is} \PY{o+ow}{not} \PY{k+kc}{None} \PY{o+ow}{and} \PY{n}{m} \PY{o}{\PYZgt{}} \PY{n}{s}\PY{p}{:}
+                         \PY{k}{return} \PY{n}{w}\PY{p}{,} \PY{n}{H\PYZus{}inv}\PY{p}{,} \PY{n}{RSS}\PY{p}{,} \PY{n}{df}
+                 \PY{k}{else}\PY{p}{:}
+                     \PY{n}{w}\PY{p}{,} \PY{n}{H\PYZus{}inv}\PY{p}{,} \PY{n}{RSS} \PY{o}{=} \PY{n}{RMNK}\PY{p}{(}\PY{n}{X}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{y}\PY{p}{,} \PY{n}{s}\PY{p}{,} \PY{n}{sigma\PYZus{}estimation}\PY{p}{,}
+                                          \PY{n}{verbose}\PY{p}{,} \PY{n}{deep\PYZus{}verbose}\PY{p}{,} \PY{n}{create\PYZus{}dataframe}\PY{p}{)}
+                     \PY{k}{if} \PY{n}{s} \PY{o+ow}{is} \PY{o+ow}{not} \PY{k+kc}{None} \PY{o+ow}{and} \PY{n}{m} \PY{o}{\PYZgt{}} \PY{n}{s}\PY{p}{:}
+                         \PY{k}{return} \PY{n}{w}\PY{p}{,} \PY{n}{H\PYZus{}inv}\PY{p}{,} \PY{n}{RSS}
+                 \PY{c+c1}{\PYZsh{} w is of shape = [m\PYZhy{}1, 1]; H\PYZus{}inv is of shape = [m\PYZhy{}1, m\PYZhy{}1]    }
+                 \PY{n}{h} \PY{o}{=} \PY{p}{(}\PY{n}{X}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{T} \PY{o}{@} \PY{n}{X}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{reshape}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)} \PY{c+c1}{\PYZsh{} shape = [m\PYZhy{}1, 1]}
+                 \PY{n}{eta} \PY{o}{=} \PY{n}{X}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{T} \PY{o}{@} \PY{n}{X}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]} \PY{c+c1}{\PYZsh{} shape = [1, 1]}
+                 \PY{n}{alpha} \PY{o}{=} \PY{n}{H\PYZus{}inv} \PY{o}{@} \PY{n}{h} \PY{c+c1}{\PYZsh{} shape = [m\PYZhy{}1, 1]}
+                 \PY{n}{beta} \PY{o}{=} \PY{n}{eta} \PY{o}{\PYZhy{}} \PY{n}{h}\PY{o}{.}\PY{n}{T} \PY{o}{@} \PY{n}{alpha} \PY{c+c1}{\PYZsh{} shape = [1, 1]}
+                 \PY{n}{beta\PYZus{}inv} \PY{o}{=} \PY{l+m+mi}{1} \PY{o}{/} \PY{n}{beta} \PY{c+c1}{\PYZsh{} shape = [1, 1]}
+                 \PY{n}{gamma} \PY{o}{=} \PY{n}{X}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{T} \PY{o}{@} \PY{n}{y} \PY{c+c1}{\PYZsh{} shape = [1, 1]}
+                 \PY{n}{nu} \PY{o}{=} \PY{n}{beta\PYZus{}inv} \PY{o}{*} \PY{p}{(}\PY{n}{gamma} \PY{o}{\PYZhy{}} \PY{n}{h}\PY{o}{.}\PY{n}{T} \PY{o}{@} \PY{n}{w}\PY{p}{)} \PY{c+c1}{\PYZsh{} shape = [1, 1]}
+                 \PY{n}{w} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{vstack}\PY{p}{(}\PY{p}{(}\PY{n}{w} \PY{o}{\PYZhy{}} \PY{n}{nu} \PY{o}{*} \PY{n}{alpha}\PY{p}{,} \PY{n}{nu}\PY{p}{)}\PY{p}{)}  \PY{c+c1}{\PYZsh{} shape = [m, 1]}
+                 \PY{n}{H\PYZus{}next\PYZus{}inv} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{vstack}\PY{p}{(}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{hstack}\PY{p}{(}\PY{p}{(}\PY{n}{H\PYZus{}inv} \PY{o}{+} \PY{n}{beta\PYZus{}inv} \PY{o}{*} \PY{n}{alpha} \PY{o}{@} \PY{n}{alpha}\PY{o}{.}\PY{n}{T}\PY{p}{,}           
+                                         \PY{p}{(}\PY{o}{\PYZhy{}} \PY{n}{beta\PYZus{}inv} \PY{o}{*} \PY{n}{alpha}\PY{p}{)}\PY{o}{.}\PY{n}{reshape}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{,}
+                                        \PY{n}{np}\PY{o}{.}\PY{n}{hstack}\PY{p}{(}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{beta\PYZus{}inv} \PY{o}{*} \PY{n}{alpha}\PY{o}{.}\PY{n}{T}\PY{p}{,} \PY{n}{beta\PYZus{}inv}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+                 \PY{n}{RSS\PYZus{}next} \PY{o}{=} \PY{p}{(}\PY{n}{RSS} \PY{o}{\PYZhy{}} \PY{n}{nu}\PY{o}{.}\PY{n}{flatten}\PY{p}{(}\PY{p}{)} \PY{o}{*}\PY{o}{*} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{beta}\PY{o}{.}\PY{n}{flatten}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+         
+             \PY{k}{else}\PY{p}{:} \PY{c+c1}{\PYZsh{} 1}
+                 \PY{n}{H\PYZus{}inv} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{]}\PY{p}{)}
+                 \PY{n}{eta} \PY{o}{=} \PY{n}{beta} \PY{o}{=} \PY{n}{X}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{T} \PY{o}{@} \PY{n}{X}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}
+                 \PY{n}{beta\PYZus{}inv} \PY{o}{=} \PY{l+m+mi}{1} \PY{o}{/} \PY{n}{beta}
+                 \PY{n}{alpha} \PY{o}{=} \PY{n}{h} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+                 \PY{n}{gamma} \PY{o}{=} \PY{n}{X}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{T} \PY{o}{@} \PY{n}{y}
+                 \PY{n}{nu} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{beta\PYZus{}inv} \PY{o}{*} \PY{n}{gamma}\PY{p}{]}\PY{p}{)}
+                 \PY{n}{w} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{nu}\PY{p}{]}\PY{p}{)}
+                 \PY{n}{H\PYZus{}next\PYZus{}inv} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{beta\PYZus{}inv}\PY{p}{)}\PY{o}{.}\PY{n}{reshape}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}
+                 \PY{n}{RSS\PYZus{}next} \PY{o}{=} \PY{p}{(}\PY{n}{y}\PY{o}{.}\PY{n}{T} \PY{o}{@} \PY{n}{y} \PY{o}{\PYZhy{}} \PY{n}{y}\PY{o}{.}\PY{n}{T} \PY{o}{@} \PY{n}{X}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{reshape}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)} \PY{o}{@} \PY{n}{w}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+                 \PY{k}{if} \PY{n}{create\PYZus{}dataframe}\PY{p}{:}
+                     \PY{n}{df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{columns}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{RSS}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{FPE}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                 
+             \PY{k}{if} \PY{n}{verbose}\PY{p}{:}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{===============================================}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{Step }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{m}\PY{p}{)}\PY{p}{)}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{===============================================}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                 \PY{k}{if} \PY{n}{deep\PYZus{}verbose}\PY{p}{:}
+                     \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{h\PYZus{}}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{m}\PY{p}{,} \PY{n}{h}\PY{o}{.}\PY{n}{reshape}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+                     \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{eta\PYZus{}}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{m}\PY{p}{,} \PY{n}{eta}\PY{p}{)}\PY{p}{)}
+                     \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{alpha\PYZus{}}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{m}\PY{p}{,} \PY{n}{alpha}\PY{o}{.}\PY{n}{reshape}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+                     \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{beta\PYZus{}}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{m}\PY{p}{,} \PY{n}{beta}\PY{p}{)}\PY{p}{)}
+                     \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{gamma\PYZus{}}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{m}\PY{p}{,} \PY{n}{gamma}\PY{p}{)}\PY{p}{)}
+                     \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{nu\PYZus{}}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{m}\PY{p}{,} \PY{n}{nu}\PY{p}{)}\PY{p}{)}
+                     \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{===============================================}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZgt{} θ\PYZus{}}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{: }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{m}\PY{p}{,} \PY{n}{w}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZgt{} H\PYZus{}}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZus{}inv:}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{m}\PY{p}{,} \PY{n}{H\PYZus{}next\PYZus{}inv}\PY{p}{)}\PY{p}{)}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZgt{} RSS\PYZus{}}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{: }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{m}\PY{p}{,} \PY{n}{RSS\PYZus{}next}\PY{p}{)}\PY{p}{)}
+             \PY{k}{if} \PY{n}{create\PYZus{}dataframe}\PY{p}{:}
+                 \PY{n}{Cp} \PY{o}{=} \PY{n}{RSS\PYZus{}next} \PY{o}{+} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{sigma\PYZus{}estimation} \PY{o}{*} \PY{n}{m}
+                 \PY{n}{n} \PY{o}{=} \PY{n}{y}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+                 \PY{n}{FPE} \PY{o}{=} \PY{p}{(}\PY{n}{n} \PY{o}{+} \PY{n}{m}\PY{p}{)} \PY{o}{/} \PY{p}{(}\PY{n}{n} \PY{o}{\PYZhy{}} \PY{n}{m}\PY{p}{)} \PY{o}{*} \PY{n}{RSS\PYZus{}next}
+                 \PY{n}{df} \PY{o}{=} \PY{n}{df}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n}{m}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{RSS}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n}{RSS\PYZus{}next}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n}{Cp}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{FPE}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n}{FPE}\PY{p}{\PYZcb{}}\PY{p}{,}
+                                \PY{n}{ignore\PYZus{}index}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+                 \PY{k}{return} \PY{n}{w}\PY{p}{,} \PY{n}{H\PYZus{}next\PYZus{}inv}\PY{p}{,} \PY{n}{RSS\PYZus{}next}\PY{p}{,} \PY{n}{df}
+             \PY{k}{return} \PY{n}{w}\PY{p}{,} \PY{n}{H\PYZus{}next\PYZus{}inv}\PY{p}{,} \PY{n}{RSS\PYZus{}next}
+\end{Verbatim}
+
+
+    \subsection{Модель Фергюльста: реалізація класу, методів,
+функцій}\label{ux43cux43eux434ux435ux43bux44c-ux444ux435ux440ux433ux44eux43bux44cux441ux442ux430-ux440ux435ux430ux43bux456ux437ux430ux446ux456ux44f-ux43aux43bux430ux441ux443-ux43cux435ux442ux43eux434ux456ux432-ux444ux443ux43dux43aux446ux456ux439}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}22}]:} \PY{k}{def} \PY{n+nf}{Verhulst\PYZus{}model\PYZus{}equation}\PY{p}{(}\PY{n}{N}\PY{p}{,} \PY{n}{t}\PY{p}{,} \PY{n}{μ}\PY{p}{,} \PY{n}{k}\PY{p}{)}\PY{p}{:}
+             \PY{k}{return} \PY{n}{μ} \PY{o}{*} \PY{n}{N} \PY{o}{*} \PY{p}{(}\PY{n}{k} \PY{o}{\PYZhy{}} \PY{n}{N}\PY{p}{)}
+         
+         \PY{k}{class} \PY{n+nc}{VerhulstModelConfig}\PY{p}{(}\PY{p}{)}\PY{p}{:} 
+             \PY{n}{k} \PY{o}{=} \PY{l+m+mi}{100}
+             \PY{n}{μ} \PY{o}{=} \PY{l+m+mf}{0.0001}
+             \PY{n}{N0} \PY{o}{=} \PY{l+m+mi}{10}
+             \PY{n}{t\PYZus{}start} \PY{o}{=} \PY{l+m+mi}{0}
+             \PY{n}{t\PYZus{}end} \PY{o}{=} \PY{l+m+mi}{500}
+             \PY{n}{num\PYZus{}samples} \PY{o}{=} \PY{l+m+mi}{50}
+             \PY{n}{num\PYZus{}samples\PYZus{}grid} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{50}\PY{p}{,} \PY{l+m+mi}{100}\PY{p}{]}
+             \PY{n}{C} \PY{o}{=} \PY{l+m+mi}{3}
+             \PY{n}{C\PYZus{}grid} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{]}
+         
+             \PY{k}{def} \PY{n+nf}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{theta} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{init\PYZus{}to\PYZus{}inter\PYZus{}params}\PY{p}{(}\PY{p}{)}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{p}{)}
+                 
+             \PY{k}{def} \PY{n+nf}{compile}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{h} \PY{o}{=} \PY{n+nb}{int}\PY{p}{(}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{t\PYZus{}end} \PY{o}{\PYZhy{}} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{t\PYZus{}start}\PY{p}{)} \PY{o}{/} \PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{num\PYZus{}samples} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{t} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{t\PYZus{}start}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{t\PYZus{}end}\PY{p}{,} \PY{n}{num}\PY{o}{=}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{num\PYZus{}samples}\PY{p}{)}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{N} \PY{o}{=} \PY{n}{odeint}\PY{p}{(}\PY{n}{Verhulst\PYZus{}model\PYZus{}equation}\PY{p}{,}
+                                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{N0}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{t}\PY{p}{,} \PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{μ}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{k}\PY{p}{)}\PY{p}{)}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{create\PYZus{}data\PYZus{}sample}\PY{p}{(}\PY{p}{)}
+                 
+             \PY{k}{def} \PY{n+nf}{recompile}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{C}\PY{p}{,} \PY{n}{num\PYZus{}samples}\PY{p}{)}\PY{p}{:}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{C} \PY{o}{=} \PY{n}{C}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{num\PYZus{}samples} \PY{o}{=} \PY{n}{num\PYZus{}samples}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{p}{)}
+                 
+             \PY{k}{def} \PY{n+nf}{show}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Initial parameters:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{μ = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+se}{\PYZbs{}}
+         \PY{l+s+s1}{               k = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{N0 = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{μ}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{k}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{N0}\PY{p}{)}\PY{p}{)}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Noise generation: C = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{C}\PY{p}{)}\PY{p}{)}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Sample length: n = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{num\PYZus{}samples}\PY{p}{)}\PY{p}{)}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Time starting from }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{ to }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{ }\PY{l+s+se}{\PYZbs{}}
+         \PY{l+s+s1}{               with discretization frequency }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{t\PYZus{}start}\PY{p}{,}
+                                                                   \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{t\PYZus{}end}\PY{p}{,}
+                                                                   \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{h}\PY{p}{)}\PY{p}{)}
+                 
+             \PY{k}{def} \PY{n+nf}{init\PYZus{}to\PYZus{}inter\PYZus{}params}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+                 \PY{n}{w1} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{μ} \PY{o}{*} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{k} \PY{o}{+} \PY{l+m+mi}{1}
+                 \PY{n}{w2} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{μ}
+                 \PY{k}{return} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{w1}\PY{p}{,} \PY{n}{w2}\PY{p}{]}\PY{p}{)}
+         
+             \PY{k}{def} \PY{n+nf}{inter\PYZus{}to\PYZus{}init\PYZus{}params}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{w1}\PY{p}{,} \PY{n}{w2}\PY{p}{)}\PY{p}{:}
+                 \PY{n}{μ} \PY{o}{=} \PY{o}{\PYZhy{}} \PY{n}{w2}
+                 \PY{n}{k} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{1} \PY{o}{\PYZhy{}} \PY{n}{w1}\PY{p}{)} \PY{o}{/} \PY{n}{w2}
+                 \PY{k}{return} \PY{n}{μ}\PY{p}{,} \PY{n}{k}
+             
+             \PY{k}{def} \PY{n+nf}{create\PYZus{}data\PYZus{}sample}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{p}{)}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{i}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{num\PYZus{}samples}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{t}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{n+nb}{map}\PY{p}{(}\PY{n+nb}{int}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{t}\PY{p}{)}\PY{p}{)}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{N(t)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{N}\PY{o}{.}\PY{n}{flatten}\PY{p}{(}\PY{p}{)}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{N\PYZca{}2(t)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{square}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{N}\PY{o}{.}\PY{n}{flatten}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{N(t+1)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{df}\PY{p}{[}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{N(t)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{N\PYZca{}2(t)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{]}\PY{p}{)} \PY{o}{@} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{theta}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{N(t+1)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{round}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{N(t+1)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{C}\PY{p}{)}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{X} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{df}\PY{p}{[}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{N(t)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{N\PYZca{}2(t)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{]}\PY{p}{)}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{y} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{N(t+1)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                 
+             \PY{k}{def} \PY{n+nf}{plot\PYZus{}3D}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+                 \PY{n}{trace1} \PY{o}{=} \PY{n}{go}\PY{o}{.}\PY{n}{Scatter3d}\PY{p}{(}
+                     \PY{n}{x}\PY{o}{=}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{N(t)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+                     \PY{n}{y}\PY{o}{=}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{N\PYZca{}2(t)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+                     \PY{n}{z}\PY{o}{=}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{N(t+1)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+                     \PY{n}{mode}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{markers}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                     \PY{n}{marker}\PY{o}{=}\PY{n+nb}{dict}\PY{p}{(}
+                         \PY{n}{size}\PY{o}{=}\PY{l+m+mi}{12}\PY{p}{,}
+                         \PY{n}{line}\PY{o}{=}\PY{n+nb}{dict}\PY{p}{(}
+                             \PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{rgba(217, 217, 217, 0.14)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                             \PY{n}{width}\PY{o}{=}\PY{l+m+mf}{0.5}
+                         \PY{p}{)}\PY{p}{,}
+                         \PY{n}{opacity}\PY{o}{=}\PY{l+m+mf}{0.8}
+                     \PY{p}{)}
+                 \PY{p}{)}
+         
+                 \PY{n}{data} \PY{o}{=} \PY{p}{[}\PY{n}{trace1}\PY{p}{]}
+                 \PY{n}{layout} \PY{o}{=} \PY{n}{go}\PY{o}{.}\PY{n}{Layout}\PY{p}{(}
+                     \PY{n}{margin}\PY{o}{=}\PY{n+nb}{dict}\PY{p}{(}
+                         \PY{n}{l}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,}
+                         \PY{n}{r}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,}
+                         \PY{n}{b}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,}
+                         \PY{n}{t}\PY{o}{=}\PY{l+m+mi}{0}
+                     \PY{p}{)}
+                 \PY{p}{)}
+                 \PY{n}{fig} \PY{o}{=} \PY{n}{go}\PY{o}{.}\PY{n}{Figure}\PY{p}{(}\PY{n}{data}\PY{o}{=}\PY{n}{data}\PY{p}{,} \PY{n}{layout}\PY{o}{=}\PY{n}{layout}\PY{p}{)}
+                 \PY{n}{py}\PY{o}{.}\PY{n}{iplot}\PY{p}{(}\PY{n}{fig}\PY{p}{,} \PY{n}{filename}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{simple\PYZhy{}3d\PYZhy{}scatter}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                 
+             \PY{k}{def} \PY{n+nf}{run\PYZus{}single\PYZus{}RMNK}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{verbose}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{deep\PYZus{}verbose}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}\PY{p}{:}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Recurrent Least Squares Method}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{theta\PYZus{}pred} \PY{o}{=} \PY{n}{RMNK}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{X}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{y}\PY{p}{,} \PY{n}{verbose}\PY{o}{=}\PY{n}{verbose}\PY{p}{,}
+                                        \PY{n}{deep\PYZus{}verbose}\PY{o}{=}\PY{n}{deep\PYZus{}verbose}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{μ\PYZus{}pred}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{k\PYZus{}pred} \PY{o}{=} \PYZbs{}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{inter\PYZus{}to\PYZus{}init\PYZus{}params}\PY{p}{(}\PY{o}{*}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{theta\PYZus{}pred}\PY{p}{)}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{=============================================}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{INTERMEDIATE PARAMETERS}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{True values:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{θ\PYZus{}1 = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{θ\PYZus{}2 = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{o}{*}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{theta}\PY{p}{)}\PY{p}{)}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Estimates:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{θ\PYZus{}1* = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{θ\PYZus{}2* = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{o}{*}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{theta\PYZus{}pred}\PY{p}{)}\PY{p}{)}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{INITIAL PARAMETERS}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{True values:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{μ = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{k = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{μ}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{k}\PY{p}{)}\PY{p}{)}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Estimates:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{μ* = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{k* = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{μ\PYZus{}pred}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{k\PYZus{}pred}\PY{p}{)}\PY{p}{)}
+                 \PY{n}{plt}\PY{o}{.}\PY{n}{scatter}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{t}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{y}\PY{p}{)}
+                 \PY{n}{t\PYZus{}for\PYZus{}plot} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{t\PYZus{}start}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{t\PYZus{}end}\PY{p}{,}
+                                          \PY{n}{num}\PY{o}{=}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{num\PYZus{}samples} \PY{o}{*} \PY{l+m+mi}{10}\PY{p}{)}
+                 \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{t\PYZus{}for\PYZus{}plot}\PY{p}{,} \PY{n}{odeint}\PY{p}{(}\PY{n}{Verhulst\PYZus{}model\PYZus{}equation}\PY{p}{,}
+                                             \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{N0}\PY{p}{,} \PY{n}{t\PYZus{}for\PYZus{}plot}\PY{p}{,}
+                                             \PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{μ\PYZus{}pred}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{k\PYZus{}pred}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                 \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+                 
+             \PY{k}{def} \PY{n+nf}{run\PYZus{}grid\PYZus{}RMNK}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{verbose}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}\PY{p}{:}
+                 \PY{n}{intermediate\PYZus{}estimates\PYZus{}df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{columns}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{C}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{num\PYZus{}samples}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                                                                   \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{θ\PYZus{}1}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{θ\PYZus{}1*}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                                                                   \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{θ\PYZus{}2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{θ\PYZus{}2*}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                 \PY{n}{initial\PYZus{}estimates\PYZus{}df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{columns}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{C}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{num\PYZus{}samples}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                                                              \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{μ}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{μ*}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{k}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{k*}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                 \PY{k}{for} \PY{n}{C} \PY{o+ow}{in} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{C\PYZus{}grid}\PY{p}{:}
+                     \PY{k}{for} \PY{n}{num\PYZus{}samples} \PY{o+ow}{in} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{num\PYZus{}samples\PYZus{}grid}\PY{p}{:} 
+                         \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{recompile}\PY{p}{(}\PY{n}{C}\PY{p}{,} \PY{n}{num\PYZus{}samples}\PY{p}{)}
+                         \PY{n}{theta\PYZus{}pred} \PY{o}{=} \PY{n}{RMNK}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{X}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{y}\PY{p}{,} \PY{n}{verbose}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}
+                         \PY{n}{μ\PYZus{}pred}\PY{p}{,} \PY{n}{k\PYZus{}pred} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{inter\PYZus{}to\PYZus{}init\PYZus{}params}\PY{p}{(}\PY{o}{*}\PY{n}{theta\PYZus{}pred}\PY{p}{)}
+                         \PY{n}{intermediate\PYZus{}estimates\PYZus{}df} \PY{o}{=} \PYZbs{}
+                         \PY{n}{intermediate\PYZus{}estimates\PYZus{}df}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{C}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{C}\PY{p}{,}
+                                                           \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{num\PYZus{}samples}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{num\PYZus{}samples}\PY{p}{,}
+                                                           \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{θ\PYZus{}1}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{theta}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}
+                                                           \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{θ\PYZus{}1*}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n}{theta\PYZus{}pred}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}
+                                                           \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{θ\PYZus{}2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{theta}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}
+                                                           \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{θ\PYZus{}2*}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n}{theta\PYZus{}pred}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{\PYZcb{}}\PY{p}{,}
+                                                          \PY{n}{ignore\PYZus{}index}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+                         \PY{n}{initial\PYZus{}estimates\PYZus{}df} \PY{o}{=} \PYZbs{}
+                         \PY{n}{initial\PYZus{}estimates\PYZus{}df}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{C}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{C}\PY{p}{,}
+                                                      \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{num\PYZus{}samples}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{num\PYZus{}samples}\PY{p}{,}
+                                                      \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{μ}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{μ}\PY{p}{,}
+                                                      \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{μ*}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n}{μ\PYZus{}pred}\PY{p}{,}
+                                                      \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{k}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{k}\PY{p}{,}
+                                                      \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{k*}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n}{k\PYZus{}pred}\PY{p}{\PYZcb{}}\PY{p}{,}
+                                                      \PY{n}{ignore\PYZus{}index}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+                         \PY{k}{if} \PY{n}{verbose}\PY{p}{:}
+                             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{=============================================================}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{C: }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{ num\PYZus{}samples: }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{C}\PY{p}{,}
+                                                                    \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{num\PYZus{}samples}\PY{p}{)}\PY{p}{)}
+                             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{INTERMEDIATE PARAMETERS}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Estimates:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{θ\PYZus{}1* = }\PY{l+s+si}{\PYZob{}: 12.8\PYZcb{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{θ\PYZus{}2* = }\PY{l+s+se}{\PYZbs{}}
+         \PY{l+s+s1}{                    }\PY{l+s+si}{\PYZob{}:12.8\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{o}{*}\PY{n}{theta\PYZus{}pred}\PY{p}{)}\PY{p}{)}
+                             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{INITIAL PARAMETERS}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Estimates:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{μ* = }\PY{l+s+si}{\PYZob{}: 12.8\PYZcb{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{k* = }\PY{l+s+se}{\PYZbs{}}
+         \PY{l+s+s1}{                    }\PY{l+s+si}{\PYZob{}: 12.8\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{μ\PYZus{}pred}\PY{p}{,} \PY{n}{k\PYZus{}pred}\PY{p}{)}\PY{p}{)}
+         
+                 \PY{k}{return} \PY{n}{pd}\PY{o}{.}\PY{n}{concat}\PY{p}{(}\PY{p}{[}\PY{n}{intermediate\PYZus{}estimates\PYZus{}df}\PY{p}{,}
+                                   \PY{n}{initial\PYZus{}estimates\PYZus{}df}\PY{p}{[}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{μ}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{μ*}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{k}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{k*}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{]}\PY{p}{]}\PY{p}{,}
+                                  \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+\end{Verbatim}
+
+
+    \subsection{Модель згасаючих коливань: реалізація класу, методів,
+функцій}\label{ux43cux43eux434ux435ux43bux44c-ux437ux433ux430ux441ux430ux44eux447ux438ux445-ux43aux43eux43bux438ux432ux430ux43dux44c-ux440ux435ux430ux43bux456ux437ux430ux446ux456ux44f-ux43aux43bux430ux441ux443-ux43cux435ux442ux43eux434ux456ux432-ux444ux443ux43dux43aux446ux456ux439}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}27}]:} \PY{k}{def} \PY{n+nf}{Oscillation\PYZus{}model\PYZus{}equation}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{t}\PY{p}{,} \PY{n}{δ}\PY{p}{,} \PY{n}{ω0\PYZus{}sqr}\PY{p}{)}\PY{p}{:}
+             \PY{c+c1}{\PYZsh{}x\PYZus{}0\PYZsq{} = x\PYZus{}1 = x\PYZsq{}}
+             \PY{c+c1}{\PYZsh{}x\PYZus{}1\PYZsq{} = x\PYZsq{}\PYZsq{} = \PYZhy{} 2 * δ * x[1] \PYZhy{} (ω0 ** 2) * x[0]}
+             \PY{k}{return} \PY{p}{[}\PY{n}{x}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}  \PY{o}{\PYZhy{}} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{δ} \PY{o}{*} \PY{n}{x}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{ω0\PYZus{}sqr} \PY{o}{*} \PY{n}{x}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{]}        
+         
+         \PY{k}{class} \PY{n+nc}{OscillationModelConfig}\PY{p}{(}\PY{p}{)}\PY{p}{:} 
+             \PY{n}{δ} \PY{o}{=} \PY{l+m+mf}{0.005}
+             \PY{n}{ω0\PYZus{}sqr} \PY{o}{=} \PY{l+m+mf}{0.01}
+             \PY{n}{x0} \PY{o}{=} \PY{l+m+mi}{5}
+             \PY{n}{x00} \PY{o}{=} \PY{l+m+mi}{2}
+             \PY{n}{t\PYZus{}start} \PY{o}{=} \PY{l+m+mi}{0}
+             \PY{n}{t\PYZus{}end} \PY{o}{=} \PY{l+m+mi}{500}
+             \PY{n}{num\PYZus{}samples} \PY{o}{=} \PY{l+m+mi}{80}
+             \PY{n}{num\PYZus{}samples\PYZus{}grid} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{30}\PY{p}{,} \PY{l+m+mi}{80}\PY{p}{,} \PY{l+m+mi}{150}\PY{p}{]}
+             \PY{n}{C} \PY{o}{=} \PY{l+m+mi}{2}
+             \PY{n}{C\PYZus{}grid} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{]}
+         
+             \PY{k}{def} \PY{n+nf}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{difference}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{forward}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{:}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{difference} \PY{o}{=} \PY{n}{difference}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{theta} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{init\PYZus{}to\PYZus{}inter\PYZus{}params}\PY{p}{(}\PY{p}{)}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{p}{)}
+                 
+             \PY{k}{def} \PY{n+nf}{compile}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{h} \PY{o}{=} \PY{n+nb}{int}\PY{p}{(}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{t\PYZus{}end} \PY{o}{\PYZhy{}} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{t\PYZus{}start}\PY{p}{)} \PY{o}{/} \PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{num\PYZus{}samples} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{t} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{t\PYZus{}start}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{t\PYZus{}end}\PY{p}{,} \PY{n}{num}\PY{o}{=}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{num\PYZus{}samples}\PY{p}{)}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{x} \PY{o}{=} \PY{n}{odeint}\PY{p}{(}\PY{n}{Oscillation\PYZus{}model\PYZus{}equation}\PY{p}{,}
+                                 \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{x0}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{x00}\PY{p}{]}\PY{p}{)}\PY{p}{,}
+                                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{t}\PY{p}{,} \PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{δ}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ω0\PYZus{}sqr}\PY{p}{)}\PY{p}{)}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{x1} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{x0} \PY{o}{+} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{x00}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{x11} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{x00}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{x\PYZus{}1} \PY{o}{=} \PY{n}{odeint}\PY{p}{(}\PY{n}{Oscillation\PYZus{}model\PYZus{}equation}\PY{p}{,}
+                                   \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{x1}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{x11}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{t}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{,}
+                                   \PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{δ}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ω0\PYZus{}sqr}\PY{p}{)}\PY{p}{)}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{create\PYZus{}data\PYZus{}sample}\PY{p}{(}\PY{p}{)}
+                 
+             \PY{k}{def} \PY{n+nf}{recompile}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{C}\PY{p}{,} \PY{n}{num\PYZus{}samples}\PY{p}{)}\PY{p}{:}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{C} \PY{o}{=} \PY{n}{C}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{num\PYZus{}samples} \PY{o}{=} \PY{n}{num\PYZus{}samples}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{p}{)}
+                 
+             \PY{k}{def} \PY{n+nf}{show}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Initial parameters:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{δ = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{ω0\PYZca{}2 = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+se}{\PYZbs{}}
+         \PY{l+s+s1}{              }\PY{l+s+se}{\PYZbs{}n}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{x0 = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{x00 = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{δ}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ω0\PYZus{}sqr}\PY{p}{,}
+                                                                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{x0}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{x00}\PY{p}{)}\PY{p}{)}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Noise generation: C = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{C}\PY{p}{)}\PY{p}{)}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Sample length: n = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{num\PYZus{}samples}\PY{p}{)}\PY{p}{)}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Time starting from }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{ to }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{ }\PY{l+s+se}{\PYZbs{}}
+         \PY{l+s+s1}{               with discretization frequency }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{t\PYZus{}start}\PY{p}{,}
+                                                                   \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{t\PYZus{}end}\PY{p}{,}
+                                                                   \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{h}\PY{p}{)}\PY{p}{)}
+                 
+             \PY{k}{def} \PY{n+nf}{init\PYZus{}to\PYZus{}inter\PYZus{}params}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+                 \PY{k}{if} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{difference} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
+                     \PY{n}{divider} \PY{o}{=} \PY{l+m+mi}{1} \PY{o}{+} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{δ}
+                     \PY{n}{w1} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{2} \PY{o}{\PYZhy{}} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ω0\PYZus{}sqr}\PY{p}{)} \PY{o}{/} \PY{n}{divider}
+                     \PY{n}{w2} \PY{o}{=} \PY{o}{\PYZhy{}} \PY{p}{(}\PY{l+m+mi}{1} \PY{o}{\PYZhy{}} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{δ}\PY{p}{)} \PY{o}{/} \PY{n}{divider}
+                 \PY{k}{elif} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{difference} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{forward}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
+                     \PY{n}{divider} \PY{o}{=} \PY{l+m+mi}{1} \PY{o}{+} \PY{l+m+mi}{2} \PY{o}{*} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{δ}
+                     \PY{n}{w1} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{2} \PY{o}{+} \PY{l+m+mi}{2} \PY{o}{*} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{δ} \PY{o}{\PYZhy{}} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ω0\PYZus{}sqr}\PY{p}{)} \PY{o}{/} \PY{n}{divider}
+                     \PY{n}{w2} \PY{o}{=} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1} \PY{o}{/} \PY{n}{divider}
+                 \PY{k}{return} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{w1}\PY{p}{,} \PY{n}{w2}\PY{p}{]}\PY{p}{)}
+         
+             \PY{k}{def} \PY{n+nf}{inter\PYZus{}to\PYZus{}init\PYZus{}params}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{w1}\PY{p}{,} \PY{n}{w2}\PY{p}{)}\PY{p}{:}
+                 \PY{k}{if} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{difference} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
+                     \PY{n}{δ} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{1} \PY{o}{+} \PY{n}{w2}\PY{p}{)} \PY{o}{/} \PY{p}{(}\PY{l+m+mi}{1} \PY{o}{\PYZhy{}} \PY{n}{w2}\PY{p}{)}
+                     \PY{n}{ω0\PYZus{}sqr} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{2} \PY{o}{\PYZhy{}} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{w1} \PY{o}{\PYZhy{}} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{w2}\PY{p}{)} \PY{o}{/} \PY{p}{(}\PY{l+m+mi}{1} \PY{o}{\PYZhy{}} \PY{n}{w2}\PY{p}{)}
+                 \PY{k}{elif} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{difference} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{forward}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
+                     \PY{n}{δ} \PY{o}{=} \PY{o}{\PYZhy{}} \PY{p}{(}\PY{l+m+mi}{1} \PY{o}{/} \PY{n}{w2} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{)} \PY{o}{/} \PY{l+m+mi}{2}
+                     \PY{n}{ω0\PYZus{}sqr} \PY{o}{=} \PY{l+m+mi}{1} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1} \PY{o}{/} \PY{n}{w2} \PY{o}{+} \PY{n}{w1} \PY{o}{/} \PY{n}{w2}
+                 \PY{k}{return} \PY{n}{δ}\PY{p}{,} \PY{n}{ω0\PYZus{}sqr}
+             
+             \PY{k}{def} \PY{n+nf}{create\PYZus{}data\PYZus{}sample}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{p}{)}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{i}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{num\PYZus{}samples}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{t}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{n+nb}{map}\PY{p}{(}\PY{n+nb}{int}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{t}\PY{p}{)}\PY{p}{)}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x(t)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{x}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{flatten}\PY{p}{(}\PY{p}{)}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x(t+1)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{x\PYZus{}1}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{flatten}\PY{p}{(}\PY{p}{)}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x(t+2)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{df}\PY{p}{[}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x(t)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x(t+1)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{]}\PY{p}{)} \PY{o}{@} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{theta}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x(t+2)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{round}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x(t+2)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{C}\PY{p}{)}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{X} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{df}\PY{p}{[}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x(t)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x(t+1)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{]}\PY{p}{)}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{y} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x(t+2)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+             
+             \PY{k}{def} \PY{n+nf}{plot\PYZus{}3D}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+                 \PY{n}{trace1} \PY{o}{=} \PY{n}{go}\PY{o}{.}\PY{n}{Scatter3d}\PY{p}{(}
+                     \PY{n}{x}\PY{o}{=}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x(t)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+                     \PY{n}{y}\PY{o}{=}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x(t+1)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+                     \PY{n}{z}\PY{o}{=}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x(t+2)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+                     \PY{n}{mode}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{markers}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                     \PY{n}{marker}\PY{o}{=}\PY{n+nb}{dict}\PY{p}{(}
+                         \PY{n}{size}\PY{o}{=}\PY{l+m+mi}{12}\PY{p}{,}
+                         \PY{n}{line}\PY{o}{=}\PY{n+nb}{dict}\PY{p}{(}
+                             \PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{rgba(217, 217, 217, 0.14)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                             \PY{n}{width}\PY{o}{=}\PY{l+m+mf}{0.5}
+                         \PY{p}{)}\PY{p}{,}
+                         \PY{n}{opacity}\PY{o}{=}\PY{l+m+mf}{0.8}
+                     \PY{p}{)}
+                 \PY{p}{)}
+         
+                 \PY{n}{data} \PY{o}{=} \PY{p}{[}\PY{n}{trace1}\PY{p}{]}
+                 \PY{n}{layout} \PY{o}{=} \PY{n}{go}\PY{o}{.}\PY{n}{Layout}\PY{p}{(}
+                     \PY{n}{margin}\PY{o}{=}\PY{n+nb}{dict}\PY{p}{(}
+                         \PY{n}{l}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,}
+                         \PY{n}{r}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,}
+                         \PY{n}{b}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,}
+                         \PY{n}{t}\PY{o}{=}\PY{l+m+mi}{0}
+                     \PY{p}{)}
+                 \PY{p}{)}
+                 \PY{n}{fig} \PY{o}{=} \PY{n}{go}\PY{o}{.}\PY{n}{Figure}\PY{p}{(}\PY{n}{data}\PY{o}{=}\PY{n}{data}\PY{p}{,} \PY{n}{layout}\PY{o}{=}\PY{n}{layout}\PY{p}{)}
+                 \PY{n}{py}\PY{o}{.}\PY{n}{iplot}\PY{p}{(}\PY{n}{fig}\PY{p}{,} \PY{n}{filename}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{simple\PYZhy{}3d\PYZhy{}scatter}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         
+             \PY{k}{def} \PY{n+nf}{run\PYZus{}single\PYZus{}RMNK}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{verbose}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{deep\PYZus{}verbose}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}\PY{p}{:}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Recurrent Least Squares Method}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{theta\PYZus{}pred} \PY{o}{=} \PY{n}{RMNK}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{X}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{y}\PY{p}{,} \PY{n}{verbose}\PY{o}{=}\PY{n}{verbose}\PY{p}{,}
+                                        \PY{n}{deep\PYZus{}verbose}\PY{o}{=}\PY{n}{deep\PYZus{}verbose}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{δ\PYZus{}pred}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ω0\PYZus{}sqr\PYZus{}pred} \PY{o}{=} \PYZbs{}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{inter\PYZus{}to\PYZus{}init\PYZus{}params}\PY{p}{(}\PY{o}{*}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{theta\PYZus{}pred}\PY{p}{)}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{=============================================}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{INTERMEDIATE PARAMETERS}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{True values:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{θ\PYZus{}1 = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{θ\PYZus{}2 = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{o}{*}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{theta}\PY{p}{)}\PY{p}{)}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Estimates:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{θ\PYZus{}1* = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{θ\PYZus{}2* = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{o}{*}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{theta\PYZus{}pred}\PY{p}{)}\PY{p}{)}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{INITIAL PARAMETERS}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{True values:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{δ = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{ω0\PYZca{}2 = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{δ}\PY{p}{,}
+                                                                    \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ω0\PYZus{}sqr}\PY{p}{)}\PY{p}{)}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Estimates:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{δ* = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{ω0\PYZca{}2* = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{δ\PYZus{}pred}\PY{p}{,}
+                                                                \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ω0\PYZus{}sqr\PYZus{}pred}\PY{p}{)}\PY{p}{)}
+                 \PY{n}{plt}\PY{o}{.}\PY{n}{scatter}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{t}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{y}\PY{p}{)}
+                 \PY{n}{t\PYZus{}for\PYZus{}plot} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{t\PYZus{}start}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{t\PYZus{}end}\PY{p}{,}
+                                          \PY{n}{num}\PY{o}{=}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{num\PYZus{}samples} \PY{o}{*} \PY{l+m+mi}{10}\PY{p}{)}
+                 \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{t\PYZus{}for\PYZus{}plot}\PY{p}{,} \PY{n}{odeint}\PY{p}{(}\PY{n}{Oscillation\PYZus{}model\PYZus{}equation}\PY{p}{,} 
+                                             \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{x0}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{x00}\PY{p}{]}\PY{p}{)}\PY{p}{,}
+                                             \PY{n}{t\PYZus{}for\PYZus{}plot}\PY{p}{,}
+                                             \PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{δ\PYZus{}pred}\PY{p}{,}
+                                              \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ω0\PYZus{}sqr\PYZus{}pred}\PY{p}{)}\PY{p}{)}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                 \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+                 
+             \PY{k}{def} \PY{n+nf}{run\PYZus{}grid\PYZus{}RMNK}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{verbose}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}\PY{p}{:}
+                 \PY{n}{intermediate\PYZus{}estimates\PYZus{}df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{columns}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{C}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{num\PYZus{}samples}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                                                                   \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{θ\PYZus{}1}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{θ\PYZus{}1*}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                                                                   \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{θ\PYZus{}2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{θ\PYZus{}2*}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                 \PY{n}{initial\PYZus{}estimates\PYZus{}df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{columns}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{C}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{num\PYZus{}samples}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                                                              \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{δ}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{δ*}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                                                              \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ω0\PYZus{}sqr}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ω0\PYZus{}sqr*}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                 \PY{k}{for} \PY{n}{C} \PY{o+ow}{in} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{C\PYZus{}grid}\PY{p}{:}
+                     \PY{k}{for} \PY{n}{num\PYZus{}samples} \PY{o+ow}{in} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{num\PYZus{}samples\PYZus{}grid}\PY{p}{:} 
+                         \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{recompile}\PY{p}{(}\PY{n}{C}\PY{p}{,} \PY{n}{num\PYZus{}samples}\PY{p}{)}
+                         \PY{n}{intermediate\PYZus{}estimates\PYZus{}df}
+                         \PY{n}{theta\PYZus{}pred} \PY{o}{=} \PY{n}{RMNK}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{X}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{y}\PY{p}{,} \PY{n}{verbose}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}
+                         \PY{n}{δ\PYZus{}pred}\PY{p}{,} \PY{n}{ω0\PYZus{}sqr\PYZus{}pred} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{inter\PYZus{}to\PYZus{}init\PYZus{}params}\PY{p}{(}\PY{o}{*}\PY{n}{theta\PYZus{}pred}\PY{p}{)}
+                         \PY{n}{intermediate\PYZus{}estimates\PYZus{}df} \PY{o}{=} \PYZbs{}
+                         \PY{n}{intermediate\PYZus{}estimates\PYZus{}df}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{C}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{C}\PY{p}{,}
+                                                           \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{num\PYZus{}samples}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{num\PYZus{}samples}\PY{p}{,}
+                                                           \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{θ\PYZus{}1}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{theta}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}
+                                                           \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{θ\PYZus{}1*}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n}{theta\PYZus{}pred}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}
+                                                           \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{θ\PYZus{}2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{theta}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}
+                                                           \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{θ\PYZus{}2*}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n}{theta\PYZus{}pred}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{\PYZcb{}}\PY{p}{,}
+                                                          \PY{n}{ignore\PYZus{}index}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+                         \PY{n}{initial\PYZus{}estimates\PYZus{}df} \PY{o}{=} \PYZbs{}
+                         \PY{n}{initial\PYZus{}estimates\PYZus{}df}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{C}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{C}\PY{p}{,}
+                                                      \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{num\PYZus{}samples}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{num\PYZus{}samples}\PY{p}{,}
+                                                      \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{δ}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{δ}\PY{p}{,}
+                                                      \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{δ*}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n}{δ\PYZus{}pred}\PY{p}{,}
+                                                      \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ω0\PYZus{}sqr}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ω0\PYZus{}sqr}\PY{p}{,}
+                                                      \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ω0\PYZus{}sqr*}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n}{ω0\PYZus{}sqr\PYZus{}pred}\PY{p}{\PYZcb{}}\PY{p}{,}
+                                                      \PY{n}{ignore\PYZus{}index}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+                         \PY{k}{if} \PY{n}{verbose}\PY{p}{:}
+                             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{=============================================================}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{C: }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{ num\PYZus{}samples: }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{C}\PY{p}{,}
+                                                                    \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{num\PYZus{}samples}\PY{p}{)}\PY{p}{)}
+                             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{INTERMEDIATE PARAMETERS}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Estimates:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{θ\PYZus{}1* = }\PY{l+s+si}{\PYZob{}: 12.8\PYZcb{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{θ\PYZus{}2* = }\PY{l+s+se}{\PYZbs{}}
+         \PY{l+s+s1}{                    }\PY{l+s+si}{\PYZob{}:12.8\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{o}{*}\PY{n}{theta\PYZus{}pred}\PY{p}{)}\PY{p}{)}
+                             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{INITIAL PARAMETERS}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Estimates:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{δ* = }\PY{l+s+si}{\PYZob{}: 12.8\PYZcb{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{k* = }\PY{l+s+se}{\PYZbs{}}
+         \PY{l+s+s1}{                    }\PY{l+s+si}{\PYZob{}: 12.8\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{δ\PYZus{}pred}\PY{p}{,} \PY{n}{ω0\PYZus{}sqr\PYZus{}pred}\PY{p}{)}\PY{p}{)}
+         
+                 \PY{k}{return} \PY{n}{pd}\PY{o}{.}\PY{n}{concat}\PY{p}{(}\PY{p}{[}\PY{n}{intermediate\PYZus{}estimates\PYZus{}df}\PY{p}{,}
+                                   \PY{n}{initial\PYZus{}estimates\PYZus{}df}\PY{p}{[}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{δ}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{δ*}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PYZbs{}
+                                                         \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ω0\PYZus{}sqr}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ω0\PYZus{}sqr*}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{]}\PY{p}{]}\PY{p}{,}
+                                  \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+\end{Verbatim}
+
+
+    \subsection{Селекція оптимальних моделей: реалізація класу, методів,
+функцій}\label{ux441ux435ux43bux435ux43aux446ux456ux44f-ux43eux43fux442ux438ux43cux430ux43bux44cux43dux438ux445-ux43cux43eux434ux435ux43bux435ux439-ux440ux435ux430ux43bux456ux437ux430ux446ux456ux44f-ux43aux43bux430ux441ux443-ux43cux435ux442ux43eux434ux456ux432-ux444ux443ux43dux43aux446ux456ux439}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{k}{class} \PY{n+nc}{ModelConfig}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+            \PY{n}{m} \PY{o}{=} \PY{l+m+mi}{5}
+            \PY{n}{n} \PY{o}{=} \PY{l+m+mi}{10}
+            \PY{n}{n\PYZus{}grid} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{30}\PY{p}{,} \PY{l+m+mi}{100}\PY{p}{]}
+            \PY{n}{theta} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+            \PY{n}{a} \PY{o}{=} \PY{l+m+mi}{0}
+            \PY{n}{b} \PY{o}{=} \PY{l+m+mi}{2}
+            \PY{n}{sigma} \PY{o}{=} \PY{l+m+mf}{0.01}
+            \PY{n}{sigma\PYZus{}grid} \PY{o}{=} \PY{p}{[}\PY{l+m+mf}{0.1}\PY{p}{,} \PY{l+m+mf}{0.5}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{]}
+            \PY{n}{s} \PY{o}{=} \PY{l+m+mi}{5}
+            \PY{n}{s\PYZus{}grid} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{]}
+            
+            \PY{k}{def} \PY{n+nf}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+                \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{p}{)}
+                
+            \PY{k}{def} \PY{n+nf}{generate\PYZus{}noise\PYZus{}and\PYZus{}output}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+                \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ksi} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{normal}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{sigma}\PY{p}{,} \PY{n}{size}\PY{o}{=}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{n}\PY{p}{)}
+                \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{y} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{X} \PY{o}{@} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{theta} \PY{o}{+} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ksi}
+                
+            \PY{k}{def} \PY{n+nf}{compile}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+                \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{X} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{uniform}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{a}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{b}\PY{p}{,} \PY{n}{size}\PY{o}{=}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{n}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{m}\PY{p}{)}\PY{p}{)}
+                \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{generate\PYZus{}noise\PYZus{}and\PYZus{}output}\PY{p}{(}\PY{p}{)}
+                
+            \PY{k}{def} \PY{n+nf}{recompile}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{n}\PY{p}{,} \PY{n}{sigma}\PY{p}{)}\PY{p}{:}
+                \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{n} \PY{o}{=} \PY{n}{n}
+                \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{sigma} \PY{o}{=} \PY{n}{sigma}
+                \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{p}{)}
+                
+            \PY{k}{def} \PY{n+nf}{show}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+        \PY{c+c1}{\PYZsh{}         print(\PYZsq{}Regressors: m = \PYZob{}\PYZcb{}\PYZsq{}.format(self.m))}
+        \PY{c+c1}{\PYZsh{}         print(\PYZsq{}True parameters: θ = \PYZob{}\PYZcb{}\PYZsq{}.format(self.theta))}
+                \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Sample length: n = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{n}\PY{p}{)}\PY{p}{)}
+                \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Noise generation: σ = }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{sigma}\PY{p}{)}\PY{p}{)}
+                \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{X[:10]:}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{X}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{10}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+                \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{y[:10]:}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{y}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{10}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+        
+            \PY{k}{def} \PY{n+nf}{run\PYZus{}grid\PYZus{}RMNK\PYZus{}model\PYZus{}selection}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+                \PY{k}{for} \PY{n}{i}\PY{p}{,} \PY{n}{n} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{n\PYZus{}grid}\PY{p}{)}\PY{p}{:} 
+                    \PY{k}{for} \PY{n}{j}\PY{p}{,} \PY{n}{sigma} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{sigma\PYZus{}grid}\PY{p}{)}\PY{p}{:}
+                        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{recompile}\PY{p}{(}\PY{n}{n}\PY{p}{,} \PY{n}{sigma}\PY{p}{)}
+                        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{SAMPLE \PYZsh{}}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{i} \PY{o}{*} \PY{n+nb}{len}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{n\PYZus{}grid}\PY{p}{)} \PY{o}{+} \PY{n}{j} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
+                        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{CONFUGURATIONS \PYZam{} DATA}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+                        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{RLSM ITERATIONS}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                        \PY{n}{theta\PYZus{}pred}\PY{p}{,} \PY{n}{\PYZus{}}\PY{p}{,} \PY{n}{\PYZus{}}\PY{p}{,} \PY{n}{df} \PY{o}{=} \PY{n}{RMNK}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{X}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{y}\PY{p}{,} \PY{n}{s}\PY{o}{=}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{s}\PY{p}{,}
+                                                    \PY{n}{verbose}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,}
+                                                    \PY{n}{create\PYZus{}dataframe}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+                        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{RESULTS}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{PARAMETERS}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{True values:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{θ: }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{theta}\PY{p}{)}\PY{p}{)}
+                        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Estimates:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{θ*: }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{theta\PYZus{}pred}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+                        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{RSS}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{RSS}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{FPE}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{FPE}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                        \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}
+                        \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+                        \PY{n+nb}{print}\PY{p}{(}\PY{n}{df}\PY{p}{)}
+                        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s* by Cp:  }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{argmin}\PY{p}{(}\PY{p}{)}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
+                        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s* by FPE: }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{FPE}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{argmin}\PY{p}{(}\PY{p}{)}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
+                        \PY{n+nb}{print}\PY{p}{(}\PY{p}{)}
+            
+            \PY{k}{def} \PY{n+nf}{run\PYZus{}single\PYZus{}full\PYZus{}RMNK\PYZus{}model\PYZus{}selection}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,}
+                                                     \PY{n}{sort\PYZus{}values\PYZus{}by}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{FPE}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{p}{:}
+                \PY{n}{total\PYZus{}df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{p}{)}
+                \PY{k}{for} \PY{n}{p} \PY{o+ow}{in} \PY{n}{permutations}\PY{p}{(}\PY{n+nb}{range}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{X}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+                    \PY{n}{p} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{p}\PY{p}{)}
+                    \PY{n}{theta\PYZus{}pred}\PY{p}{,} \PY{n}{\PYZus{}}\PY{p}{,} \PY{n}{\PYZus{}}\PY{p}{,} \PY{n}{df} \PY{o}{=} \PY{n}{RMNK}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{X}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{p}\PY{p}{]}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{y}\PY{p}{,} \PY{n}{s}\PY{o}{=}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{s}\PY{p}{,}
+                                                \PY{n}{verbose}\PY{o}{=}\PY{k+kc}{False}\PY{p}{,} \PY{n}{create\PYZus{}dataframe}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+                    \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{regressors}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{p}{[}\PY{n+nb}{str}\PY{p}{(}\PY{n+nb}{sorted}\PY{p}{(}\PY{n}{p}\PY{p}{[}\PY{p}{:}\PY{n+nb}{int}\PY{p}{(}\PY{n}{s}\PY{p}{)}\PY{p}{]}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)} \PY{k}{for} \PY{n}{s} \PY{o+ow}{in} \PY{n}{df}\PY{o}{.}\PY{n}{s}\PY{p}{]}
+                    \PY{n}{total\PYZus{}df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{concat}\PY{p}{(}\PY{p}{[}\PY{n}{total\PYZus{}df}\PY{p}{,} \PY{n}{df}\PY{p}{]}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}
+        
+                \PY{n}{total\PYZus{}df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{RSS}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{round}\PY{p}{(}\PY{n}{total\PYZus{}df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{RSS}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{)}
+                \PY{n}{total\PYZus{}df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{round}\PY{p}{(}\PY{n}{total\PYZus{}df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{)}
+                \PY{n}{total\PYZus{}df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{FPE}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{round}\PY{p}{(}\PY{n}{total\PYZus{}df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{FPE}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{)}
+                \PY{n}{total\PYZus{}df} \PY{o}{=} \PY{n}{total\PYZus{}df}\PY{o}{.}\PY{n}{drop\PYZus{}duplicates}\PY{p}{(}\PY{p}{)}
+                \PY{n}{total\PYZus{}df} \PY{o}{=} \PY{n}{total\PYZus{}df}\PY{o}{.}\PY{n}{sort\PYZus{}values}\PY{p}{(}\PY{n}{by}\PY{o}{=}\PY{n}{sort\PYZus{}values\PYZus{}by}\PY{p}{)}\PY{o}{.}\PY{n}{reset\PYZus{}index}\PY{p}{(}\PY{p}{)}\PYZbs{}
+                           \PY{p}{[}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{regressors}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{RSS}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{FPE}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{]}
+                \PY{k}{return} \PY{n}{total\PYZus{}df}
+\end{Verbatim}
+
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}
