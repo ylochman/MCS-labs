@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.11)  29 APR 2018 01:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.11)  4 MAY 2018 11:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -586,8 +586,8 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 Package: ulem 2012/05/18
 \ULdepth=\dimen161
 )
-Package hyperref Info: Option `breaklinks' set `true' on input line 270.
-Package hyperref Info: Option `colorlinks' set `true' on input line 270.
+Package hyperref Info: Option `breaklinks' set `true' on input line 269.
+Package hyperref Info: Option `colorlinks' set `true' on input line 269.
  (./Protocol.aux
 LaTeX Font Info:    Try loading font information for T2A+cmr on input line 21.
 
@@ -624,41 +624,41 @@ LaTeX Warning: Label `ux442ux435ux441ux442-3' multiply defined.
 )
 \openout1 = `Protocol.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 277.
-LaTeX Font Info:    ... okay on input line 277.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 277.
-LaTeX Font Info:    ... okay on input line 277.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 277.
-LaTeX Font Info:    ... okay on input line 277.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 277.
-LaTeX Font Info:    ... okay on input line 277.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 277.
-LaTeX Font Info:    ... okay on input line 277.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 277.
-LaTeX Font Info:    ... okay on input line 277.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 277.
-LaTeX Font Info:    ... okay on input line 277.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 277.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 277.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 276.
+LaTeX Font Info:    ... okay on input line 276.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 276.
+LaTeX Font Info:    ... okay on input line 276.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 276.
+LaTeX Font Info:    ... okay on input line 276.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 276.
+LaTeX Font Info:    ... okay on input line 276.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 276.
+LaTeX Font Info:    ... okay on input line 276.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 276.
+LaTeX Font Info:    ... okay on input line 276.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 276.
+LaTeX Font Info:    ... okay on input line 276.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 276.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 276.
 
  (/usr/local/texlive/2017/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 277.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 277.
-LaTeX Font Info:    ... okay on input line 277.
-LaTeX Font Info:    Try loading font information for T1+ppl on input line 277.
+LaTeX Font Info:    ... okay on input line 276.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 276.
+LaTeX Font Info:    ... okay on input line 276.
+LaTeX Font Info:    Try loading font information for T1+ppl on input line 276.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 )
-LaTeX Font Info:    Try loading font information for T2A+ppl on input line 277.
+LaTeX Font Info:    Try loading font information for T2A+ppl on input line 276.
 
-LaTeX Font Info:    No file T2Appl.fd. on input line 277.
+LaTeX Font Info:    No file T2Appl.fd. on input line 276.
 
 
 LaTeX Font Warning: Font shape `T2A/ppl/m/n' undefined
-(Font)              using `T2A/cmr/m/n' instead on input line 277.
+(Font)              using `T2A/cmr/m/n' instead on input line 276.
 
 (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -737,7 +737,7 @@ Package caption Info: End \AtBeginDocument code.
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
 \AtBeginShipoutBox=\box41
-Package hyperref Info: Link coloring ON on input line 277.
+Package hyperref Info: Link coloring ON on input line 276.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -747,9 +747,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count139
 )
-LaTeX Info: Redefining \ref on input line 277.
-LaTeX Info: Redefining \pageref on input line 277.
-LaTeX Info: Redefining \nameref on input line 277.
+LaTeX Info: Redefining \ref on input line 276.
+LaTeX Info: Redefining \pageref on input line 276.
+LaTeX Info: Redefining \nameref on input line 276.
 
 (./Protocol.out) (./Protocol.out)
 \@outlinefile=\write4
@@ -764,541 +764,541 @@ File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 )
 
 LaTeX Font Warning: Font shape `T2A/ppl/bx/n' undefined
-(Font)              using `T2A/ppl/m/n' instead on input line 292.
+(Font)              using `T2A/ppl/m/n' instead on input line 290.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/ucs/data/uni-33.def
 File: uni-33.def 2013/05/13 UCS: Unicode data U+2100..U+21FF
 )
 
 LaTeX Font Warning: Font shape `T2A/ppl/m/it' undefined
-(Font)              using `T2A/ppl/m/n' instead on input line 299.
+(Font)              using `T2A/ppl/m/n' instead on input line 297.
 
-LaTeX Font Info:    Try loading font information for OT1+ppl on input line 305.
+LaTeX Font Info:    Try loading font information for OT1+ppl on input line 303.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
-LaTeX Font Info:    Try loading font information for OML+zplm on input line 305
+LaTeX Font Info:    Try loading font information for OML+zplm on input line 303
 .
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMS+zplm on input line 305
+LaTeX Font Info:    Try loading font information for OMS+zplm on input line 303
 .
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMX+zplm on input line 305
+LaTeX Font Info:    Try loading font information for OMX+zplm on input line 303
 .
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 305
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 303
 .
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 305.
+(Font)              scaled to size 11.40997pt on input line 303.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 305.
+(Font)              scaled to size 8.33606pt on input line 303.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 305.
+(Font)              scaled to size 6.25204pt on input line 303.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 305.
+(Font)              scaled to size 11.40997pt on input line 303.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 305.
+(Font)              scaled to size 8.33606pt on input line 303.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 305.
+(Font)              scaled to size 6.25204pt on input line 303.
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 319.
+(babel)             in language  on input line 317.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 319.
+(babel)             in language  on input line 317.
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 319.
+(babel)             in language  on input line 317.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 319.
+(babel)             in language  on input line 317.
  [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 324.
+(babel)             in language  on input line 320.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 324.
+(babel)             in language  on input line 320.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\CYRP' on input line 324.
+(hyperref)                removing `\CYRP' on input line 320.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 324.
+(hyperref)                removing `\cyro' on input line 320.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrsh' on input line 324.
+(hyperref)                removing `\cyrsh' on input line 320.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyru' on input line 324.
+(hyperref)                removing `\cyru' on input line 320.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrk' on input line 324.
+(hyperref)                removing `\cyrk' on input line 320.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrm' on input line 324.
+(hyperref)                removing `\cyrm' on input line 320.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 324.
+(hyperref)                removing `\cyro' on input line 320.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrd' on input line 324.
+(hyperref)                removing `\cyrd' on input line 320.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 324.
+(hyperref)                removing `\cyre' on input line 320.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrl' on input line 324.
+(hyperref)                removing `\cyrl' on input line 320.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrii' on input line 324.
+(hyperref)                removing `\cyrii' on input line 320.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 324.
+(hyperref)                removing `\cyro' on input line 320.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrp' on input line 324.
+(hyperref)                removing `\cyrp' on input line 320.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrt' on input line 324.
+(hyperref)                removing `\cyrt' on input line 320.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyri' on input line 324.
+(hyperref)                removing `\cyri' on input line 320.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrm' on input line 324.
+(hyperref)                removing `\cyrm' on input line 320.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyra' on input line 324.
+(hyperref)                removing `\cyra' on input line 320.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrl' on input line 324.
+(hyperref)                removing `\cyrl' on input line 320.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrsftsn' on input line 324.
+(hyperref)                removing `\cyrsftsn' on input line 320.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrn' on input line 324.
+(hyperref)                removing `\cyrn' on input line 320.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 324.
+(hyperref)                removing `\cyro' on input line 320.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyryi' on input line 324.
+(hyperref)                removing `\cyryi' on input line 320.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrs' on input line 324.
+(hyperref)                removing `\cyrs' on input line 320.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrk' on input line 324.
+(hyperref)                removing `\cyrk' on input line 320.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrl' on input line 324.
+(hyperref)                removing `\cyrl' on input line 320.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyra' on input line 324.
+(hyperref)                removing `\cyra' on input line 320.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrd' on input line 324.
+(hyperref)                removing `\cyrd' on input line 320.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrn' on input line 324.
+(hyperref)                removing `\cyrn' on input line 320.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 324.
+(hyperref)                removing `\cyro' on input line 320.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrs' on input line 324.
+(hyperref)                removing `\cyrs' on input line 320.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrt' on input line 324.
+(hyperref)                removing `\cyrt' on input line 320.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrii' on input line 324.
+(hyperref)                removing `\cyrii' on input line 320.
 
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 327.
+(babel)             in language  on input line 328.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 327.
+(babel)             in language  on input line 328.
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\CYRZ' on input line 327.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyra' on input line 327.
+(hyperref)                removing `\CYRZ' on input line 328.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrd' on input line 327.
+(hyperref)                removing `\cyra' on input line 328.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyra' on input line 327.
+(hyperref)                removing `\cyrd' on input line 328.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrn' on input line 327.
+(hyperref)                removing `\cyra' on input line 328.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrn' on input line 327.
+(hyperref)                removing `\cyrn' on input line 328.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrya' on input line 327.
+(hyperref)                removing `\cyrn' on input line 328.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrk' on input line 327.
+(hyperref)                removing `\cyrya' on input line 328.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 327.
+(hyperref)                removing `\cyrk' on input line 328.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrn' on input line 327.
+(hyperref)                removing `\cyro' on input line 328.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrf' on input line 327.
+(hyperref)                removing `\cyrn' on input line 328.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrii' on input line 327.
+(hyperref)                removing `\cyrf' on input line 328.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrg' on input line 327.
+(hyperref)                removing `\cyrii' on input line 328.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyru' on input line 327.
+(hyperref)                removing `\cyrg' on input line 328.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrr' on input line 327.
+(hyperref)                removing `\cyru' on input line 328.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyra' on input line 327.
+(hyperref)                removing `\cyrr' on input line 328.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrc' on input line 327.
+(hyperref)                removing `\cyra' on input line 328.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrii' on input line 327.
+(hyperref)                removing `\cyrc' on input line 328.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrishrt' on input line 327.
+(hyperref)                removing `\cyrii' on input line 328.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\CYRS' on input line 327.
+(hyperref)                removing `\cyrishrt' on input line 328.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrt' on input line 327.
+(hyperref)                removing `\CYRS' on input line 328.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrv' on input line 327.
+(hyperref)                removing `\cyrt' on input line 328.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 327.
+(hyperref)                removing `\cyrv' on input line 328.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrr' on input line 327.
+(hyperref)                removing `\cyro' on input line 328.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 327.
+(hyperref)                removing `\cyrr' on input line 328.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrn' on input line 327.
+(hyperref)                removing `\cyre' on input line 328.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrn' on input line 327.
+(hyperref)                removing `\cyrn' on input line 328.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrya' on input line 327.
+(hyperref)                removing `\cyrn' on input line 328.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrv' on input line 327.
+(hyperref)                removing `\cyrya' on input line 328.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyri' on input line 327.
+(hyperref)                removing `\cyrv' on input line 328.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrb' on input line 327.
+(hyperref)                removing `\cyri' on input line 328.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrii' on input line 327.
+(hyperref)                removing `\cyrb' on input line 328.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrr' on input line 327.
+(hyperref)                removing `\cyrii' on input line 328.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 327.
+(hyperref)                removing `\cyrr' on input line 328.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrk' on input line 327.
+(hyperref)                removing `\cyro' on input line 328.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrk' on input line 328.
 
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 330.
+(babel)             in language  on input line 331.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 330.
+(babel)             in language  on input line 331.
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\CYRT' on input line 330.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 330.
+(hyperref)                removing `\CYRT' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrs' on input line 330.
+(hyperref)                removing `\cyre' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrt' on input line 330.
+(hyperref)                removing `\cyrs' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrv' on input line 330.
+(hyperref)                removing `\cyrt' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyri' on input line 330.
+(hyperref)                removing `\cyrv' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrb' on input line 330.
+(hyperref)                removing `\cyri' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrii' on input line 330.
+(hyperref)                removing `\cyrb' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrr' on input line 330.
+(hyperref)                removing `\cyrii' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrk' on input line 330.
+(hyperref)                removing `\cyrr' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyra' on input line 330.
+(hyperref)                removing `\cyrk' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyra' on input line 330.
+(hyperref)                removing `\cyra' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrn' on input line 330.
+(hyperref)                removing `\cyra' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyra' on input line 330.
+(hyperref)                removing `\cyrn' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrl' on input line 330.
+(hyperref)                removing `\cyra' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 330.
+(hyperref)                removing `\cyrl' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrg' on input line 330.
+(hyperref)                removing `\cyro' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrii' on input line 330.
+(hyperref)                removing `\cyrg' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrch' on input line 330.
+(hyperref)                removing `\cyrii' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrn' on input line 330.
+(hyperref)                removing `\cyrch' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyra' on input line 330.
+(hyperref)                removing `\cyrn' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrv' on input line 330.
+(hyperref)                removing `\cyra' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyri' on input line 330.
+(hyperref)                removing `\cyrv' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrb' on input line 330.
+(hyperref)                removing `\cyri' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrii' on input line 330.
+(hyperref)                removing `\cyrb' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrr' on input line 330.
+(hyperref)                removing `\cyrii' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrc' on input line 330.
+(hyperref)                removing `\cyrr' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrii' on input line 330.
+(hyperref)                removing `\cyrc' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrz' on input line 330.
+(hyperref)                removing `\cyrii' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrl' on input line 330.
+(hyperref)                removing `\cyrz' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyra' on input line 330.
+(hyperref)                removing `\cyrl' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrb' on input line 330.
+(hyperref)                removing `\cyra' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 330.
+(hyperref)                removing `\cyrb' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrr' on input line 330.
+(hyperref)                removing `\cyro' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyra' on input line 330.
+(hyperref)                removing `\cyrr' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrt' on input line 330.
+(hyperref)                removing `\cyra' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 330.
+(hyperref)                removing `\cyrt' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrr' on input line 330.
+(hyperref)                removing `\cyro' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrn' on input line 330.
+(hyperref)                removing `\cyrr' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 330.
+(hyperref)                removing `\cyrn' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyryi' on input line 330.
+(hyperref)                removing `\cyro' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrr' on input line 330.
+(hyperref)                removing `\cyryi' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 330.
+(hyperref)                removing `\cyrr' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrb' on input line 330.
+(hyperref)                removing `\cyro' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 330.
+(hyperref)                removing `\cyrb' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrt' on input line 330.
+(hyperref)                removing `\cyro' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyri' on input line 330.
+(hyperref)                removing `\cyrt' on input line 331.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\textnumero' on input line 330.
+(hyperref)                removing `\cyri' on input line 331.
 
-LaTeX Font Info:    Try loading font information for T2A+cmtt on input line 332
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\textnumero' on input line 331.
+
+LaTeX Font Info:    Try loading font information for T2A+cmtt on input line 333
 .
 (/usr/local/texlive/2017/texmf-dist/tex/latex/cyrillic/t2acmtt.fd
 File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
@@ -1307,1480 +1307,1422 @@ File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 File: uni-3.def 2013/05/13 UCS: Unicode data U+0300..U+03FF
 )
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 364.
+(babel)             in language  on input line 365.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 364.
+(babel)             in language  on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\CYRT' on input line 364.
+(hyperref)                removing `\CYRT' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 364.
+(hyperref)                removing `\cyre' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrs' on input line 364.
+(hyperref)                removing `\cyrs' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrt' on input line 364.
+(hyperref)                removing `\cyrt' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrv' on input line 364.
+(hyperref)                removing `\cyrv' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 364.
+(hyperref)                removing `\cyre' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrl' on input line 364.
+(hyperref)                removing `\cyrl' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyri' on input line 364.
+(hyperref)                removing `\cyri' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrk' on input line 364.
+(hyperref)                removing `\cyrk' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyra' on input line 364.
+(hyperref)                removing `\cyra' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrv' on input line 364.
+(hyperref)                removing `\cyrv' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyri' on input line 364.
+(hyperref)                removing `\cyri' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrb' on input line 364.
+(hyperref)                removing `\cyrb' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrii' on input line 364.
+(hyperref)                removing `\cyrii' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrr' on input line 364.
+(hyperref)                removing `\cyrr' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrk' on input line 364.
+(hyperref)                removing `\cyrk' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyra' on input line 364.
+(hyperref)                removing `\cyra' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrz' on input line 364.
+(hyperref)                removing `\cyrz' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrv' on input line 364.
+(hyperref)                removing `\cyrv' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 364.
+(hyperref)                removing `\cyre' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrl' on input line 364.
+(hyperref)                removing `\cyrl' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyri' on input line 364.
+(hyperref)                removing `\cyri' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrk' on input line 364.
+(hyperref)                removing `\cyrk' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 364.
+(hyperref)                removing `\cyro' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyryu' on input line 364.
+(hyperref)                removing `\cyryu' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrk' on input line 364.
+(hyperref)                removing `\cyrk' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrii' on input line 364.
+(hyperref)                removing `\cyrii' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrl' on input line 364.
+(hyperref)                removing `\cyrl' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrsftsn' on input line 364.
+(hyperref)                removing `\cyrsftsn' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrk' on input line 364.
+(hyperref)                removing `\cyrk' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrii' on input line 364.
+(hyperref)                removing `\cyrii' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrs' on input line 364.
+(hyperref)                removing `\cyrs' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrt' on input line 364.
+(hyperref)                removing `\cyrt' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyryu' on input line 364.
+(hyperref)                removing `\cyryu' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrr' on input line 364.
+(hyperref)                removing `\cyrr' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 364.
+(hyperref)                removing `\cyre' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrg' on input line 364.
+(hyperref)                removing `\cyrg' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrr' on input line 364.
+(hyperref)                removing `\cyrr' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 364.
+(hyperref)                removing `\cyre' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrs' on input line 364.
+(hyperref)                removing `\cyrs' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 364.
+(hyperref)                removing `\cyro' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrr' on input line 364.
+(hyperref)                removing `\cyrr' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrii' on input line 364.
+(hyperref)                removing `\cyrii' on input line 365.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrv' on input line 364.
+(hyperref)                removing `\cyrv' on input line 365.
 
-LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 367
+LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 368
 .
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/ts1cmtt.fd
 File: ts1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 388.
+(babel)             in language  on input line 385.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 388.
+(babel)             in language  on input line 385.
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 388.
+(babel)             in language  on input line 385.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 388.
+(babel)             in language  on input line 385.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.388   0.48024906 0.24493323 0.38827829]
-                                          [1]
+l.385 Sample length: n = 1000
+                              [1]
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 404.
+(babel)             in language  on input line 408.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 404.
+(babel)             in language  on input line 408.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\CYRT' on input line 404.
+(hyperref)                removing `\CYRT' on input line 408.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 404.
+(hyperref)                removing `\cyre' on input line 408.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrs' on input line 404.
+(hyperref)                removing `\cyrs' on input line 408.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrt' on input line 404.
+(hyperref)                removing `\cyrt' on input line 408.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrv' on input line 404.
+(hyperref)                removing `\cyrv' on input line 408.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrl' on input line 404.
+(hyperref)                removing `\cyrl' on input line 408.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyra' on input line 404.
+(hyperref)                removing `\cyra' on input line 408.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrs' on input line 404.
+(hyperref)                removing `\cyrs' on input line 408.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrn' on input line 404.
+(hyperref)                removing `\cyrn' on input line 408.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrii' on input line 404.
+(hyperref)                removing `\cyrii' on input line 408.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrz' on input line 404.
+(hyperref)                removing `\cyrz' on input line 408.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyra' on input line 404.
+(hyperref)                removing `\cyra' on input line 408.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrd' on input line 404.
+(hyperref)                removing `\cyrd' on input line 408.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyra' on input line 404.
+(hyperref)                removing `\cyra' on input line 408.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrch' on input line 404.
+(hyperref)                removing `\cyrch' on input line 408.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrii' on input line 404.
+(hyperref)                removing `\cyrii' on input line 408.
 
+LaTeX Font Info:    Try loading font information for TS1+ppl on input line 420.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ts1ppl.fd
+File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
+)
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 454.
+(babel)             in language  on input line 455.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 454.
+(babel)             in language  on input line 455.
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 454.
+(babel)             in language  on input line 455.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 454.
-[2]
+(babel)             in language  on input line 455.
+ [2]
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 520.
+(babel)             in language  on input line 539.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 520.
+(babel)             in language  on input line 539.
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 520.
+(babel)             in language  on input line 539.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 520.
+(babel)             in language  on input line 539.
  [3]
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 564.
+(babel)             in language  on input line 592.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 564.
+(babel)             in language  on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\CYRP' on input line 564.
+(hyperref)                removing `\CYRP' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 564.
+(hyperref)                removing `\cyro' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrsh' on input line 564.
+(hyperref)                removing `\cyrsh' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyru' on input line 564.
+(hyperref)                removing `\cyru' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrk' on input line 564.
+(hyperref)                removing `\cyrk' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrm' on input line 564.
+(hyperref)                removing `\cyrm' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 564.
+(hyperref)                removing `\cyro' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrd' on input line 564.
+(hyperref)                removing `\cyrd' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 564.
+(hyperref)                removing `\cyre' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrl' on input line 564.
+(hyperref)                removing `\cyrl' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrii' on input line 564.
+(hyperref)                removing `\cyrii' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\CYRP' on input line 564.
+(hyperref)                removing `\CYRP' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 564.
+(hyperref)                removing `\cyro' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrs' on input line 564.
+(hyperref)                removing `\cyrs' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrl' on input line 564.
+(hyperref)                removing `\cyrl' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrii' on input line 564.
+(hyperref)                removing `\cyrii' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrd' on input line 564.
+(hyperref)                removing `\cyrd' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 564.
+(hyperref)                removing `\cyro' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrv' on input line 564.
+(hyperref)                removing `\cyrv' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrn' on input line 564.
+(hyperref)                removing `\cyrn' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 564.
+(hyperref)                removing `\cyre' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrv' on input line 564.
+(hyperref)                removing `\cyrv' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrk' on input line 564.
+(hyperref)                removing `\cyrk' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrl' on input line 564.
+(hyperref)                removing `\cyrl' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyryu' on input line 564.
+(hyperref)                removing `\cyryu' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrch' on input line 564.
+(hyperref)                removing `\cyrch' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 564.
+(hyperref)                removing `\cyre' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrn' on input line 564.
+(hyperref)                removing `\cyrn' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrn' on input line 564.
+(hyperref)                removing `\cyrn' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrya' on input line 564.
+(hyperref)                removing `\cyrya' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrm' on input line 564.
+(hyperref)                removing `\cyrm' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 564.
+(hyperref)                removing `\cyre' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrt' on input line 564.
+(hyperref)                removing `\cyrt' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 564.
+(hyperref)                removing `\cyro' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrd' on input line 564.
+(hyperref)                removing `\cyrd' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrz' on input line 564.
+(hyperref)                removing `\cyrz' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrl' on input line 564.
+(hyperref)                removing `\cyrl' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyra' on input line 564.
+(hyperref)                removing `\cyra' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrb' on input line 564.
+(hyperref)                removing `\cyrb' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 564.
+(hyperref)                removing `\cyro' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrr' on input line 564.
+(hyperref)                removing `\cyrr' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyra' on input line 564.
+(hyperref)                removing `\cyra' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrt' on input line 564.
+(hyperref)                removing `\cyrt' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 564.
+(hyperref)                removing `\cyro' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrr' on input line 564.
+(hyperref)                removing `\cyrr' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrn' on input line 564.
+(hyperref)                removing `\cyrn' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 564.
+(hyperref)                removing `\cyro' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyryi' on input line 564.
+(hyperref)                removing `\cyryi' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrr' on input line 564.
+(hyperref)                removing `\cyrr' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 564.
+(hyperref)                removing `\cyro' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrb' on input line 564.
+(hyperref)                removing `\cyrb' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 564.
+(hyperref)                removing `\cyro' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrt' on input line 564.
+(hyperref)                removing `\cyrt' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyri' on input line 564.
+(hyperref)                removing `\cyri' on input line 592.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\textnumero' on input line 564.
+(hyperref)                removing `\textnumero' on input line 592.
 
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 566.
+(babel)             in language  on input line 594.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 566.
+(babel)             in language  on input line 594.
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\CYRT' on input line 566.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 566.
+(hyperref)                removing `\CYRT' on input line 594.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrs' on input line 566.
+(hyperref)                removing `\cyre' on input line 594.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrt' on input line 566.
+(hyperref)                removing `\cyrs' on input line 594.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrt' on input line 594.
 
 LaTeX Font Info:    Font shape `T2A/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T2A/cmtt/m/n' tried instead on input line 569.
+(Font)              Font shape `T2A/cmtt/m/n' tried instead on input line 597.
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 585.
+(babel)             in language  on input line 612.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 585.
+(babel)             in language  on input line 612.
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 585.
+(babel)             in language  on input line 612.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 585.
-[4] <output_18_1.png, id=140, 548.0475pt x 307.1475pt>
-File: output_18_1.png Graphic file (type png)
- <use output_18_1.png>
-Package pdftex.def Info: output_18_1.png used on input line 588.
+(babel)             in language  on input line 612.
+[4] <output_16_1.png, id=138, 548.0475pt x 307.1475pt>
+File: output_16_1.png Graphic file (type png)
+ <use output_16_1.png>
+Package pdftex.def Info: output_16_1.png used on input line 617.
 (pdftex.def)             Requested size: 548.04616pt x 307.14674pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 590--591
+Underfull \hbox (badness 10000) in paragraph at lines 619--620
 
  []
 
-<output_18_3.png, id=142, 548.0475pt x 307.1475pt>
-File: output_18_3.png Graphic file (type png)
- <use output_18_3.png>
-Package pdftex.def Info: output_18_3.png used on input line 605.
+<output_16_3.png, id=140, 548.0475pt x 307.1475pt>
+File: output_16_3.png Graphic file (type png)
+ <use output_16_3.png>
+Package pdftex.def Info: output_16_3.png used on input line 636.
 (pdftex.def)             Requested size: 548.04616pt x 307.14674pt.
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 606.
+(babel)             in language  on input line 637.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 606.
+(babel)             in language  on input line 637.
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 606.
+(babel)             in language  on input line 637.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 606.
+(babel)             in language  on input line 637.
 
-[5 <./output_18_1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 607--608
+[5 <./output_16_1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 638--639
 
  []
 
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 616.
+(babel)             in language  on input line 654.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 616.
+(babel)             in language  on input line 654.
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\CYRT' on input line 616.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 616.
+(hyperref)                removing `\CYRT' on input line 654.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrs' on input line 616.
+(hyperref)                removing `\cyre' on input line 654.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrt' on input line 616.
+(hyperref)                removing `\cyrs' on input line 654.
 
-<output_20_1.png, id=148, 560.0925pt x 307.1475pt>
-File: output_20_1.png Graphic file (type png)
- <use output_20_1.png>
-Package pdftex.def Info: output_20_1.png used on input line 638.
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrt' on input line 654.
+
+<output_19_1.png, id=146, 560.0925pt x 307.1475pt>
+File: output_19_1.png Graphic file (type png)
+ <use output_19_1.png>
+Package pdftex.def Info: output_19_1.png used on input line 677.
 (pdftex.def)             Requested size: 560.09113pt x 307.14674pt.
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 639.
+(babel)             in language  on input line 678.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 639.
+(babel)             in language  on input line 678.
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 639.
+(babel)             in language  on input line 678.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 639.
+(babel)             in language  on input line 678.
 
-[6 <./output_18_3.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 640--641
+[6 <./output_16_3.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 679--680
 
  []
 
-<output_20_3.png, id=155, 560.0925pt x 307.1475pt>
-File: output_20_3.png Graphic file (type png)
- <use output_20_3.png>
-Package pdftex.def Info: output_20_3.png used on input line 655.
+<output_19_3.png, id=155, 560.0925pt x 307.1475pt>
+File: output_19_3.png Graphic file (type png)
+ <use output_19_3.png>
+Package pdftex.def Info: output_19_3.png used on input line 698.
 (pdftex.def)             Requested size: 560.09113pt x 307.14674pt.
+Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 699.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 699.
+Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 699.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 699.
 
-Underfull \hbox (badness 10000) in paragraph at lines 657--658
+[7 <./output_19_1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 700--701
 
  []
 
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 658.
+(babel)             in language  on input line 718.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 658.
+(babel)             in language  on input line 718.
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\CYRT' on input line 718.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyre' on input line 718.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrs' on input line 718.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrt' on input line 718.
+
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 658.
+(babel)             in language  on input line 739.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 658.
-[7 <./output_20_1.png> <./output_20_3.png>]
+(babel)             in language  on input line 739.
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 666.
+(babel)             in language  on input line 739.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 666.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\CYRT' on input line 666.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 666.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrs' on input line 666.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrt' on input line 666.
-
-<output_22_1.png, id=162, 554.07pt x 307.1475pt>
+(babel)             in language  on input line 739.
+[8 <./output_19_3.png>] <output_22_1.png, id=166, 554.07pt x 307.1475pt>
 File: output_22_1.png Graphic file (type png)
- <use output_22_1.png>
-Package pdftex.def Info: output_22_1.png used on input line 689.
+
+<use output_22_1.png>
+Package pdftex.def Info: output_22_1.png used on input line 742.
 (pdftex.def)             Requested size: 554.06865pt x 307.14674pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 691--692
+Underfull \hbox (badness 10000) in paragraph at lines 744--745
 
  []
 
-Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 700.
-Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 700.
-Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 700.
-Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 700.
-[8 <./output_22_1.png>] <output_22_3.png, id=168, 548.0475pt x 307.1475pt>
+<output_22_3.png, id=167, 548.0475pt x 307.1475pt>
 File: output_22_3.png Graphic file (type png)
-
-<use output_22_3.png>
-Package pdftex.def Info: output_22_3.png used on input line 707.
-(pdftex.def)             Requested size: 548.04616pt x 307.14674pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 709--710
-
- []
-
-Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 719.
-Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 719.
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\CYRP' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrsh' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyru' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrk' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrm' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrd' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrl' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrii' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\CYRM' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrt' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrd' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrk' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrr' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrl' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrya' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrc' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrii' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrishrt' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrn' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrg' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrv' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrk' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrl' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyryu' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrch' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrn' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrn' on input line 719.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrya' on input line 719.
-
-Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 721.
-Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 721.
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\CYRT' on input line 721.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 721.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrs' on input line 721.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrt' on input line 721.
-
-<output_25_1.png, id=169, 548.0475pt x 307.1475pt>
-File: output_25_1.png Graphic file (type png)
- <use output_25_1.png>
-Package pdftex.def Info: output_25_1.png used on input line 739.
+ <use output_22_3.png>
+Package pdftex.def Info: output_22_3.png used on input line 770.
 (pdftex.def)             Requested size: 548.04616pt x 307.14674pt.
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 740.
+(babel)             in language  on input line 771.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 740.
+(babel)             in language  on input line 771.
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 740.
+(babel)             in language  on input line 771.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 740.
+(babel)             in language  on input line 771.
 
-[9 <./output_22_3.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 741--742
+[9 <./output_22_1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 772--773
 
  []
 
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 750.
+(babel)             in language  on input line 798.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 750.
+(babel)             in language  on input line 798.
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\CYRT' on input line 750.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 750.
+(hyperref)                removing `\CYRP' on input line 798.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrs' on input line 750.
+(hyperref)                removing `\cyro' on input line 798.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrt' on input line 750.
+(hyperref)                removing `\cyrsh' on input line 798.
 
-<output_27_1.png, id=175, 560.0925pt x 307.1475pt>
-File: output_27_1.png Graphic file (type png)
- <use output_27_1.png>
-Package pdftex.def Info: output_27_1.png used on input line 768.
-(pdftex.def)             Requested size: 560.09113pt x 307.14674pt.
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyru' on input line 798.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrk' on input line 798.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrm' on input line 798.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyro' on input line 798.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrd' on input line 798.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyre' on input line 798.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrl' on input line 798.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrii' on input line 798.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\CYRM' on input line 798.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyre' on input line 798.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrt' on input line 798.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyro' on input line 798.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrd' on input line 798.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrk' on input line 798.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyro' on input line 798.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrr' on input line 798.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyre' on input line 798.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrl' on input line 798.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrya' on input line 798.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrc' on input line 798.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrii' on input line 798.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrishrt' on input line 798.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrn' on input line 798.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyro' on input line 798.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrg' on input line 798.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyro' on input line 798.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrv' on input line 798.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrk' on input line 798.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrl' on input line 798.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyryu' on input line 798.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrch' on input line 798.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyre' on input line 798.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrn' on input line 798.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrn' on input line 798.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrya' on input line 798.
+
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 769.
+(babel)             in language  on input line 800.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 769.
-Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 769.
-Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 769.
+(babel)             in language  on input line 800.
 
-[10 <./output_25_1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 770--771
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\CYRT' on input line 800.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyre' on input line 800.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrs' on input line 800.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrt' on input line 800.
+
+Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 814.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 814.
+Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 814.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 814.
+[10 <./output_22_3.png>] <output_26_1.png, id=178, 548.0475pt x 307.1475pt>
+File: output_26_1.png Graphic file (type png)
+
+<use output_26_1.png>
+Package pdftex.def Info: output_26_1.png used on input line 823.
+(pdftex.def)             Requested size: 548.04616pt x 307.14674pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 825--826
 
  []
 
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 779.
+(babel)             in language  on input line 840.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 779.
+(babel)             in language  on input line 840.
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\CYRT' on input line 779.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 779.
+(hyperref)                removing `\CYRT' on input line 840.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrs' on input line 779.
+(hyperref)                removing `\cyre' on input line 840.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrt' on input line 779.
+(hyperref)                removing `\cyrs' on input line 840.
 
-<output_29_1.png, id=182, 560.0925pt x 307.1475pt>
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrt' on input line 840.
+
+Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 855.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 855.
+Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 855.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 855.
+[11 <./output_26_1.png>] <output_29_1.png, id=185, 560.0925pt x 307.1475pt>
 File: output_29_1.png Graphic file (type png)
- <use output_29_1.png>
-Package pdftex.def Info: output_29_1.png used on input line 798.
-(pdftex.def)             Requested size: 560.09113pt x 307.14674pt.
-Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 799.
-Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 799.
-Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 799.
-Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 799.
 
-[11 <./output_27_1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 800--801
+<use output_29_1.png>
+Package pdftex.def Info: output_29_1.png used on input line 868.
+(pdftex.def)             Requested size: 560.09113pt x 307.14674pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 870--871
 
  []
 
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 810.
-Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 810.
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\CYRP' on input line 810.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 810.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrsh' on input line 810.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyru' on input line 810.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrk' on input line 810.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrm' on input line 810.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 810.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrd' on input line 810.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 810.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrl' on input line 810.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrii' on input line 810.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\CYRM' on input line 810.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 810.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrt' on input line 810.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 810.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrd' on input line 810.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrv' on input line 810.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyri' on input line 810.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrp' on input line 810.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyra' on input line 810.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrd' on input line 810.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrk' on input line 810.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 810.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrv' on input line 810.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 810.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrg' on input line 810.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 810.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrv' on input line 810.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrk' on input line 810.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrl' on input line 810.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyryu' on input line 810.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrch' on input line 810.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 810.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrn' on input line 810.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrn' on input line 810.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrya' on input line 810.
-
-Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 812.
-Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 812.
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\CYRT' on input line 812.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 812.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrs' on input line 812.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrt' on input line 812.
-
-Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 840.
-Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 840.
-Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 840.
-Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 840.
-[12 <./output_29_1.png>]
-Package babel Info: Redefining ukrainian shorthand "|
 (babel)             in language  on input line 887.
 Package babel Info: Redefining ukrainian shorthand "~
 (babel)             in language  on input line 887.
-Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 887.
-Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 887.
- [13]
-Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 889.
-Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 889.
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\CYRT' on input line 887.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\CYRT' on input line 889.
+(hyperref)                removing `\cyre' on input line 887.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 889.
+(hyperref)                removing `\cyrs' on input line 887.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrs' on input line 889.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrt' on input line 889.
+(hyperref)                removing `\cyrt' on input line 887.
 
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 940.
+(babel)             in language  on input line 893.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 940.
+(babel)             in language  on input line 893.
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 940.
+(babel)             in language  on input line 893.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 940.
+(babel)             in language  on input line 893.
+[12 <./output_29_1.png>] <output_32_1.png, id=192, 560.0925pt x 307.1475pt>
+File: output_32_1.png Graphic file (type png)
+
+<use output_32_1.png>
+Package pdftex.def Info: output_32_1.png used on input line 919.
+(pdftex.def)             Requested size: 560.09113pt x 307.14674pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 921--922
+
+ []
+
+Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 929.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 929.
+Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 929.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 929.
+[13 <./output_32_1.png>]
+Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 952.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 952.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\CYRP' on input line 952.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyro' on input line 952.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrsh' on input line 952.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyru' on input line 952.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrk' on input line 952.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrm' on input line 952.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyro' on input line 952.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrd' on input line 952.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyre' on input line 952.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrl' on input line 952.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrii' on input line 952.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\CYRM' on input line 952.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyre' on input line 952.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrt' on input line 952.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyro' on input line 952.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrd' on input line 952.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrv' on input line 952.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyri' on input line 952.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrp' on input line 952.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyra' on input line 952.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrd' on input line 952.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrk' on input line 952.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyro' on input line 952.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrv' on input line 952.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyro' on input line 952.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrg' on input line 952.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyro' on input line 952.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrv' on input line 952.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrk' on input line 952.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrl' on input line 952.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyryu' on input line 952.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrch' on input line 952.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyre' on input line 952.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrn' on input line 952.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrn' on input line 952.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrya' on input line 952.
+
+Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 954.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 954.
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\CYRT' on input line 954.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyre' on input line 954.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrs' on input line 954.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrt' on input line 954.
+
+Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 987.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 987.
+Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 987.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 987.
 [14]
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 966.
+(babel)             in language  on input line 1034.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 966.
+(babel)             in language  on input line 1034.
+Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 1034.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 1034.
+ [15]
+Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 1057.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 1057.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\CYRT' on input line 966.
+(hyperref)                removing `\CYRT' on input line 1057.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 966.
+(hyperref)                removing `\cyre' on input line 1057.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrs' on input line 966.
+(hyperref)                removing `\cyrs' on input line 1057.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrt' on input line 966.
+(hyperref)                removing `\cyrt' on input line 1057.
 
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 993.
+(babel)             in language  on input line 1089.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 993.
+(babel)             in language  on input line 1089.
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 993.
+(babel)             in language  on input line 1089.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 993.
-[15]
+(babel)             in language  on input line 1089.
+[16]
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1041.
+(babel)             in language  on input line 1137.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1041.
+(babel)             in language  on input line 1137.
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1041.
+(babel)             in language  on input line 1137.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1041.
- [16]
-Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1065.
-Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1065.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\CYRP' on input line 1065.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 1065.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrsh' on input line 1065.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyru' on input line 1065.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrk' on input line 1065.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrm' on input line 1065.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 1065.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrd' on input line 1065.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 1065.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrl' on input line 1065.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrii' on input line 1065.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\CYRM' on input line 1065.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 1065.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrt' on input line 1065.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 1065.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrd' on input line 1065.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrp' on input line 1065.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 1065.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrr' on input line 1065.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 1065.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrb' on input line 1065.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrii' on input line 1065.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrr' on input line 1065.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrn' on input line 1065.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 1065.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrg' on input line 1065.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 1065.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrv' on input line 1065.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrk' on input line 1065.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrl' on input line 1065.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyryu' on input line 1065.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrch' on input line 1065.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 1065.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrn' on input line 1065.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrn' on input line 1065.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrya' on input line 1065.
-
-Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1067.
-Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1067.
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\CYRT' on input line 1067.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 1067.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrs' on input line 1067.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrt' on input line 1067.
-
-Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1103.
-Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1103.
-Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1103.
-Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1103.
-[17]
-Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1112.
-Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1112.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\CYRT' on input line 1112.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 1112.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrs' on input line 1112.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrt' on input line 1112.
-
+(babel)             in language  on input line 1137.
+ [17]
 Package babel Info: Redefining ukrainian shorthand "|
 (babel)             in language  on input line 1161.
 Package babel Info: Redefining ukrainian shorthand "~
 (babel)             in language  on input line 1161.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\CYRT' on input line 1161.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyre' on input line 1161.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrs' on input line 1161.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrt' on input line 1161.
+
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1161.
+(babel)             in language  on input line 1192.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1161.
+(babel)             in language  on input line 1192.
+Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 1192.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 1192.
 [18]
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1210.
+(babel)             in language  on input line 1240.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1210.
+(babel)             in language  on input line 1240.
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1210.
+(babel)             in language  on input line 1240.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1210.
+(babel)             in language  on input line 1240.
  [19]
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1232.
+(babel)             in language  on input line 1288.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1232.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\CYRT' on input line 1232.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 1232.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrs' on input line 1232.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrt' on input line 1232.
-
+(babel)             in language  on input line 1288.
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1275.
+(babel)             in language  on input line 1288.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1275.
+(babel)             in language  on input line 1288.
+ [20]
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1275.
+(babel)             in language  on input line 1342.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1275.
-[20]
+(babel)             in language  on input line 1342.
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1321.
+(babel)             in language  on input line 1342.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1321.
-Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1321.
-Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1321.
+(babel)             in language  on input line 1342.
  [21]
 Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 1371.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 1371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\CYRP' on input line 1371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyro' on input line 1371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrsh' on input line 1371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyru' on input line 1371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrk' on input line 1371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrm' on input line 1371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyro' on input line 1371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrd' on input line 1371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyre' on input line 1371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrl' on input line 1371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrii' on input line 1371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\CYRM' on input line 1371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyre' on input line 1371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrt' on input line 1371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyro' on input line 1371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrd' on input line 1371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrp' on input line 1371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyre' on input line 1371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrr' on input line 1371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyre' on input line 1371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrb' on input line 1371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrii' on input line 1371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrr' on input line 1371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrn' on input line 1371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyro' on input line 1371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrg' on input line 1371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyro' on input line 1371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrv' on input line 1371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrk' on input line 1371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrl' on input line 1371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyryu' on input line 1371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrch' on input line 1371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyre' on input line 1371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrn' on input line 1371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrn' on input line 1371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrya' on input line 1371.
+
+Package babel Info: Redefining ukrainian shorthand "|
 (babel)             in language  on input line 1373.
 Package babel Info: Redefining ukrainian shorthand "~
 (babel)             in language  on input line 1373.
 
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\CYRT' on input line 1373.
+
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\CYRV' on input line 1373.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyri' on input line 1373.
+(hyperref)                removing `\cyre' on input line 1373.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
@@ -2788,568 +2730,703 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrn' on input line 1373.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 1373.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrv' on input line 1373.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrk' on input line 1373.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyri' on input line 1373.
+(hyperref)                removing `\cyrt' on input line 1373.
 
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1377.
+(babel)             in language  on input line 1407.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1377.
+(babel)             in language  on input line 1407.
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1377.
+(babel)             in language  on input line 1407.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1377.
+(babel)             in language  on input line 1407.
 [22]
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1378.
+(babel)             in language  on input line 1447.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1378.
+(babel)             in language  on input line 1447.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\CYRK' on input line 1378.
+(hyperref)                removing `\CYRT' on input line 1447.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 1378.
+(hyperref)                removing `\cyre' on input line 1447.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrd' on input line 1378.
+(hyperref)                removing `\cyrs' on input line 1447.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrp' on input line 1378.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrr' on input line 1378.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 1378.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrg' on input line 1378.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrr' on input line 1378.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyra' on input line 1378.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrm' on input line 1378.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyri' on input line 1378.
+(hyperref)                removing `\cyrt' on input line 1447.
 
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1381.
+(babel)             in language  on input line 1469.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1381.
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\CYRII' on input line 1381.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrm' on input line 1381.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrp' on input line 1381.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 1381.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrr' on input line 1381.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrt' on input line 1381.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrn' on input line 1381.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 1381.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 1381.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrb' on input line 1381.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrh' on input line 1381.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrii' on input line 1381.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrd' on input line 1381.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrn' on input line 1381.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyri' on input line 1381.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrh' on input line 1381.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrb' on input line 1381.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrii' on input line 1381.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrb' on input line 1381.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrl' on input line 1381.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrii' on input line 1381.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 1381.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrt' on input line 1381.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 1381.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrk' on input line 1381.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrn' on input line 1381.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyra' on input line 1381.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrl' on input line 1381.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyra' on input line 1381.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrsh' on input line 1381.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrt' on input line 1381.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyru' on input line 1381.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrv' on input line 1381.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyra' on input line 1381.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrn' on input line 1381.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrn' on input line 1381.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrya' on input line 1381.
-
+(babel)             in language  on input line 1469.
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1397.
+(babel)             in language  on input line 1469.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1397.
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\CYRR' on input line 1397.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 1397.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyra' on input line 1397.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrl' on input line 1397.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrii' on input line 1397.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrz' on input line 1397.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyra' on input line 1397.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrc' on input line 1397.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrii' on input line 1397.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrya' on input line 1397.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\CYRM' on input line 1397.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\CYRN' on input line 1397.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\CYRK' on input line 1397.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\CYRO' on input line 1397.
-
-Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1430.
-Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1430.
-Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1430.
-Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1430.
+(babel)             in language  on input line 1469.
 [23]
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1477.
+(babel)             in language  on input line 1522.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1477.
+(babel)             in language  on input line 1522.
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1477.
+(babel)             in language  on input line 1522.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1477.
+(babel)             in language  on input line 1522.
  [24]
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1481.
+(babel)             in language  on input line 1574.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1481.
+(babel)             in language  on input line 1574.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\CYRR' on input line 1481.
+(hyperref)                removing `\CYRT' on input line 1574.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 1481.
+(hyperref)                removing `\cyre' on input line 1574.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyra' on input line 1481.
+(hyperref)                removing `\cyrs' on input line 1574.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrl' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrii' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrz' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyra' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrc' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrii' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrya' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrk' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrl' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyra' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrs' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyru' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrm' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrd' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrl' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyryu' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrv' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyra' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrn' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrn' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrya' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrii' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyru' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrs' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrii' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrh' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrn' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrb' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrh' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrii' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrd' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrn' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyri' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrh' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrm' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyre' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrt' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyro' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrd' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrii' on input line 1481.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\cyrv' on input line 1481.
+(hyperref)                removing `\cyrt' on input line 1574.
 
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1530.
+(babel)             in language  on input line 1580.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1530.
+(babel)             in language  on input line 1580.
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1530.
+(babel)             in language  on input line 1580.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1530.
+(babel)             in language  on input line 1580.
 [25]
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1578.
+(babel)             in language  on input line 1636.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1578.
+(babel)             in language  on input line 1636.
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1578.
+(babel)             in language  on input line 1636.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1578.
+(babel)             in language  on input line 1636.
  [26]
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1626.
+(babel)             in language  on input line 1689.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1626.
+(babel)             in language  on input line 1689.
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1626.
+(babel)             in language  on input line 1689.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1626.
+(babel)             in language  on input line 1689.
  [27]
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1674.
+(babel)             in language  on input line 1744.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1674.
+(babel)             in language  on input line 1744.
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1674.
+(babel)             in language  on input line 1744.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1674.
+(babel)             in language  on input line 1744.
  [28]
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1722.
+(babel)             in language  on input line 1748.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1722.
+(babel)             in language  on input line 1748.
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1722.
+(babel)             in language  on input line 1748.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1722.
+(babel)             in language  on input line 1748.
  [29]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1738.
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1738.
+(babel)             in language  on input line 1749.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1738.
+(babel)             in language  on input line 1749.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\CYRV' on input line 1749.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyri' on input line 1749.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrs' on input line 1749.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrn' on input line 1749.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyro' on input line 1749.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrv' on input line 1749.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrk' on input line 1749.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyri' on input line 1749.
+
 Package babel Info: Redefining ukrainian shorthand "|
-(babel)             in language  on input line 1738.
+(babel)             in language  on input line 1766.
 Package babel Info: Redefining ukrainian shorthand "~
-(babel)             in language  on input line 1738.
- [30]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1738.
+(babel)             in language  on input line 1766.
+Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 1766.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 1766.
+[30]
+Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 1768.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 1768.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\CYRK' on input line 1768.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyro' on input line 1768.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrd' on input line 1768.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrp' on input line 1768.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrr' on input line 1768.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyro' on input line 1768.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrg' on input line 1768.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrr' on input line 1768.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyra' on input line 1768.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrm' on input line 1768.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyri' on input line 1768.
+
+Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 1771.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 1771.
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\CYRII' on input line 1771.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrm' on input line 1771.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrp' on input line 1771.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyro' on input line 1771.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrr' on input line 1771.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrt' on input line 1771.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrn' on input line 1771.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyre' on input line 1771.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyro' on input line 1771.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrb' on input line 1771.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrh' on input line 1771.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrii' on input line 1771.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrd' on input line 1771.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrn' on input line 1771.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyri' on input line 1771.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrh' on input line 1771.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrb' on input line 1771.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrii' on input line 1771.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrb' on input line 1771.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrl' on input line 1771.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrii' on input line 1771.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyro' on input line 1771.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrt' on input line 1771.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyre' on input line 1771.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrk' on input line 1771.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrn' on input line 1771.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyra' on input line 1771.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrl' on input line 1771.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyra' on input line 1771.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrsh' on input line 1771.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrt' on input line 1771.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyru' on input line 1771.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrv' on input line 1771.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyra' on input line 1771.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrn' on input line 1771.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrn' on input line 1771.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrya' on input line 1771.
+
+Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 1787.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 1787.
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\CYRR' on input line 1787.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyre' on input line 1787.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyra' on input line 1787.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrl' on input line 1787.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrii' on input line 1787.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrz' on input line 1787.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyra' on input line 1787.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrc' on input line 1787.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrii' on input line 1787.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrya' on input line 1787.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\CYRM' on input line 1787.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\CYRN' on input line 1787.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\CYRK' on input line 1787.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\CYRO' on input line 1787.
+
+Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 1826.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 1826.
+Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 1826.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 1826.
+[31]
+Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 1874.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 1874.
+Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 1874.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 1874.
+ [32]
+Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 1885.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\CYRR' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyre' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyra' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrl' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrii' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrz' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyra' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrc' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrii' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrya' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrk' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrl' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyra' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrs' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyru' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrm' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyro' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrd' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyre' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrl' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyryu' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrv' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyra' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrn' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrn' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrya' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrii' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyru' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrs' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrii' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrh' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrn' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyre' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyro' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrb' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrh' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrii' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrd' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrn' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyri' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrh' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrm' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyre' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrt' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyro' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrd' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrii' on input line 1885.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\cyrv' on input line 1885.
+
+Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 1926.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 1926.
+Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 1926.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 1926.
+[33]
+Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 1974.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 1974.
+Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 1974.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 1974.
+ [34]
+Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 2022.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 2022.
+Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 2022.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 2022.
+ [35]
+Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 2070.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 2070.
+Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 2070.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 2070.
+ [36]
+Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 2118.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 2118.
+Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 2118.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 2118.
+ [37]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2155.
+Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 2155.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 2155.
+Package babel Info: Redefining ukrainian shorthand "|
+(babel)             in language  on input line 2155.
+Package babel Info: Redefining ukrainian shorthand "~
+(babel)             in language  on input line 2155.
+ [38]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2155.
  (./Protocol.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1738.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1738.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2155.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2155.
 
 Package rerunfilecheck Info: File `Protocol.out' has not changed.
 (rerunfilecheck)             Checksum: 04F6F83D873397D73F2C489725AA0D14;1556.
@@ -3360,31 +3437,35 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1738.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2155.
  ) 
 Here is how much of TeX's memory you used:
- 13699 strings out of 492995
- 199175 string characters out of 6132704
- 297586 words of memory out of 5000000
- 16932 multiletter control sequences out of 15000+600000
- 19040 words of font info for 51 fonts, out of 8000000 for 9000
+ 13738 strings out of 492995
+ 199659 string characters out of 6132704
+ 298111 words of memory out of 5000000
+ 16954 multiletter control sequences out of 15000+600000
+ 22111 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,6n,38p,863b,660s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,5n,38p,863b,660s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc}
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
-live/2017/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive
-/2017/texmf-dist/fonts/type1/public/cm-super/sfit1095.pfb></usr/local/texlive/2
-017/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/201
-7/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2017/
-texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2017/te
-xmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2017/texm
-f-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/2017/texmf-
-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on Protocol.pdf (31 pages, 272806 bytes).
+live/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texl
+ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texliv
+e/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
+/2017/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/201
+7/texmf-dist/fonts/type1/public/cm-super/sfit1095.pfb></usr/local/texlive/2017/
+texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2017/te
+xmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2017/texm
+f-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2017/texmf-
+dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2017/texmf-di
+st/fonts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/2017/texmf-dist
+/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/
+type1/urw/palatino/uplri8a.pfb>
+Output written on Protocol.pdf (39 pages, 352465 bytes).
 PDF statistics:
- 320 PDF objects out of 1000 (max. 8388607)
- 258 compressed objects within 3 object streams
- 61 named destinations out of 1000 (max. 500000)
+ 370 PDF objects out of 1000 (max. 8388607)
+ 296 compressed objects within 3 object streams
+ 67 named destinations out of 1000 (max. 500000)
  254 words of extra memory for PDF output out of 10000 (max. 10000000)
 
